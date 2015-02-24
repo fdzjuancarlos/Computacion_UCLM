@@ -1,1 +1,5 @@
-\contentsline {section}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {1}Introducci\'on}{4}
+\contentsline {subsection}{\numberline {1.1}Planteamiento del Problema}{4}
+\contentsline {subsection}{\numberline {1.2}Objetivos y Alcance}{4}
+\contentsline {subsection}{\numberline {1.3}Los Expertos}{5}
+\contentsline {subsection}{\numberline {1.4}Los usuarios finales del sistema}{5}
