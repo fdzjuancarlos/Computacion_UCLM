@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1424798074 "llncs.tex" "llncs.pdf" "llncs" 1424798075
+["pdflatex"] 1424798074 "llncs.tex" "llncs.pdf" "llncs" 1424872590
   "/usr/local/texlive/2014/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/local/texlive/2014/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -37,7 +37,7 @@
   "aliascnt.sty" 1308754042 2598 b30528bf103263149326b7572d9672a5 ""
   "llncs.aux" 1424798075 441 4b43f858897334cdc819a38683fb8cb3 ""
   "llncs.cls" 1380280472 42849 e98f9316a296920ae82de0017d2b1604 ""
-  "llncs.tex" 1424798073 6758 b859067cd824f0b9a2661bfecc4fda6f ""
+  "llncs.tex" 1424801466 6758 b859067cd824f0b9a2661bfecc4fda6f ""
   "llncs.toc" 1424798075 343 91f1971a256ffddac3a03d458355f517 ""
   "llncsdoc.sty" 1206702920 1480 e7e04de6baa0f55a67c64e5291b7bc53 ""
   "remreset.sty" 1327593838 1096 6a75275ca00e32428c6f059d2f618ea7 ""
