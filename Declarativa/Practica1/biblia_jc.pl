@@ -40,6 +40,10 @@ hombre(lot).
 hombre(abraham).
 hombre(teraj).
 hombre(najor).
+hombre(esau).
+hombre(jacob).
+hombre(laban).
+
 
 mujer(melca). %esposa de najor
 mujer(jesca).
@@ -57,6 +61,5 @@ ascendiente(X, Z) :- ascendiente_directo(X, Y), ascendiente(Y, Z).
 hijo(X,Y) :- hombre(X), ascendiente_directo(Y,X).
 hija(X,Y) :- mujer(X), ascendiente_directo(Y,X).
 
-casado(X,Y) :- casado(Y,X).
 
 abuelo(X,Y) :- hombre(X) , ascendiente_directo(X,Z) , ascendiente_directo(Z,Y).
