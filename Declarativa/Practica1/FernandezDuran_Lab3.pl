@@ -1,89 +1,4 @@
-% f(a,b) = f(a,X)
 
-padre(teraj,abraham).
-padre(teraj,sara).
-padre(teraj,najor).
-padre(teraj,haran).
-
-padre(abraham,isaac).
-padre(abraham,ismael). %madre fue agar
-
-padre(najor,batuel).
-
-padre(haran,lot).
-padre(haran,melca).
-padre(haran,jesca).
-
-padre(batuel,rebeca).
-padre(batuel,laban).
-
-padre(isaac,esau).
-padre(isaac,jacob).
-
-madre(agar,ismael).
-
-madre(sara, isaac).
-
-madre(melca,batuel).
-
-madre(rebeca,esau).
-madre(rebeca,jacob).
-
-casado(najor,melca).
-casado(isaac,rebeca).
-casado(abraham,sara).
-
-hombre(haran).
-hombre(batuel).
-hombre(isaac).
-hombre(lot).
-hombre(abraham).
-hombre(teraj).
-hombre(najor).
-hombre(esau).
-hombre(jacob).
-hombre(laban).
-
-
-mujer(melca). %esposa de najor
-mujer(jesca).
-mujer(rebeca). %esposa de isaac
-mujer(sara). %esposa de abraham
-mujer(agar). %esclava de sara
-
-%%% REGLAS
-
-ascendiente_directo(X, Y) :- (padre(X, Y); madre(X, Y)).
-
-ascendiente(X, Z) :- ascendiente_directo(X, Z).
-ascendiente(X, Z) :- ascendiente_directo(X, Y), ascendiente(Y, Z).
-
-hijo(X,Y) :- hombre(X), ascendiente_directo(Y,X).
-hija(X,Y) :- mujer(X), ascendiente_directo(Y,X).
-
-
-%a)
-
-abuelo(X,Y) :- hombre(X) , ascendiente_directo(X,Z) , ascendiente_directo(Z,Y).
-abuela(X,Y) :- mujer(X) , ascendiente_directo(X,Z) , ascendiente_directo(Z,Y).
-
-hermano(X,Y) :- hombre(X), ascendiente_directo(Z,X), ascendiente_directo(Z,Y), dif(X,Y).  
-hermana(X,Y) :- mujer(X), ascendiente_directo(X,Z), ascendiente_directo(Y,Z), dif(X,Y).  
-
-tio(X,Y) :- hombre(X), hermano(X,Z), ascendiente_directo(Z,Y).
-tia(X,Y) :- mujer(X), hermano(X,Z), ascendiente_directo(Z,Y).
-
-sobrino(X,Y) :- tio(Y,X) ; tia(Y,X) , hombre(X).
-sobrina(X,Y) :- tio(Y,X) ; tia(Y,X) , mujer(X).
-
-primo(X,Y) :- (tio(Z,X);tia(Z,X)),ascendiente_directo(Z,Y) , hombre(X).
-prima(X,Y) :- (tio(Z,X);tia(Z,X)),ascendiente_directo(Z,Y) , mujer(X).
-
-parentesco_familiar(X,Y) :- (ascendiente(X,Y);hermano(X,Y);hermana(X,Y);
-tio(X,Y);tia(X,Y);sobrino(X,Y);sobrina(X,Y);primo(X,Y);prima(X,Y)).
-
-incestuosos(X,Y) :- parentesco_familiar(X,Y) , ascendiente_directo(X,Z),
-ascendiente_directo(Y,Z).
 
 %Ejercicio 2
 
@@ -124,3 +39,37 @@ P=persona(_,Apellidos_Padre,_,trabajo(T,_)),
 M=persona(_,Apellidos_Madre,_,trabajo(Tmadre,_)),
 not(Tmadre=en_paro;Tmadre=desocupado).
 
+
+%Ejercicio 3
+
+
+padre(P) :- familia(P,_,_).
+madre(P) :- familia(_,P,_).
+
+pertenece(X, [Y|T]) :- X = Y; pertenece(X, T).
+hijo(P) :- familia(_,_,H), pertenece(P,H).
+
+existe(P) :- padre(P) ; madre(P) ; hijo(P).
+
+f_nacimiento(P,F) :- existe(P), P=persona(_,_,F,_).
+
+salario(P,S) :- existe(P), P=persona(_,_,_,trabajo(_,S)).
+
+ej3a(Nombre, Apellidos) :- existe(P) , P=persona(Nombre,Apellidos,_,_).
+ej3b(Nombre_Hijo, Apellidos_Hijo) :- hijo(P) , 
+P=persona(Nombre_Hijo, Apellidos_Hijo,_,_),
+f_nacimiento(P,F), F=fecha(_,_,Year), Year > 1980.
+
+ej3c(Nombre_Mujer, Apellidos_Mujer) :- madre(P), 
+P=persona(Nombre_Mujer, Apellidos_Mujer, _ , trabajo(Tmadre,_)),
+not(Tmadre=en_paro;Tmadre=desocupado).
+
+ej3d(Nombre, Apellidos) :- existe(P),
+P=persona(Nombre,Apellidos,fecha(_,_,Year), trabajo(Trabajo,_)),
+(Trabajo=en_paro;Trabajo=desocupado),
+Year < 1960.
+
+ej3e(Nombre, Apellidos) :- existe(P),
+P=persona(Nombre,Apellidos,fecha(_,_,Year), _),
+Year > 1950,
+salario(P,S), S >= 800 , S =< 1300.
