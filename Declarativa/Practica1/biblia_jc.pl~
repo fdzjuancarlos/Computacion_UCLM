@@ -111,8 +111,7 @@ familia( persona(pedro, ramirez, fecha(7, junio, 1966), trabajo(en_paro,0)),
 persona(teresa, fuentes, fecha(12, enero, 1968), trabajo(administrativa, 1250)),
 [] ).
 
-ej2a(Nombre,Apellidos) :- familia(_,M,H), length(H,X), X>=3, 
-M=persona(Nombre,Apellidos,_,_).
+ej2a(Nombre,Apellidos) :- familia(_,M,H), length(H,X), X>=3, M=persona(Nombre,Apellidos,_,_).
 
 ej2b(Apellidos_Padre,Apellidos_Madre) :- familia(P,M,H), length(H,0), 
 P=persona(_,Apellidos_Padre,_,_),
