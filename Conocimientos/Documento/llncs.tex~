@@ -3,6 +3,7 @@
 % for Lecture Notes in Computer Science, version 2.4
 \documentclass{llncs}
 \usepackage{llncsdoc}
+\usepackage[latin1]{inputenc}
 %
 \begin{document}
 \markboth{\LaTeXe{} Class for Lecture Notes in Computer
@@ -71,39 +72,88 @@ $\bullet$&\multicolumn{3}{@{}l}{\bfseries We are also reachable through the worl
 \tableofcontents
 \newpage
 %
-\section{Introduction}
-%
-Authors wishing to code their contribution
-with \LaTeX{}, as well as those who have already coded with \LaTeX{},
-will be provided with a document class that will give the text the
-desired layout. Authors are requested to
-adhere strictly to these instructions; {\em the class
-file must not be changed}.
+\section{Introducción}
 
-The text output area is automatically set within an area of
-12.2\,cm horizontally  and 19.3\,cm vertically.
+En esta sección realizaremos una introducción acerca del Sistema Experto de recomendación de lengauje de 
+Programación en el que quedará definido nuestro problema, definiendo a su vez el alcance que abarcará nuestro
+sistema experto y de cuáles son los objetivos que satisfará el mismo. Presentaremos los expertos de los cuales
+se obtendrá el conocimiento experto y a qué tipo de usuario estará dirigido nuestro Sistema Experto
 
-If you are already familiar with \LaTeX{}, then the
-LLNCS class should not give you any major difficulties.
-It will change the layout to the required LLNCS style
-(it will for instance define the layout of \verb|\section|).
-We had to invent some extra commands,
-which are not provided by \LaTeX{} (e.g.\
-\verb|\institute|, see also Sect.\,\ref{contbegin})
 
-For the main body of the paper (the text) you
-should use the commands of the standard \LaTeX{} ``article'' class.
-Even if you are familiar with those commands, we urge you to read
-this entire documentation thoroughly. It contains many suggestions on
-how to use our commands properly; thus your paper
-will be formatted exactly to LLNCS standard.
-For the input of the references at the end of your contribution,
-please follow our instructions given in Sect.\,\ref{refer} References.
+\subsection{Planteamiento del Problema}
 
-The majority of these hints are not specific for LLNCS; they may improve
-your use of \LaTeX{} in general.
-Furthermore, the documentation provides suggestions about the proper
-editing and use
-of the input files (capitalization, abbreviation etc.) (see
-Sect.\,\ref{refedit} How to Edit Your Input File).%
+El mundo de la informática es demasiado grande y muchas veces la tecnología y tendencias actuales suelen variar
+con rapidez, esto puede ser desconcertante para las personas que dedicamos nuestra vida diaria a este campo, 
+entre ellos, los informáticos.
+ Muchas veces, nos vemos en la situación de querer abordar un nuevo problema, queremos especializarnos en
+ un campo específco, pero no conocemos las herramientas apropiadas para ello, en nuestro caso, los lenguajes de
+ programación, los cuales se caracterizan porque no existe uno que predomine sobre todos, ya que cada uno
+ se adapta mejor a unos problemas que otros abordan peor.\\
+
+Sin embargo, en la vida real, tampoco hay 1 lenguaje específico para cada tipo de problema, si es cierto que,
+existen unos determinados lenguajes de programación más importantes que otros a la hora de abordad una
+temática concreta, por ejemplo, la programación en dispositivos móviles, la programación de sistemas empotrados,
+ la programación de un sistema experto o incluso un lenguaje que sea más didactico para aprender a programar.\\
+
+ En base a unas características recomendaremos el lenguaje de programación que más adecuado al usuario según
+ sus necesidades o preocupaciones. En este sistema experto nos centraremos en las necesidades más comunes,
+ como por ejemplo, necesidades empresariales que van fuertemente ligadas a una tecnología, como los
+ dispositivos Smartphone, de entre los que se pueden diferenciar principalmente los sistemas Android y los
+ sistemas iOS. También estudiaremos los lenguajes recomendados para aplicaciones convencionales de escritorio por ejemplo
+ de gestión, programación de microcontroladores, campo de los videojuegos o desarrollo de páginas web entre
+ otros.
+
+
+\subsection{Objetivos y Alcance}
+
+El objetivo de nuestro sistema experto es proporcionar al usuario un lenguaje de programación que se adapte
+a sus problemas y necesidades, pudiendo estas diferir de varias formas, los campos de aplicación para nuestro
+sistema experto serán:
+
+\begin{itemize}
+  \item Aplicaciones de sobremesa
+  \item Aplicaciones multiplataforma
+  \item Páginas Web
+  \item Aprendizaje
+  \item Sistemas Expertos
+  \item Videojuegos
+  \item Aplicaciones para móviles
+  \item Microcontroladores
+  \item Conocer un determinado paradigma (POO por ejemplo)
+\end{itemize}
+
+\subsection{Los Expertos}
+
+El conocimiento será adquirido principalmente de 3 expertos, siendo todos profesores con actividades docentes
+en la Escuela Superior de Informática de la UCLM
+
+\begin{itemize}
+  \item \textbf{Pascual Julián Iranzo}: Doctorado en Ciencias de la Computación, con actividad docente en
+    Lógica y Programación declarativa durante 18 años, experto en Sistemas Inteligentes proporcionará el
+    conocimiento necesario acerca de la rama de la Programación Declarativa, sus ventajas frente a la
+    Programación Imperativa así como de Sistemas Inteligentes.
+  \item \textbf{David Villa Alises}: Doctorado en Ingenería Informática, miembro del grupo de investigación
+    \textbf{Arco} con actividad docente en Redes de Computadores y Sistemas Distribuidos.
+  \item \textbf{Ismael Caballero Muñoz-Reja}:HTTP Error 404. The requested resource is not found.
+\end{itemize}
+
+\subsection{Los usuarios finales del sistema}
+
 \end{document}
+
+% \\   Forzar algo más de espacio entre párrafos
+
+%  \textbf{Texto en negrita}
+
+%  \begin{itemize}
+%    \item Tu lista
+%    \item de objetos
+%  \end{itemize} Además se puede anidar con otro begin itemize para sublistas de objetos
+
+% \newpage  Forzar nueva página
+
+% Las imágenes aún no las entiendo porque es complicado, lo suyo es echarle un google
+
+% Cualquier otra cosa que se necesite echandole 1 google en inglés siempre hay alguien que lo resuelve,
+% está muy bien documentado, yo ya te digo que no he necesitado aprender LaTeX como tal si no que me he
+% puesto sobre la marcha buscando lo que necesitaba y aquí estoy

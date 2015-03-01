@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  25 FEB 2015 18:21
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.2.23)  25 FEB 2015 18:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**anteproyecto.tex
-(./anteproyecto.tex
+**conocimientos.tex
+(./conocimientos.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./llncs.cls
@@ -135,8 +135,9 @@ Package: inputenc 2008/03/30 v1.1d Input encoding file
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
-)) (./anteproyecto.aux)
-\openout1 = `anteproyecto.aux'.
+))
+No file conocimientos.aux.
+\openout1 = `conocimientos.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
@@ -151,59 +152,64 @@ LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 17.
+(Font)              <17.28> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 17.
+(Font)              <12> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 17.
+(Font)              <24.88> on input line 20.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 20.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./anteproyecto.toc
+]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 1.
+(Font)              <7> on input line 41.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 1.
-)
+(Font)              <5> on input line 41.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 71.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 71.
+ [2]
+No file conocimientos.toc.
 \tf@toc=\write3
-\openout3 = `anteproyecto.toc'.
+\openout3 = `conocimientos.toc'.
 
+[3
 
-[2
-
-] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 86--88
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+]
+Underfull \hbox (badness 10000) in paragraph at lines 85--92
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 88--91
+Underfull \hbox (badness 10000) in paragraph at lines 93--97
 
  []
 
-[4] (./anteproyecto.aux) ) 
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 152--154
+
+ []
+
+[5]
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--157
+
+ []
+
+[6] (./conocimientos.aux) ) 
 Here is how much of TeX's memory you used:
- 692 strings out of 493304
- 8044 string characters out of 6139871
- 68763 words of memory out of 5000000
- 4205 multiletter control sequences out of 15000+600000
- 8506 words of font info for 30 fonts, out of 8000000 for 9000
+ 706 strings out of 493305
+ 8176 string characters out of 6139897
+ 69760 words of memory out of 5000000
+ 4218 multiletter control sequences out of 15000+600000
+ 10813 words of font info for 38 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 29i,7n,21p,931b,263s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on anteproyecto.pdf (4 pages, 78751 bytes).
-PDF statistics:
- 41 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 29i,10n,21p,927b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
 
+Output written on conocimientos.dvi (6 pages, 10164 bytes).
