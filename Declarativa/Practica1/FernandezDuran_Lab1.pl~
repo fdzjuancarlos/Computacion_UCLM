@@ -84,7 +84,7 @@ prima(X,Y) :- (tio(Z,X);tia(Z,X)),ascendiente_directo(Z,Y) , mujer(X).
 
 %b)
 
-familia(X, Y) :- (ascendiente_directo(X, Y); descendiente_directo(X, Y); abuelo(X,Y); abuelo(Y,X); abuela(X,Y); abuela(Y,X); hermano(X, Y); hermana(X, Y)).
+familia(X, Y) :- (ascendiente_directo(X, Y); descendiente_directo(X, Y); abuelo(X,Y); abuelo(Y,X); abuela(X,Y); abuela(Y,X); hermano(X, Y); hermana(X, Y); primo(X, Y); prima(X, Y); tio(X,Y); tio(Y,X); tia(X,Y), tia(Y,X)).
 
 incestuosos(X, Y) :- casado(X, Y), familia(X, Y).
 
