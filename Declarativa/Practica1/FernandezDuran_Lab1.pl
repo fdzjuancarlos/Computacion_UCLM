@@ -73,8 +73,8 @@ abuela(X,Y) :- mujer(X) , ascendiente_directo(X,Z) , ascendiente_directo(Z,Y).
 hermano(X,Y) :- hombre(X), ascendiente_directo(Z,X), ascendiente_directo(Z,Y), dif(X,Y).  
 hermana(X,Y) :- mujer(X), ascendiente_directo(X,Z), ascendiente_directo(Y,Z), dif(X,Y).  
 
-tio(X,Y) :- hombre(X), hermano(X,Z), ascendiente_directo(Z,Y).
-tia(X,Y) :- mujer(X), hermano(X,Z), ascendiente_directo(Z,Y).
+tio(X,Y) :- (ascendiente_directo(Z, Y), (hermano(X, Z); (casado(X, T), hermana(T, Z))).
+tia(X,Y) :- (ascendiente_directo(Z, Y), (hermana(X, Z); (casado(X, T), hermano(T, Z))).
 
 sobrino(X,Y) :- tio(Y,X) ; tia(Y,X) , hombre(X).
 sobrina(X,Y) :- tio(Y,X) ; tia(Y,X) , mujer(X).
