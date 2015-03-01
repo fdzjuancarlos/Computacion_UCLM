@@ -7,7 +7,7 @@ padre(haran,lot).
 padre(haran,melca).
 padre(haran,jesca).
 
-padre(teraj,habraham).
+padre(teraj,abraham).
 padre(teraj,najor).
 padre(teraj,haran).
 padre(teraj,sara).
