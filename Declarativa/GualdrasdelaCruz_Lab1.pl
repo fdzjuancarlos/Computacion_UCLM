@@ -38,6 +38,7 @@ hombre(abraham).
 hombre(esau).
 hombre(jacob).
 hombre(laban).
+hombre(batuel).
 
 mujer(melca).
 mujer(jesca).
@@ -58,29 +59,25 @@ ascendiente(X, Z) :- ascendiente_directo(X, Y), ascendiente(Y, Z).
 descendiente_directo(X, Y) :- ascendiente_directo(Y, X).
 descendiente(X, Z) :- ascendiente(Z, X).
 
-%descendiente_directo(X, Y) :- (padre(Y, X); madre(Y, X)).
-%descendiente(X, Z) :- descendiente_directo(X,Z).
-%descendiente(X, Z) :- descendiente_directo(X, Y), descendiente(Y, Z).
-
 hijo(X, Y) :- hombre(X), ascendiente_directo(Y,X).
 hija(X, Y) :- mujer(X), ascendiente_directo(Y,X).
 
 abuelo(X, Z) :- (hombre(X), ascendiente_directo(X, Y), ascendiente_directo(Y, Z)).
 abuela(X, Z) :- (mujer(X), ascendiente_directo(X, Y), ascendiente_directo(Y, Z)).
 
-hermano(X, Y) :- (hombre(X), ascendiente_directo(Z, X), ascendiente_directo(Z, Y)).
-hermana(X, Y) :- (mujer(X), ascendiente_directo(Z, X), ascendiente_directo(Z, Y)).
+hermano(X,Y) :- hombre(X), ascendiente_directo(Z,X), ascendiente_directo(Z,Y), dif(X,Y).  
+hermana(X,Y) :- mujer(X), ascendiente_directo(X,Z), ascendiente_directo(Y,Z), dif(X,Y).  
 
-tio(X, Y) :- (ascendiente_directo(Z, Y), (hermano(X, Z); (casado(X, T), hermano(T, Z))).
-tia(X, Y) :- (ascendiente_directo(Z, Y), hermana(X, Z)).
+tio(X,Y) :- (ascendiente_directo(Z, Y), (hermano(X, Z); (casado(X, T), hermana(T, Z))).
+tia(X,Y) :- (ascendiente_directo(Z, Y), (hermana(X, Z); (casado(X, T), hermano(T, Z))).
 
 sobrino(X, Y) :- hombre(X), (tio(Y,X); tia(Y,X)).
 sobrina(X, Y) :- mujer(X), (tio(Y,X); tia(Y,X)).
 
-primo(X, Y) :- hombre(X), (tio(Z, X); tia(Z, X)), (padre(Z, Y); madre(Z, Y)).
-prima(X, Y) :- mujer(X), (tio(Z, X); tia(Z, X)), (padre(Z, Y); madre(Z, Y)).
+primo(X, Y) :- hombre(X), (tio(Z, X); tia(Z, X)), ascendiente_directo(Z, Y)).
+prima(X, Y) :- mujer(X), (tio(Z, X); tia(Z, X)), ascendiente_directo(Z, Y)).
 
-familia(X, Y) :- (ascendiente_directo(X, Y); descendiente_directo(X, Y); abuelo(X,Y); abuelo(Y,X); abuela(X,Y); abuela(Y,X); hermano(X, Y); hermana(X, Y); primo(X, Y); prima(X, Y); tio(X,Y); tio(Y,X); tia(X,Y), tia(Y,X)).
+familia(X, Y) :- (ascendiente_directo(X, Y); descendiente_directo(X, Y); abuelo(X,Y); abuelo(Y,X); abuela(X,Y); abuela(Y,X); hermano(X, Y); hermana(X, Y)).
 
 incestuosos(X, Y) :- casado(X, Y), familia(X, Y).
 
