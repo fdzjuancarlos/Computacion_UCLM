@@ -14,4 +14,4 @@
 \contentsline {subsection}{\numberline {3.2}Asignaci\'on de pesos}{8}
 \contentsline {subsection}{\numberline {3.3}Evaluaci\'on de la aplicaci\'on}{8}
 \contentsline {subsubsection}{Leyenda}{9}
-\contentsline {subsubsection}{Tablas.}{9}
+\contentsline {subsubsection}{Tablas.}{10}
