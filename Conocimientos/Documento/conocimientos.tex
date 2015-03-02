@@ -6,25 +6,22 @@
 \usepackage[latin1]{inputenc}
 %
 \begin{document}
-\markboth{\LaTeXe{} Class for Lecture Notes in Computer
-Science}{\LaTeXe{} Class for Lecture Notes in Computer Science}
 \thispagestyle{empty}
-\begin{flushleft}
-\LARGE\bfseries Instructions for Authors\\
-Coding with \LaTeX\\[2cm]
-\end{flushleft}
 \rule{\textwidth}{1pt}
 \vspace{2pt}
 \begin{flushright}
 \Huge
 \begin{tabular}{@{}l}
-\LaTeXe{} Class\\
-for Lecture Notes\\
-in Computer Science\\[6pt]
-{\Large Version 2.4}
+Sistema Experto de\\
+recomendación de\\
+lenguaje de programación\\[6pt]
 \end{tabular}
 \end{flushright}
 \rule{\textwidth}{1pt}
+\begin{flushleft}
+\LARGE\bfseries Victor Gualdras de la Cruz\\
+Juan Carlos Fernández Durán\\[2cm]
+\end{flushleft}
 \vfill
 %\begin{flushleft}
 %\large\itshape
@@ -38,37 +35,7 @@ in Computer Science\\[6pt]
 %\end{flushleft}
 \newpage
 %
-\section*{For further information please contact us:}
-%
-\begin{flushleft}
-\begin{tabular}{l@{\quad}l@{\hspace{3mm}}l@{\qquad}l}
-$\bullet$&\multicolumn{3}{@{}l}{\bfseries LNCS Editorial Office}\\[1mm]
-&\multicolumn{3}{@{}l}{Springer-Verlag}\\
-&\multicolumn{3}{@{}l}{Computer Science Editorial}\\
-&\multicolumn{3}{@{}l}{Tiergartenstraße 17}\\
-&\multicolumn{3}{@{}l}{69121 Heidelberg}\\
-&\multicolumn{3}{@{}l}{Germany}\\[0.5mm]
- & Tel:       & +49-6221-487-8706\\
- & Fax:       & +49-6221-487-8588\\
- & e-mail:    & \tt lncs@springer.com    & for editorial questions\\
- &            & \tt texhelp@springer.de & for \TeX{} problems\\[2mm]
-\noalign{\rule{\textwidth}{1pt}}
-\noalign{\vskip2mm}
-%
-%{\tt svserv@vax.ntp.springer.de}\hfil first try the \verb|help|
-%command.
-%
-$\bullet$&\multicolumn{3}{@{}l}{\bfseries We are also reachable through the world wide web:}\\[1mm]
-         &\multicolumn{2}{@{}l}{\texttt{http://www.springer.com}}&Springer Global Website\\
-         &\multicolumn{2}{@{}l}{\texttt{http://www.springer.com/lncs}}&LNCS home page\\
-         &\multicolumn{2}{@{}l}{\texttt{http://www.springerlink.com}}&data repository\\
-         &\multicolumn{2}{@{}l}{\texttt{ftp://ftp.springer.de}}&FTP server
-\end{tabular}
-\end{flushleft}
 
-
-%
-\newpage
 \tableofcontents
 \newpage
 %
@@ -139,6 +106,117 @@ en la Escuela Superior de Informática de la UCLM
 
 \subsection{Los usuarios finales del sistema}
 
+Los usuarios serán, en su mayoría, personas que tienen un interés especial en la informática para realizar un
+determinado desarrollo, pudiendo ser para fines lucrativos, mero aprendizaje, práctica, etc.
+
+Tras recibir las necesidades del usuario, el sistema responderá realizando una simulación del juicio del experto
+recomendando el lenguaje de
+programación que crea más apropiado
+
+\section{Estado del Arte}
+
+En el estado del arte presentaremos un breve estudio sobre la presencia de cómo se ha llevado este problema al campo
+de los sistemas expertos por parte de otras personas, así como artículos en los que se describa esta problemática.
+Abordaremos brevemente cada uno de estos artículos con un breve resumen.
+
+También introduciremos los conceptos más importantes tanto de nuestro sistema experto como de los lenguajes de
+programación.
+
+
+\subsection{Conceptos y Procedimientos principales del área de aplicación del Sistema Experto}
+
+A continuación se presentarán los conceptos más importantes del area de los lenguajes de Programación
+
+\begin{itemize}
+  \item \textbf{Lenguaje de Programación} es un lenguaje formal diseñado para comunicar instrucciones a un computador.
+  \item \textbf{Lenguaje Compilado}: El programa escrito en el determinado lenguaje pasa por un proceso de compilación,
+    de manera que dicho texto en el determinado lenguaje es convertido normalmente a un lenguaje intermedio como por
+    ejemplo lenguaje ensamblador, y en última instancia, a un archivo binario que el procesador puede entender
+    directamente.
+  \item \textbf{Lenguaje interpretado}: El programa es escrito en el determinado lenguaje pero no se llega a compilar,
+    en lugar de eso, un programa carga secuencialmete instrucción por instrucción.
+  \item \textbf{Programación Orientada a Objetos}: Paradigma que un lenguaje de programación puede adoptar o no, que
+    consiste en agrupar los datos de un determinado problema, quedando asociada con la lógica del propio programa.
+  \item \textbf{Flujo de Control}: Orden en el que las instrucciones de programación se van ejecutando.
+  \item \textbf{Programación Declarativa}: Paradigma de programación en el que se indica qué se debe resolver en lugar
+    de cómo se debe resolver. El programador no tiene porqué especificar el flujo de control.
+%  \item \textbf{
+%  \item \textbf{
+\end{itemize}
+
+\subsection{Conceptos y Procedimientos principales de Informática que serán utilizados}
+
+A continuación se presentará brevemente los conceptos principales que utilizaremos para construir nuestro sistema
+experto
+
+\subsubsection{Ingeniería del Conocimiento.}
+
+Se refiere a todo el proceso de uso de técnicas para la construcción, mantenimiento y uso de un Sistema basado en el
+conocimiento. El objetivo principal es construir modelos de conocimiento, dicho conocimiento es extraído principalmente
+por 2 vías, que puede ser la manual o la automática, en la manual, el ingeniero del conocimiento aplicará diversas
+técnicas para extraer el conocimiento de uno o varios expertos como por ejemplo, las entrevistas.\\
+
+En el proceso de la obtención de conocimiento de forma automática, también llamado \textbf{Knowledge Discovery from
+Data} abreviado como KDD, obtendremos la información a partir de un gran número de datos.
+
+\subsubsection{Sistemas Expertos.}
+
+Un sistema experto es un sistema que trata de emular la toma de decisión que tomaría un humano en un campo determinado.
+Estos sistemas expertos están divididos en 2 principales partes, una base del conocimiento, en la que tendremos nuestras
+reglas y hechos, y por otra parte, tendremos un motor de inferencia, que se encargará de disparar los hechos con las
+reglas obteniendo la información necesaria.
+
+Más tarde el usuario definirá su situación y el sistema experto simulará el juicio del experto dando como resultado un
+lenguaje de programación recomendado
+
+\subsection{Revisión Bibliográfica}
+
+Tras una búsqueda exhaustiva, solo encontramos un único sistema experto \cite{kish} el cual en base a unas preguntas
+cortas determina que lenguaje de programación es el que debes usar, su código fuente está publicado, y se puede observar
+que es bastante sencillo, el sistema está compuesto por unas preguntas que según la respuesta te redirige a otra
+pregunta o directamente a una respuesta, toma en consideración varias cosas, como por ejemplo que tipo de desarrollo
+estamos tratando, si es para una inteligencia artifical, una aplicación de escritorio, móvil, o web, tiene en cuenta
+para que plataformas queremos trabajar, si nos importa que sea multiplataforma...\\
+
+Podemos encontrar un artículo\cite{vladys} acerca de qué lenguaje de programación elegir
+como primer lenguaje de programación para aprender a programar, esta será otra perspectiva que nuestro
+sistema experto abordará, y por lo tanto es interesante analizarla. En este artículo se
+habla de cómo Pascal fue inicialmente concebido como un lenguaje de programación para
+la enseñanza, además, tuvo mucho éxito y se utilizó con propósitos comerciales, sin embargo
+ ha quedado muy desfasado en el tiempo. Se realiza un estudio de los requisitos que debería
+ tener el lenguaje de programación que utilizaremos como primer lenguaje, y se hace también
+ un estudio de qué tipo de aplicaciones tienen unos determinados lenguajes candidatos a 
+ ser el primer lenguaje de programación, siendo C\# y Java los lenguajes con mayor aplicación.
+ El artículo concluye que aunque Pascal fuera ideal, se ha quedado muy desfasada y recomienda como
+ primer lenguaje Python, ya que cumple con todos los requisitos, soporta varios paradigmas de programación
+ como la orientada a objetos, estructural o funcional. además de ser un lenguaje muy utilizado.\\
+
+Dado que en el sistema experto se abordará el tema empresarial, es interesante ver una comparativa de
+los lenguajes de programación mejor pagados \cite{lisa} ya que algunas personas pueden interesarles
+únicamente el punto de vista económico, visto desde esta perspectiva, los desarrolladores de Ruby on
+Rails, Objective C y Python son los lenguajes mejor pagados de la industria. Por parte de Ruby on Rails
+y Python, se debe a la enorme productividad que consiguen con poco tiempo, por parte de Objective C se
+debe a la exclusividad impuesta de la plataforma Apple para programar en dicho lenguaje para sus propias
+aplicaciones.\\
+
+
+Otra de las grandes areas de aplicación de la programación es la programación web, en este artículo 
+\cite{yoshi} podemos observar una comparativa de algunos de los lenguajes de programación más interesantes
+para afrontar un desarrollo web, siendo HTML y CSS los más básicos, luego se ve diferenciada por los que
+se ejecutan desde la aplicación cliente y desde la servidora. En el caso del cliente contamos con JavaScropt
+y ActionScript, desde el servidor se recomienda utilizar PHP, Java, Python o Ruby. El autor concluye con
+que la decisión depende del problema, un problema se puede ajustar mejor a un determinado lenguaje de
+programación que otro\\
+
+Es especialmente interesante este artículo \cite{udemy} donde además
+de hacer una ligera pincelada de cada lenguaje, muestra en imágenes varios perfiles
+de desarrollador típicos en la industria, habilidades asociadas a esos perfiles y 
+lenguajes de programación que también están relacionados. Permite ver de una
+forma clara y sencilla que se espera de cada perfil además de una breve
+descripción de los lenguajes, por ejemplo, los desarrolladores de video juegos
+tienden a usar más los lenguajes C, C++, C\# y Java, trabajan bien bajo presión,
+y suelen tener otras habilidades relacionadas con el diseño.
+
 
 \section{Estudio de viabilidad. Test de Slagle.}
 
@@ -160,6 +238,31 @@ Vamos a analizar si el sistema previsto es viable de cara a realizarlo mediante 
 	\item \textbf{Justificación}:Hola
 
 \end{itemize}
+
+
+
+\begin{thebibliography}{1}
+  \bibitem {kish}
+Kish Waukee College.
+Expert System for Choosing a Programming Language
+  \bibitem {vladys}
+Vladyslav Kruglyk
+ and Michael Lvov.
+Kherson State University. Ukraine. 
+http://ceur-ws.org/Vol-848/ICTERI-2012-CEUR-WS-paper-37-p-188-198.pdf
+  \bibitem {lisa}
+    Lisa Eadicicco
+    Business Insider. (2014). 
+http://www.businessinsider.com/best-tech-skills-resume-ranked-salary-2014-11
+  \bibitem {yoshi}
+    Yoshitaka Shiotsu. (2014).
+https://www.odesk.com/blog/2014/03/web-development-101-top-web-development-languages-2014/
+  \bibitem {udemy}
+    Kasia Mikoluk. (2013).
+    https://blog.udemy.com/best-programming-language/
+\end{thebibliography}
+%Arch. Rat. Mech. Anal. 78, 315--333 (1982) \end{thebibliography}
+
 
 \end{document}
 
