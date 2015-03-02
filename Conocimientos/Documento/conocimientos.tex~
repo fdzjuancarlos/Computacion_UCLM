@@ -297,7 +297,7 @@ VC4=\prod_{i=6,10,12,17}(Ve_{i}//Vu_{i})(\prod_{i=1}^{17}(Pe_{i}*Ve_{i}))^{1/17}
 
 
 	\item	Elegir la aplicación candidata con mejor valor, generalmente. De todas maneras, se establecerá un valor umbral para la elección de la tarea. Si el valor resultante es menor que el umbral exigido, se rechazará la tarea. Este proceso se realiza tanto para una sola tarea como para un conjunto de ellas.
-\end{enumerate}
+\end{itemize}
 
 \begin{equation}
 VC = \left\lbrace

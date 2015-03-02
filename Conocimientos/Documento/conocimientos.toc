@@ -9,5 +9,9 @@
 \contentsline {subsubsection}{Ingenier\IeC {\'\i }a del Conocimiento.}{5}
 \contentsline {subsubsection}{Sistemas Expertos.}{5}
 \contentsline {subsection}{\numberline {2.3}Revisi\'on Bibliogr\'afica}{6}
-\contentsline {section}{\numberline {3}Estudio de viabilidad. Test de Slagle.}{7}
+\contentsline {section}{\numberline {3}Estudio de viabilidad. Test de Slagle}{7}
 \contentsline {subsection}{\numberline {3.1}Definici\'on de las caracter\IeC {\'\i }sticas}{7}
+\contentsline {subsection}{\numberline {3.2}Asignaci\'on de pesos}{8}
+\contentsline {subsection}{\numberline {3.3}Evaluaci\'on de la aplicaci\'on}{8}
+\contentsline {subsubsection}{Leyenda}{9}
+\contentsline {subsubsection}{Tablas}{10}
