@@ -1,17 +1,18 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=latex 2015.2.23)  25 FEB 2015 18:47
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  2 MAR 2015 17:09
 entering extended mode
  restricted \write18 enabled.
+ file:line:error style messages enabled.
  %&-line parsing enabled.
 **conocimientos.tex
 (./conocimientos.tex
-LaTeX2e <2011/06/27>
-Babel <3.9h> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2014/05/01>
+Babel <3.9k> and hyphenation patterns for 78 languages loaded.
 (./llncs.cls
 Document Class: llncs 2013/09/27 v2.18 
  LaTeX document class for Lecture Notes in Computer Science
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -26,8 +27,8 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
+(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
 \c@tracingmulticols=\count87
 \mult@box=\box26
 \multicol@leftmargin=\dimen103
@@ -44,6 +45,7 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \multicolbaselineskip=\skip44
 \partial@page=\box27
 \last@line=\box28
+\maxbalancingoverflow=\dimen108
 \mult@rightbox=\box29
 \mult@grightbox=\box30
 \mult@gfirstbox=\box31
@@ -67,16 +69,16 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \@tempa=\box49
 \c@columnbadness=\count93
 \c@finalcolumnbadness=\count94
-\last@try=\dimen108
-\multicolovershoot=\dimen109
-\multicolundershoot=\dimen110
+\last@try=\dimen109
+\multicolovershoot=\dimen110
+\multicolundershoot=\dimen111
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
-\multicol@sort@counter=\count95
-) (./aliascnt.sty
+\mc@col@check@num=\count95
+)
+(./aliascnt.sty
 Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
-
-(./remreset.sty))
+ (./remreset.sty))
 \c@chapter=\count96
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -89,22 +91,22 @@ LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
 LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
 LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
 LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
-\tocchpnum=\dimen111
-\tocsecnum=\dimen112
-\tocsectotal=\dimen113
-\tocsubsecnum=\dimen114
-\tocsubsectotal=\dimen115
-\tocsubsubsecnum=\dimen116
-\tocsubsubsectotal=\dimen117
-\tocparanum=\dimen118
-\tocparatotal=\dimen119
-\tocsubparanum=\dimen120
+\tocchpnum=\dimen112
+\tocsecnum=\dimen113
+\tocsectotal=\dimen114
+\tocsubsecnum=\dimen115
+\tocsubsectotal=\dimen116
+\tocsubsubsecnum=\dimen117
+\tocsubsubsectotal=\dimen118
+\tocparanum=\dimen119
+\tocparatotal=\dimen120
+\tocsubparanum=\dimen121
 \@tempcntc=\count97
-\fnindent=\dimen121
+\fnindent=\dimen122
 \c@@inst=\count98
 \c@@auth=\count99
 \c@auco=\count100
-\instindent=\dimen122
+\instindent=\dimen123
 \authrun=\box52
 \authorrunning=\toks14
 \tocauthor=\toks15
@@ -126,17 +128,17 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@question=\count113
 \c@solution=\count114
 \c@remark=\count115
-\headlineindent=\dimen123
+\headlineindent=\dimen124
 ) (./llncsdoc.sty)
-(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2014/04/30 v1.2b Input encoding file
 \inpenc@prehook=\toks18
 \inpenc@posthook=\toks19
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2008/03/30 v1.1d Input encoding file
+(/usr/local/texlive/2014/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2014/04/30 v1.2b Input encoding file
 ))
-No file conocimientos.aux.
+(./conocimientos.aux)
 \openout1 = `conocimientos.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
@@ -151,65 +153,119 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
 LaTeX Font Info:    ... okay on input line 8.
+
+Overfull \hbox (15.0pt too wide) in paragraph at lines 10--12
+[][]
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <24.88> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <20.74> on input line 14.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 20.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 20.
 [1
 
-]
+{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./conocimientos.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 41.
+(Font)              <7> on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 41.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 71.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 71.
- [2]
-No file conocimientos.toc.
+(Font)              <5> on input line 1.
+)
 \tf@toc=\write3
 \openout3 = `conocimientos.toc'.
 
-[3
+ [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 85--92
+Underfull \hbox (badness 10000) in paragraph at lines 52--59
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 93--97
+Underfull \hbox (badness 10000) in paragraph at lines 60--64
 
  []
 
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 152--154
+[3] [4]
+Overfull \hbox (11.21045pt too wide) in paragraph at lines 154--158
+\OT1/cmr/m/n/10 para la con-strucci^^Son, man-ten-imiento y uso de un Sis-tema 
+basado en el conocimiento.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--158
 
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
+Underfull \hbox (badness 10000) in paragraph at lines 174--180
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 154--157
+Underfull \hbox (badness 10000) in paragraph at lines 181--193
 
  []
 
-[6] (./conocimientos.aux) ) 
+
+Underfull \hbox (badness 10000) in paragraph at lines 194--201
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--210
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 230--232
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 232--235
+
+ []
+
+[7]
+Underfull \hbox (badness 2698) in paragraph at lines 249--253
+[]\OT1/cmr/m/n/9 Vladyslav Krug-lyk and Michael Lvov. Kher-son State Uni-ver-si
+ty. Ukraine.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 258--260
+[]\OT1/cmr/m/n/9 Yoshitaka Sh-iotsu. (2014). https://www.odesk.com/blog/2014/03
+/web-
+ []
+
+[8] (./conocimientos.aux) ) 
 Here is how much of TeX's memory you used:
- 706 strings out of 493305
- 8176 string characters out of 6139897
- 69760 words of memory out of 5000000
- 4218 multiletter control sequences out of 15000+600000
- 10813 words of font info for 38 fonts, out of 8000000 for 9000
- 957 hyphenation exceptions out of 8191
- 29i,10n,21p,927b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 717 strings out of 493117
+ 8400 string characters out of 6135433
+ 70626 words of memory out of 5000000
+ 4234 multiletter control sequences out of 15000+600000
+ 8506 words of font info for 30 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 29i,7n,21p,927b,262s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2014/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr17.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb>
+Output written on conocimientos.pdf (8 pages, 104685 bytes).
+PDF statistics:
+ 55 PDF objects out of 1000 (max. 8388607)
+ 38 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on conocimientos.dvi (6 pages, 10164 bytes).
