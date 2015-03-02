@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  2 MAR 2015 19:47
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  2 MAR 2015 22:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -168,20 +168,7 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen124
 \Gin@req@width=\dimen125
 )
-(./conocimientos.aux
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-)
+(./conocimientos.aux)
 \openout1 = `conocimientos.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
@@ -196,7 +183,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
 LaTeX Font Info:    ... okay on input line 9.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
 \scratchdimen=\dimen126
@@ -269,12 +257,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 15.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./conocimientos.toc
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 1.
-)
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./conocimientos.toc)
 \tf@toc=\write3
 \openout3 = `conocimientos.toc'.
 
@@ -282,6 +265,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [2
 
 ]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 43.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 43.
+
 Underfull \hbox (badness 10000) in paragraph at lines 53--60
 
  []
@@ -303,9 +291,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--159
  []
 
 [5]
+
+LaTeX Warning: Citation `kish' on page 6 undefined on input line 175.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 175--181
 
  []
+
+
+LaTeX Warning: Citation `vladys' on page 6 undefined on input line 182.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 182--194
@@ -313,16 +308,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--194
  []
 
 
+LaTeX Warning: Citation `lisa' on page 6 undefined on input line 196.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 195--202
 
  []
+
+
+LaTeX Warning: Citation `yoshi' on page 6 undefined on input line 205.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 204--211
 
  []
 
-[6] [7]
+[6]
+
+LaTeX Warning: Citation `udemy' on page 7 undefined on input line 212.
+
+[7]
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <9> on input line 269.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -334,31 +339,46 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
 [9]
-Underfull \hbox (badness 2698) in paragraph at lines 382--386
+Overfull \hbox (4.15489pt too wide) in paragraph at lines 475--478
+[]\OT1/cmr/m/n/10 Unicamente nos queda cal-cu-lar el Valor Nor-mal-izado. Valor
+ Obtenido 69.93644
+ []
+
+[10]
+Underfull \hbox (badness 2698) in paragraph at lines 489--493
 []\OT1/cmr/m/n/9 Vladyslav Krug-lyk and Michael Lvov. Kher-son State Uni-ver-si
 ty. Ukraine.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 391--393
+Underfull \hbox (badness 10000) in paragraph at lines 498--500
 []\OT1/cmr/m/n/9 Yoshitaka Sh-iotsu. (2014). https://www.odesk.com/blog/2014/03
 /web-
  []
 
-[10] (./conocimientos.aux)
+[11] [12] (./conocimientos.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  1966 strings out of 493304
  26916 string characters out of 6139871
- 104400 words of memory out of 5000000
+ 133337 words of memory out of 5000000
  5410 multiletter control sequences out of 15000+600000
  10338 words of font info for 36 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,9n,23p,411b,276s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,15n,23p,411b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -370,10 +390,10 @@ public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb>
-Output written on conocimientos.pdf (10 pages, 162726 bytes).
+Output written on conocimientos.pdf (12 pages, 173259 bytes).
 PDF statistics:
- 81 PDF objects out of 1000 (max. 8388607)
- 57 compressed objects within 1 object stream
+ 87 PDF objects out of 1000 (max. 8388607)
+ 61 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
