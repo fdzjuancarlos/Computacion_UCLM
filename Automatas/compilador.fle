@@ -1,0 +1,25 @@
+%%
+
+%class compilador
+%standalone
+%8bit
+
+%{
+  public int cont;
+%}
+
+%init{
+	cont=0;
+%init}
+
+%eof{
+	System.out.print("Naturales = "+cont);
+%eof}
+
+
+%%
+
+["regexp"]+ { System.out.println(yytext()); }
+.   {}
+
+

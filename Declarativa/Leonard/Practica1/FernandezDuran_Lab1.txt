@@ -1,4 +1,5 @@
 
+%Ejercicio1
 
 %c) ascendiente es recursiva, todas las demas relaciones son indirectamente recursivas.
 

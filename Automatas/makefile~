@@ -1,0 +1,6 @@
+all: jflex
+
+jflex:
+	jflex compilador.fle
+	javac compilador.java
+	java numeros ./lenguaje.ffg
