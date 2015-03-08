@@ -1,0 +1,4 @@
+
+%c) ascendiente es recursiva, todas las demas relaciones son indirectamente recursivas.
+
+%d) Todos los predicados conservan la propiedad de ser inversibles al ser prolog puro.
