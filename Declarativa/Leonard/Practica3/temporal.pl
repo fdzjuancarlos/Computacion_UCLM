@@ -95,22 +95,30 @@ listaOrdenada(Ordenado).
 %Ejercicio 12
 %eval(5 * x ** 2 + 1, 4, R).
 
-sus(X,Y,[],[]).
+monomio(C):- integer(C).
+monomio(x).
+monomio(C*x):- integer(C).
+monomio(C*x**E) :- integer(C), integer(E).
+polinomio(M+P) :- monomio(M), monomio(P).
+polinomio(M-P) :- monomio(M), monomio(P).
+polinomio(M+P) :- monomio(M), polinomio(P).
+polinomio(M+P) :- polinomio(M), monomio(P).
 
-sus(X,Y,[X|Sublista],[Y|Sublista2]) :- 
-sus(X,Y,Sublista,Sublista2).
+eval(C, _, C):- integer(C).
+eval(C*x, Valor, Resultado):- Resultado is C * Valor.
+eval(C*x**E, Valor, Resultado):- Resultado is C * Valor ** E.
 
-sus(X,Y,[P|Sublista],[P|Sublista2]) :- 
-dif(X,P),
-sus(X,Y,Sublista,Sublista2).
+eval(Z,Valor,Resultado):-
+polinomio(Z) = polinomio(M+P),
+eval(M,Valor,R1),
+eval(P,Valor,R2),
+Resultado is R1+R2.
 
-conversion(Original,Final,Reemplazado):-
-atom_chars(Original, L1),
-sus(x,Reemplazado,L1,L2),
-atom_chars(L2,Final).
-
-eval(P, V, R):-
-R is P.
+eval(Z,Valor,Resultado):-
+polinomio(Z) = polinomio(M-P),
+eval(M,Valor,R1),
+eval(P,Valor,R2),
+Resultado is R1-R2.
 
 
 
