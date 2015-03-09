@@ -47,6 +47,7 @@ append(Menoresordenados,Sub1,ListaOrdenada).
 
 listaOrdenada([]).
 
+
 listaOrdenada([Elem|L]):-
 listaOrdenadaRec(L,Elem).
 
@@ -91,8 +92,25 @@ igualesElem(Mezcla,Ordenado),
 listaOrdenada(Ordenado).
 
 
+%Ejercicio 12
+%eval(5 * x ** 2 + 1, 4, R).
 
+sus(X,Y,[],[]).
 
+sus(X,Y,[X|Sublista],[Y|Sublista2]) :- 
+sus(X,Y,Sublista,Sublista2).
+
+sus(X,Y,[P|Sublista],[P|Sublista2]) :- 
+dif(X,P),
+sus(X,Y,Sublista,Sublista2).
+
+conversion(Original,Final,Reemplazado):-
+atom_chars(Original, L1),
+sus(x,Reemplazado,L1,L2),
+atom_chars(L2,Final).
+
+eval(P, V, R):-
+R is P.
 
 
 
