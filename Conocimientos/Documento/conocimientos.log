@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  2 MAR 2015 23:00
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  9 MAR 2015 23:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -127,11 +127,29 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@solution=\count114
 \c@remark=\count115
 \headlineindent=\dimen123
-) (./llncsdoc.sty)
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2014/01/29 v5.0m Spanish support from the babel system
+
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
+\babel@savecnt=\count116
+\U@D=\dimen124
+)
+\es@datefmt=\count117
+\es@quottoks=\toks18
+\es@quotdepth=\count118
+Package babel Info: Making " an active character on input line 496.
+Package babel Info: Making . an active character on input line 599.
+Package babel Info: Making < an active character on input line 644.
+Package babel Info: Making > an active character on input line 644.
+)) (./llncsdoc.sty)
 (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
-\inpenc@prehook=\toks18
-\inpenc@posthook=\toks19
+\inpenc@prehook=\toks19
+\inpenc@posthook=\toks20
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
 File: latin1.def 2008/03/30 v1.1d Input encoding file
@@ -141,7 +159,7 @@ Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks20
+\KV@toks@=\toks21
 )
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
@@ -163,12 +181,15 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count116
+\Gread@gobject=\count119
 ))
-\Gin@req@height=\dimen124
-\Gin@req@width=\dimen125
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
 )
 (./conocimientos.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+
 
 LaTeX Warning: Label `my-label' multiply defined.
 
@@ -193,31 +214,33 @@ LaTeX Warning: Label `my-label' multiply defined.
 )
 \openout1 = `conocimientos.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
  (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen126
+\scratchcounter=\count120
+\scratchdimen=\dimen127
 \scratchbox=\box54
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks21
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen127
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks22
+\nofMPsegments=\count121
+\nofMParguments=\count122
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count123
+\MPscratchDim=\dimen128
+\MPnumerator=\count124
+\makeMPintoPDFobject=\count125
+\everyMPtoPDFconversion=\toks23
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -266,23 +289,25 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Overfull \hbox (15.0pt too wide) in paragraph at lines 11--13
+Overfull \hbox (15.0pt too wide) in paragraph at lines 12--14
 [][]
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 15.
+(Font)              <24.88> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 15.
+(Font)              <20.74> on input line 16.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 15.
+(Font)              <17.28> on input line 16.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./conocimientos.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 1.
+(Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 1.
+(Font)              <5> on input line 2.
 )
 \tf@toc=\write3
 \openout3 = `conocimientos.toc'.
@@ -291,86 +316,86 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [2
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 53--60
+Underfull \hbox (badness 10000) in paragraph at lines 68--75
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 61--65
+Underfull \hbox (badness 10000) in paragraph at lines 76--80
 
  []
 
-[3] [4]
-Overfull \hbox (11.21045pt too wide) in paragraph at lines 155--159
-\OT1/cmr/m/n/10 para la con-strucci^^Son, man-ten-imiento y uso de un Sis-tema 
-basado en el conocimiento.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 155--159
-
- []
-
-[5]
-Underfull \hbox (badness 10000) in paragraph at lines 175--181
+[3] [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 170--174
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--194
+Underfull \hbox (badness 10000) in paragraph at lines 190--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 195--202
+Underfull \hbox (badness 10000) in paragraph at lines 197--209
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 210--217
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--211
+Underfull \hbox (badness 10000) in paragraph at lines 219--226
 
  []
 
-[6] [7]
+
+Underfull \vbox (badness 2158) has occurred while \output is active []
+
+ [7]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 269.
+(Font)              <9> on input line 284.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 269.
- [8]
+(Font)              <6> on input line 284.
+
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[9] [10] [11]
-Overfull \hbox (4.15489pt too wide) in paragraph at lines 476--479
-[]\OT1/cmr/m/n/10 Unicamente nos queda cal-cu-lar el Valor Nor-mal-izado. Valor
- Obtenido 69.93644
+[8] [9] [10] [11] [12]
+Overfull \hbox (4.15489pt too wide) in paragraph at lines 491--494
+[][]\OT1/cmr/m/n/10 Uni-ca-men-te nos que-da cal-cu-lar el Va-lor Nor-ma-li-za-
+do. Va-lor Ob-te-ni-do 69.93644
  []
 
-[12]
-Underfull \hbox (badness 2698) in paragraph at lines 492--496
-[]\OT1/cmr/m/n/9 Vladyslav Krug-lyk and Michael Lvov. Kher-son State Uni-ver-si
-ty. Ukraine.
+[13]
+Underfull \hbox (badness 2698) in paragraph at lines 507--511
+[]\OT1/cmr/m/n/9 Vladyslav Kruglyk and Mi-chael Lvov. Kher-son Sta-te Uni-ver-s
+ity. Ukrai-ne.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--503
-[]\OT1/cmr/m/n/9 Yoshitaka Sh-iotsu. (2014). https://www.odesk.com/blog/2014/03
+Underfull \hbox (badness 10000) in paragraph at lines 516--518
+[]\OT1/cmr/m/n/9 Yoshitaka Shiot-su. (2014). https://www.odesk.com/blog/2014/03
 /web-
  []
 
-[13] (./conocimientos.aux)
+[14] (./conocimientos.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 1966 strings out of 493304
- 26916 string characters out of 6139871
- 129400 words of memory out of 5000000
- 5410 multiletter control sequences out of 15000+600000
+ 2679 strings out of 493304
+ 35815 string characters out of 6139871
+ 145394 words of memory out of 5000000
+ 6112 multiletter control sequences out of 15000+600000
  10338 words of font info for 36 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 37i,15n,23p,411b,290s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,15n,26p,464b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -382,10 +407,10 @@ public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb>
-Output written on conocimientos.pdf (13 pages, 173425 bytes).
+Output written on conocimientos.pdf (14 pages, 175588 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 64 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

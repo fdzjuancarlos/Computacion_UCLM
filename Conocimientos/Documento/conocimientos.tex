@@ -2,6 +2,7 @@
 % the LaTeX2e class from Springer-Verlag
 % for Lecture Notes in Computer Science, version 2.4
 \documentclass{llncs}
+\usepackage[spanish]{babel}
 \usepackage{llncsdoc}
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
@@ -24,6 +25,9 @@ lenguaje de programación\\[6pt]
 Juan Carlos Fernández Durán\\[2cm]
 \end{flushleft}
 \vfill
+
+\addto\captionsspanish{%
+  \renewcommand\contentsname{}}
 %\begin{flushleft}
 %\large\itshape
 %\begin{tabular}{@{}l}
@@ -40,9 +44,23 @@ Juan Carlos Fernández Durán\\[2cm]
 \tableofcontents
 \newpage
 %
+
+\section{Resumen}
+
+En este documento se expone el objetivo que pretende cumplir el sistema de recomendación de lenguajes de programación. Se analizará la necesidad de un sistema como este, lo que quiere abarcar y las utilidades que tendrá. Posteriormente se presentarán los expertos de los que se recabará el conocimiento necesario para el sistema, mostrando sus habilidades y conocimientos más específicos, y lo que aportará cada uno al proyecto. Se mostrarán también los potenciales usuarios que tendrá el SE.
+A continuación se mostrará en que situación se encuentra este tipo de sistemas, analizando si existen otros sistemas similares, o que información de provecho existe que se pueda obtener. También se mostrarán algunos conceptos que serán usados a lo largo de este documento referentes tanto al campo de aplicación como a los Sistemas Expertos en general. 
+Para justificar y comprobar que el sistema es viable y merece la pena su desarrollo se realizara el test de Slagle.
+
+\section{Abstract}
+
+This document will expose the goal that aims to accomplish the programming language recommender system. It would be analized the requirement of a system like that, what it wants to cover and the utilitis it will have. After this, the experts whose knowledge we will take of will be presented. The skills and knowledge of this experts will be shown, and will show which give each other to the proyect. Also the potencial usser will be presented. Also the potencial users of the system will be shown. 
+
+After that, the actual situation of system like that will be exposed, analizyng if there are another similars works, o what helpful information we can take. Next some related concepts are going to be explained, refered to the application field and so to the field of Expert System.
+To warrant and check the viability and whether it is worth to go away with the proyect the Slagle Test is going to be done.
+
 \section{Introducción}
 
-En esta sección realizaremos una introducción acerca del Sistema Experto de recomendación de lengauje de 
+En esta sección realizaremos una introducción acerca del Sistema Experto de recomendación de lenguaje de 
 Programación en el que quedará definido nuestro problema, definiendo a su vez el alcance que abarcará nuestro
 sistema experto y de cuáles son los objetivos que satisfará el mismo. Presentaremos los expertos de los cuales
 se obtendrá el conocimiento experto y a qué tipo de usuario estará dirigido nuestro Sistema Experto
@@ -54,14 +72,14 @@ El mundo de la informática es demasiado grande y muchas veces la tecnología y te
 con rapidez, esto puede ser desconcertante para las personas que dedicamos nuestra vida diaria a este campo, 
 entre ellos, los informáticos.
  Muchas veces, nos vemos en la situación de querer abordar un nuevo problema, queremos especializarnos en
- un campo específco, pero no conocemos las herramientas apropiadas para ello, en nuestro caso, los lenguajes de
+ un campo específico, pero no conocemos las herramientas apropiadas para ello, en nuestro caso, los lenguajes de
  programación, los cuales se caracterizan porque no existe uno que predomine sobre todos, ya que cada uno
  se adapta mejor a unos problemas que otros abordan peor.\\
 
 Sin embargo, en la vida real, tampoco hay 1 lenguaje específico para cada tipo de problema, si es cierto que,
 existen unos determinados lenguajes de programación más importantes que otros a la hora de abordad una
 temática concreta, por ejemplo, la programación en dispositivos móviles, la programación de sistemas empotrados,
- la programación de un sistema experto o incluso un lenguaje que sea más didactico para aprender a programar.\\
+ la programación de un sistema experto o incluso un lenguaje que sea más didáctico para aprender a programar.\\
 
  En base a unas características recomendaremos el lenguaje de programación que más adecuado al usuario según
  sus necesidades o preocupaciones. En este sistema experto nos centraremos en las necesidades más comunes,
@@ -100,7 +118,7 @@ en la Escuela Superior de Informática de la UCLM
     Lógica y Programación declarativa durante 18 años, experto en Sistemas Inteligentes proporcionará el
     conocimiento necesario acerca de la rama de la Programación Declarativa, sus ventajas frente a la
     Programación Imperativa así como de Sistemas Inteligentes.
-  \item \textbf{David Villa Alises}: Doctorado en Ingenería Informática, miembro del grupo de investigación
+  \item \textbf{David Villa Alises}: Doctorado en Ingeniería Informática, miembro del grupo de investigación
     \textbf{Arco} con actividad docente en Redes de Computadores y Sistemas Distribuidos.
   \item \textbf{Ismael Caballero Muñoz-Reja}:Experiencia profesional en el mundo de la informática, proporcionará la visión más empresarial acerca de los lenguajes de programación, actualmente desempeña su actividad docente en la Escuela Superior de Informática de la UCLM en asignaturas como Ingeniería del Software II
 \end{itemize}
@@ -135,7 +153,7 @@ A continuación se presentarán los conceptos más importantes del area de los leng
     ejemplo lenguaje ensamblador, y en última instancia, a un archivo binario que el procesador puede entender
     directamente.
   \item \textbf{Lenguaje interpretado}: El programa es escrito en el determinado lenguaje pero no se llega a compilar,
-    en lugar de eso, un programa carga secuencialmete instrucción por instrucción.
+    en lugar de eso, un programa carga secuencialmente instrucción por instrucción.
   \item \textbf{Programación Orientada a Objetos}: Paradigma que un lenguaje de programación puede adoptar o no, que
     consiste en agrupar los datos de un determinado problema, quedando asociada con la lógica del propio programa.
   \item \textbf{Flujo de Control}: Orden en el que las instrucciones de programación se van ejecutando.
@@ -176,7 +194,7 @@ Tras una búsqueda exhaustiva, solo encontramos un único sistema experto \cite{ki
 cortas determina que lenguaje de programación es el que debes usar, su código fuente está publicado, y se puede observar
 que es bastante sencillo, el sistema está compuesto por unas preguntas que según la respuesta te redirige a otra
 pregunta o directamente a una respuesta, toma en consideración varias cosas, como por ejemplo que tipo de desarrollo
-estamos tratando, si es para una inteligencia artifical, una aplicación de escritorio, móvil, o web, tiene en cuenta
+estamos tratando, si es para una inteligencia artificial, una aplicación de escritorio, móvil, o web, tiene en cuenta
 para que plataformas queremos trabajar, si nos importa que sea multiplataforma...\\
 
 Podemos encontrar un artículo\cite{vladys} acerca de qué lenguaje de programación elegir
@@ -201,7 +219,7 @@ debe a la exclusividad impuesta de la plataforma Apple para programar en dicho l
 aplicaciones.\\
 
 
-Otra de las grandes areas de aplicación de la programación es la programación web, en este artículo 
+Otra de las grandes áreas de aplicación de la programación es la programación web, en este artículo 
 \cite{yoshi} podemos observar una comparativa de algunos de los lenguajes de programación más interesantes
 para afrontar un desarrollo web, siendo HTML y CSS los más básicos, luego se ve diferenciada por los que
 se ejecutan desde la aplicación cliente y desde la servidora. En el caso del cliente contamos con JavaScropt
@@ -214,21 +232,21 @@ de hacer una ligera pincelada de cada lenguaje, muestra en imágenes varios perfi
 de desarrollador típicos en la industria, habilidades asociadas a esos perfiles y 
 lenguajes de programación que también están relacionados. Permite ver de una
 forma clara y sencilla que se espera de cada perfil además de una breve
-descripción de los lenguajes, por ejemplo, los desarrolladores de video juegos
+descripción de los lenguajes, por ejemplo, los desarrolladores de videojuegos
 tienden a usar más los lenguajes C, C++, C\# y Java, trabajan bien bajo presión,
 y suelen tener otras habilidades relacionadas con el diseño.
 
 
 \section{Estudio de viabilidad. Test de Slagle}
 
-Vamos a analizar si el sistema previsto es viable de cara a realizarlo mediante un Sistema Experto. Para ello se usara el conocido como Test de Slagle. En primer lugar se definiran las características del sistema y de los involucrados o stakeholders. A continuación se asignaran los pesos para finalmente evaluar si el sistema cumple con los objetivos necesarios. 
+Vamos a analizar si el sistema previsto es viable de cara a realizarlo mediante un Sistema Experto. Para ello se usara el conocido como Test de Slagle. En primer lugar se definirán las características del sistema y de los involucrados o stakeholders. A continuación se asignaran los pesos para finalmente evaluar si el sistema cumple con los objetivos necesarios. 
 \subsection{Definición de las características}
 
 Se contemplan las características del sistema desde cuatro dimensiones: Plausibilidad, Justificación, Adecuación, Éxito, sobre cada una de estas dimensiones se establecen tres categorías diferentes: Directivos o Usuarios, los expertos y la tarea. Las características pueden ser esenciales o deseables y se ha establecido un valor umbral de 7 que debe ser superado por las primeras.
 
 \begin{itemize}
 	\item \textbf{Plausibilidad}: Se analiza si la tarea es susceptible de poder abordarse desde el punto de vista de la Ingeniería del Conocimiento, y si se cuenta con los medios para hacerlo.
-	\item \textbf{Justificacion}: Se justifica o intenta justificar la necesidad de realizar este sistema desde la perspectiva de la Ingeniería del Conocimiento. Puede haber muchos motivos de justificación, como el económico, el social etc.
+	\item \textbf{Justificación}: Se justifica o intenta justificar la necesidad de realizar este sistema desde la perspectiva de la Ingeniería del Conocimiento. Puede haber muchos motivos de justificación, como el económico, el social etc.
 	\item \textbf{Adecuación}: Se analiza lo adecuado del problema para ser resuelto mediante técnicas de IC. El problema podría ser mejor abordado mediante la algoritmia u otros procedimientos.
 	\item \textbf{Éxito}: Se estima y determina el éxito que podría llegar a tener el sistema.  
 	
@@ -313,7 +331,7 @@ Aquí se encuentra una guía de las abreviaturas usadas y su significado.
 
 \begin{table}[h]
 \centering
-\caption{Categorias}
+\caption{Categorías}
 \label{my-label}
 \begin{tabular}{|l|l|}
 \hline
@@ -355,7 +373,7 @@ Mediante las siguientes tablas evaluaremos si nuestro sistema es viable.
 
 \begin{table}[hp]
 \centering
-\caption{Dimension de Plausibilidad}
+\caption{Dimensión de Plausibilidad}
 \label{my-label}
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{|l|l|l|l|l|l|}
@@ -473,8 +491,8 @@ Una vez calculados todos los valores calculamos el valor total de referencia del
 VC=\frac{80.79358+74.42169+61.69024+62.84026}{4}=69.93644
 \]
 
-Unicamente nos queda calcular el Valor Normalizado.
-Valor Obtenido  69.93644 - Valor Maximo Posible 76,21
+Únicamente nos queda calcular el Valor Normalizado.
+Valor Obtenido  69.93644 - Valor Máximo Posible 76,21
 Valor Real X - 100
 
 \[

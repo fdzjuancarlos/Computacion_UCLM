@@ -2,6 +2,7 @@
 % the LaTeX2e class from Springer-Verlag
 % for Lecture Notes in Computer Science, version 2.4
 \documentclass{llncs}
+\usepackage[spanish]{babel}
 \usepackage{llncsdoc}
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
@@ -24,6 +25,9 @@ lenguaje de programación\\[6pt]
 Juan Carlos Fernández Durán\\[2cm]
 \end{flushleft}
 \vfill
+
+\addto\captionsspanish{%
+  \renewcommand\contentsname{}}
 %\begin{flushleft}
 %\large\itshape
 %\begin{tabular}{@{}l}
@@ -40,6 +44,11 @@ Juan Carlos Fernández Durán\\[2cm]
 \tableofcontents
 \newpage
 %
+
+\section{Resumen}
+
+En este documento se expone
+
 \section{Introducción}
 
 En esta sección realizaremos una introducción acerca del Sistema Experto de recomendación de lengauje de 
@@ -348,10 +357,11 @@ Aquí se encuentra una guía de las abreviaturas usadas y su significado.
 \end{tabular}
 \end{table}
 
+\newpage
 \subsubsection{Tablas.}
 
 Mediante las siguientes tablas evaluaremos si nuestro sistema es viable.
-\newpage
+
 \begin{table}[hp]
 \centering
 \caption{Dimension de Plausibilidad}
