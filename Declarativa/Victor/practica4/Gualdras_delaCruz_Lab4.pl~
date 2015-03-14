@@ -49,6 +49,9 @@ preorden(nil, []);
 preorden(hoja(X), hoja(X)).
 preorden(nodo(X,Rosadelfas), [nodo(X)|R) :- preordenFrontera(nodo(X), R). 
 
+esListaPreorden([R], F):- frontera(R,F).
+esListaPreorden([R|Rosadelfas], [X|Rx]) :- preorden(R,X), esListaPreorden(Rosadelfas,Rx).
+
 
 
 

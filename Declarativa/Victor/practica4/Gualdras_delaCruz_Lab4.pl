@@ -43,7 +43,7 @@ esListaFrontera([R], F):- frontera(R,F).
 esListaFrontera([R|Rosadelfas], N) :- frontera(R,N1), esListaFrontera(Rosadelfas,N2), append(N1,N2,N).
 
 
-%Ejercicio16
+%d
 
 preorden(nil, []);
 preorden(hoja(X), hoja(X)).
