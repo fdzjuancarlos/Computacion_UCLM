@@ -36,11 +36,21 @@ grado(A, G) :- esRosadelfa(A,G).
 
 %c
 frontera(nil,N):- N=[].
-frontera(hoja(_), N):- N=[hoja(_)].
+frontera(hoja(X), N):- N=[hoja(X)].
 frontera(nodo(_,Rosadelfas), N) :- esListaFrontera(Rosadelfas, N). 
 
 esListaFrontera([R], F):- frontera(R,F).
 esListaFrontera([R|Rosadelfas], N) :- frontera(R,N1), esListaFrontera(Rosadelfas,N2), append(N1,N2,N).
+
+
+%Ejercicio16
+
+preorden(nil, []);
+preorden(hoja(X), hoja(X)).
+preorden(nodo(X,Rosadelfas), [nodo(X)|R) :- preordenFrontera(nodo(X), R). 
+
+esListaPreorden([R], F):- frontera(R,F).
+esListaPreorden([R|Rosadelfas], [X|Rx]) :- preorden(R,X), esListaPreorden(Rosadelfas,Rx).
 
 
 
