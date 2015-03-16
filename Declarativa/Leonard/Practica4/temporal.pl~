@@ -21,7 +21,7 @@ esListaRosadelfas([R|Rosadelfas], N) :- esRosadelfa(R,X), esListaRosadelfas(Rosa
 
 %Ejercicio 15 Peso
 
-peso(nil, P):- esRosadelfa(nil,P).
+peso(nil, P):- P is 0.
 peso(hoja(_), P):- esRosadelfa(hoja(_),P).
 peso(nodo(_,Rosadelfas), P) :- esListaRosadelfasPesada(Rosadelfas, X), P is  X+1.
 
