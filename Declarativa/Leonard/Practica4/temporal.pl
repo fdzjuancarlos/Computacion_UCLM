@@ -56,6 +56,7 @@ N is X+Y.
 
 
 
+%Ejercicio 16
 
 % construirRosadelfa(L, G, R), construye una rosadelfa R, a partir de los elementos de una lista L.
 construirRosadelfa([], _, nil).

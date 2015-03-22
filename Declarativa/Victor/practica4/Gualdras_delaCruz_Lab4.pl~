@@ -43,16 +43,59 @@ esListaFrontera([R], F):- frontera(R,F).
 esListaFrontera([R|Rosadelfas], N) :- frontera(R,N1), esListaFrontera(Rosadelfas,N2), append(N1,N2,N).
 
 
-%Ejercicio16
+%d
 
-preorden(nil, []);
-preorden(hoja(X), hoja(X)).
-preorden(nodo(X,Rosadelfas), [nodo(X)|R) :- preordenFrontera(nodo(X), R). 
+preorden(nil, []).
+preorden(hoja(X), P) :- P = hoja(X).
+preorden(nodo(X,Rosadelfas), Z) :- esListaPreorden(Rosadelfas, R), aplanar([nodo(X)|R], Z). 
 
 esListaPreorden([R], F):- frontera(R,F).
 esListaPreorden([R|Rosadelfas], [X|Rx]) :- preorden(R,X), esListaPreorden(Rosadelfas,Rx).
 
+aplanar(Lista, Aplanada) :- esLista(Lista), nueva2(Lista,Aplanada1), borrar(Aplanada1, Aplanada).
 
+igual(X,[X]).
+
+borrar([],[]).
+borrar([X|Rx], [X|Ry]) :- not(esVacio(X)), borrar(Rx,Ry).
+borrar([X|Rx], Ry) :- esVacio(X), borrar(Rx,Ry).
+
+nueva2(X,Y):- not(anidada(X)), igual(X,Y).
+nueva2([X|Rx], Y) :- nueva2(X,P), nueva2(Rx,Q), append(P,Q,Y).
+
+esLista([]).
+esLista([_|R]) :- esLista(R).
+
+anidada([_|R]) :- not(esVacio(R)).
+anidada([R|_]) :- not(esVacio(R)).
+
+
+%Ejercicio 16
+
+% construirRosadelfa(L, G, R), construye una rosadelfa R, a partir de los elementos de una lista L.
+construirRosadelfa([], _, nil).
+construirRosadelfa([X], _, hoja(X)).
+construirRosadelfa([X|L], G, nodo(X, [R|Rosadelfas])):- 
+partir(L, G, [L1|GListas]),
+construirRosadelfa(L1, G, R),
+construirRosadelfas(GListas, G, Rosadelfas).
+
+% inspecciona una lista de listas y por cada lista inspeccionada crea una rosadelfa
+construirRosadelfas([], _, []).
+construirRosadelfas([L|GListas], G, [R|Rosadelfas]) :-
+construirRosadelfa(L, G, R),
+construirRosadelfas(GListas, G, Rosadelfas).
+% partir(L, G, [L1|GListas]), divide la lista L en una secuencia de listas de longitud 
+% menor o igual que G, que se devuelve como una lista de listas en el segundo argumento.
+partir(L, G, [L]):- length(L,N), N < G.
+partir(L, 0, L).
+partir(L, G, [L1|GListas]):- length(L,N), N >= G,
+G>0,
+NuevaLength is N//G,
+length(L1, NuevaLength),
+append(L1, LL, L),
+PorPartir is G-1,
+partir(LL, PorPartir, GListas).
 
 
 
