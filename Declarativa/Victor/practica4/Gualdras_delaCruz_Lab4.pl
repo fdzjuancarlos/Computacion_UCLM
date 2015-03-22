@@ -1,4 +1,4 @@
-%trace, esListaRosadelfas([nodo(_,[hoja(_), hoja(_),hoja(_),hoja(_)]),nodo(_,[nodo(_,[hoja(_),hoja(_),hoja(_)])])]).
+%trace, esListaRosadelfas(nodo(_,[nodo(_,[hoja(_), hoja(_)])),nodo(_,[nodo(_,[hoja(_),hoja(_)])])).
 
 %Ejercicio 14
 % esRosadelfa(O), el objeto O es una rosadelfa.
@@ -46,29 +46,14 @@ esListaFrontera([R|Rosadelfas], N) :- frontera(R,N1), esListaFrontera(Rosadelfas
 %d
 
 preorden(nil, []).
-preorden(hoja(X), P) :- P = hoja(X).
-preorden(nodo(X,Rosadelfas), Z) :- esListaPreorden(Rosadelfas, R), aplanar([nodo(X)|R], Z). 
+preorden(hoja(X), P) :- P = [hoja(X)].
 
-esListaPreorden([R], F):- frontera(R,F).
-esListaPreorden([R|Rosadelfas], [X|Rx]) :- preorden(R,X), esListaPreorden(Rosadelfas,Rx).
+%preorden(nodo(X,Rosadelfas), Z) :- esListaPreorden(Rosadelfas, R), aplanar([nodo(X)|R], Z).
+preorden(nodo(X,Rosadelfas), [nodo(X)|R]) :- esListaPreorden(Rosadelfas, R). 
 
-aplanar(Lista, Aplanada) :- esLista(Lista), nueva2(Lista,Aplanada1), borrar(Aplanada1, Aplanada).
+esListaPreorden([R], F):- preorden(R,F).
+esListaPreorden([R|Rosadelfas], Z) :- preorden(R,X), esListaPreorden(Rosadelfas,Rx), append(X,Rx,Z).
 
-igual(X,[X]).
-
-borrar([],[]).
-borrar([X|Rx], [X|Ry]) :- not(esVacio(X)), borrar(Rx,Ry).
-borrar([X|Rx], Ry) :- esVacio(X), borrar(Rx,Ry).
-
-nueva2(X,Y):- not(anidada(X)), igual(X,Y).
-nueva2([X|Rx], Y) :- nueva2(X,P), nueva2(Rx,Q), append(P,Q,Y).
-
-esLista([]).
-esLista([_|R]) :- esLista(R).
-
-anidada([_|R]) :- not(esVacio(R)).
-anidada([R|_]) :- not(esVacio(R)).
-esVacio([]).
 
 %Ejercicio 16
 
