@@ -1,0 +1,18 @@
+
+////Preguntar como cambiar el input, en flex (C) se hace con YY_input, pero en manual no sale
+
+%{
+	StringBuffer string = new StringBuffer();
+	public boolean recognize(regexp exp, java.io.Reader symb){
+		yyreset(symb);
+		yybegin(exp);
+	}
+
+	public void REtoFA(regexp exp){
+		
+	}
+%}
+
+WhiteSpace = [\t\f]
+
+
