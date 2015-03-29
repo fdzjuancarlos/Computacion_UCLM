@@ -2,7 +2,7 @@
 
 %Ejercicio17
 
-speedup(S, G1, G2, T1, T2) :- speed(G1, T1), speed(G2,T2), S is T2/T1.
+speedup(S, G1, G2) :- speed(G1, T1), speed(G2,T2), S is T2/T1.
 
 speed(G, T) :- T1 is cputime, call(G), T2 is cputime, T is T2 - T1.
 
