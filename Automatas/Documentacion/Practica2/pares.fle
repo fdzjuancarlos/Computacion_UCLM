@@ -1,0 +1,17 @@
+ 
+%%
+
+%class pares
+%public 
+%standalone
+%state pares
+
+%%
+
+<pares> [0-9]+ { System.out.println("Par : "+yytext());
+		yybegin(YYINITIAL) ;}
+<YYINITIAL> [0-9]+ { System.out.println("impar : "+yytext());
+	 	yybegin(pares) ; }
+
+.   {}
+

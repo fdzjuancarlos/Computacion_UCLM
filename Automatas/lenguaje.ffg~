@@ -1,6 +1,9 @@
 adasdasf 1231 regexp akska
 
-automaton Prueba{
+automaton   
+
+
+  Prueba{
 	states q0,q1,q2;
 	states q0;
 	alphabet a,b,c;
