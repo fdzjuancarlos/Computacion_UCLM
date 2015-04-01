@@ -18,6 +18,7 @@
 
 %state automata
 %state transition
+%state expresion
 
 Alphabet = ([a-z]|[A-Z]|[0-9])+
 VariableFinal = {Alphabet} \;
@@ -28,18 +29,24 @@ LineTerminator = \r | \n | \r\n | " "
 WhiteSpace = {LineTerminator} | [\t\f]
 WhiteSpaces = {WhiteSpace}*
 
-BeginComment = "\*"
-EndComment = "*\"
+Str = ('{Alphabet}')+
+Expr = ( {Alphabet} | \| | \( | \) | \{ | \} | \[ | \] | \< | \> | \* | \+ | \? | \^ | \$ | \/ | \. | \" | \~ | \! | {Str})+
 
 
 %%
 
 
+("regexp" {WhiteSpaces} {Alphabet} \{)+ { 
+System.out.println("Dentro de expresion");
+yybegin(expresion);
+}
 
 ("automaton" {WhiteSpaces} {Alphabet} \{)+ { 
 System.out.println("Dentro de automata");
 yybegin(automata);
 }
+
+
 
 <automata> ("states " )+ {Variables} {
 	System.out.println("states");
@@ -67,6 +74,17 @@ yybegin(automata);
 <transition> \}+ {
 	System.out.println("Cierra transition");
 	yybegin(automata);
+}
+
+
+
+<expresion>{
+	({Expr})+
+		{System.out.println("Expresion Regular");}
+	
+	\}+ {
+		System.out.println("Fin de expresion regular");
+	}
 }
 
 
