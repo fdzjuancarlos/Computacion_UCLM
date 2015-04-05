@@ -1,0 +1,7 @@
+# no tmp files
+*~
+# no swp files
+*.swp
+# ignore class files
+*.class
+
