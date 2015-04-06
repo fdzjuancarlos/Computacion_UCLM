@@ -4,4 +4,8 @@
 \contentsline {subsection}{\numberline {1.2}Entrevistas y sus resultados}{3}
 \contentsline {subsection}{\numberline {1.3}El proceso de conceptualizaci\'on}{4}
 \contentsline {subsection}{\numberline {1.4}Conceptualizaci\'on y sus resultados}{4}
-\contentsline {subsubsection}{Conocimientos F\'acticos}{4}
+\contentsline {subsubsection}{Conocimientos Factuales}{4}
+\contentsline {subsubsection}{Conocimientos Estrat\'egicos}{14}
+\contentsline {subsubsection}{Conocimientos T\'acticos}{14}
+\contentsline {section}{\numberline {2}Implementaci\'on}{14}
+\contentsline {subsection}{\numberline {2.1}Interfaz Gr\'afica de Usuario}{14}
