@@ -74,4 +74,3 @@ fib2(N,Fibonacci,I,Fn1,Fn2) :- I<N,
 	NewFn1=NewF, 
 	NewI is I+1, 
 	fib2(N,Fibonacci,NewI,NewFn1,NewFn2).
-

@@ -45,7 +45,7 @@ longitud2([X|Rx], A, N) :- NewA is A+1, longitud2(Rx, NewA, N).
 
 % suma1(L,N), N es la suma de los elementos de una lista de enteros.
 suma1([],0).
-suma1([H|T],N) :- suma1(T,Z), N is Z +H.
+suma1([H|T],N) :- suma1(T,Z), N is Z +H
 
 suma2(L,N):- suma2(L,0,N).
 
@@ -74,4 +74,3 @@ fib2(N,Fibonacci,I,Fn1,Fn2) :- I<N,
 	NewFn1=NewF, 
 	NewI is I+1, 
 	fib2(N,Fibonacci,NewI,NewFn1,NewFn2).
-

@@ -1,0 +1,78 @@
+%Ejercicio 18
+Anotaciones de tiempo:
+	
+	Invertir 2 respecto a Invertir 1
+	
+	Para una lista de 1000 elementos, invertir 2 necesita un 0.00092 del tiempo respecto de Invertir 1, es decir,
+	invertir 2 es 1087 veces más rápido que invertir 1
+	
+	El tiempo de Invertir 1 ha sido de: 0.06015437999999999
+	El tiempo de Invertir 2 ha sido de: 5.5901999999996566e-5
+	
+	Reverse respecto a Invertir 1
+	
+	Para una lista de 1000 elementos, reverse necesita un 0.0029 del tiempo de Invetir 1, es decir,
+	reverse es 334 veces más rápido
+	
+	El tiempo de Invertir 1 ha sido de: 0.05097976900000001
+	El tiempo de Reverse ha sido de: 0.00015280199999997968
+	
+	Invertir 2 repsecto a Reverse
+	
+	Para 1000 elementos, Invertir2 necesita un 0.108 del tiempo de
+	Inverse, es decir, Invertir2 es 9 veces más rápido que Inverse
+	
+	El tiempo de Reverse ha sido de:  0.00588553
+	El tiempo de Invertir2 ha sido de: 0.0006360550000000034 
+
+
+%Ejercicio 19
+Anotaciones de tiempo:
+	
+	Longitud 2 respecto a Longitud 1
+	
+	Para una lista de 1000 elementos, longitud 2 necesita un  0.11226004124645897 del tiempo respecto de longitud 1, es decir,
+	longitud 2 es  7.837542916456152 veces más rápido que longitud 1
+	
+	El tiempo de longitud 1 ha sido de: 0.0005889599999999995,
+	El tiempo de longitud 2 ha sido de: 7.514599999999816e-5,
+	
+	Length respecto a Longitud 1
+	
+	Para una lista de 1000 elementos, length necesita un  0.03449170702828843 del tiempo de Invetir 1, es decir,
+	length es 28.99247634162752 veces más rápido
+	
+	El tiempo de longitud 1 ha sido de: 0.0004932490000000012
+	El tiempo de length ha sido de:  1.701299999999628e-5
+	
+	longitud 2 respecto a length
+	
+	Para 1000 elementos, length necesita un 0.17524219819394551 del tiempo de
+	longitud 2, es decir, length es 0.17524219819394551 veces más rápido que Inverse
+	
+	El tiempo de length ha sido de:  1.651499999999473e-5
+	El tiempo de longitud2 ha sido de: 5.706388132002725 
+
+%Ejercicio 20
+Anotaciones de tiempo:
+	
+	Suma 2 respecto a suma 1
+	
+	Para una lista de 1000 elementos, suma 2 necesita un 0.6567317188719571 del tiempo respecto de suma 1, es decir,
+	suma 2 es 1.5226917952397085 veces más rápido que suma 1
+	
+	El tiempo de suma 1 ha sido de: 0.001545117999999998,
+	El tiempo de suma 2 ha sido de: 0.0010147279999999995
+	
+%Ejercicio 21
+Anotaciones de tiempo:
+	
+	fib 2 respecto a fib 1
+	
+	Para una sucesion de 20, fib 1 necesita un  0.0008443518486005983 del tiempo respecto de fib, es decir,
+	fib 2 es  2239.2086470943736 veces más rápido que fib
+	
+	El tiempo de fib ha sido de:  0.026465207000000004,
+	El tiempo de longitud 2 ha sido de: 1.181899999999625e-5,
+	
+	Length respecto a Longitud 1

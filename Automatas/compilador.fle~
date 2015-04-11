@@ -1,6 +1,6 @@
 %%
 
-%class numeros
+%class compilador
 %standalone
 %8bit
 
@@ -16,10 +16,76 @@
 	System.out.print("Naturales = "+cont);
 %eof}
 
+%state automata
+%state transition
+%state expresion
+
+Alphabet = ([a-z]|[A-Z]|[0-9])+
+VariableFinal = {Alphabet} \;
+SucVariables= ({Alphabet} \,)*
+Variables = {SucVariables} {VariableFinal}
+
+LineTerminator = \r | \n | \r\n | " "
+WhiteSpace = {LineTerminator} | [\t\f]
+WhiteSpaces = {WhiteSpace}*
+
+Str = ('{Alphabet}')+
+Expr = ( {Alphabet} | \| | \( | \) | \{ | \} | \[ | \] | \< | \> | \* | \+ | \? | \^ | \$ | \/ | \. | \" | \~ | \! | {Str})+
+
 
 %%
 
-["regexp"]+ { System.out.println(yytext()); }
-.   {}
+
+("regexp" {WhiteSpaces} {Alphabet} \{)+ { 
+System.out.println("Dentro de expresion");
+yybegin(expresion);
+}
+
+("automaton" {WhiteSpaces} {Alphabet} \{)+ { 
+System.out.println("Dentro de automata");
+yybegin(automata);
+}
+
+
+
+<automata> ("states " )+ {Variables} {
+	System.out.println("states");
+}
+<automata> ("alphabet " )+ {Variables} {
+	System.out.println("alphabet");
+}
+<automata> ("initial " )+ {Variables} {
+	System.out.println("initial");
+}
+<automata> ("final " )+ {Variables} {
+	System.out.println("final");
+}
+<automata> ("transition{" )+ {
+	System.out.println("transition begins");
+	yybegin(transition);
+}
+<automata> \}+ {
+	System.out.println("cierra automata");
+	yybegin(YYINITIAL);
+}
+<transition> ({SucVariables} {Alphabet} " =")+ {
+	System.out.println("estado a");
+}
+<transition> \}+ {
+	System.out.println("Cierra transition");
+	yybegin(automata);
+}
+
+
+
+<expresion>{
+	({Expr})+
+		{System.out.println("Expresion Regular");}
+	
+	\}+ {
+		System.out.println("Fin de expresion regular");
+	}
+}
+
 
 

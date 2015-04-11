@@ -1,0 +1,33 @@
+/* --------------------------Seccion codigo-usuario ------------------------ */
+//import java_cup.runtime.Symbol;
+import java_cup.runtime.*;
+
+/* ----------------- Seccion de opciones y declaraciones  ----------------- */
+%%
+
+%public
+//%class Gramatica
+%cup
+
+%%
+/* ------------------------ Seccion de reglas lexicas ---------------------- */
+
+
+"{" { return new Symbol(sym.CORCHETE_ABIERTO); }
+"}" { return new Symbol(sym.CORCHETE_CERRADO); }
+"," { return new Symbol(sym.COMA); }
+";" { return new Symbol(sym.PUNTO_Y_COMA); }
+":=" { return new Symbol(sym.ASIGNADOR); }
+"|" { return new Symbol(sym.UNION); }
+"$" { return new Symbol(sym.PALABRA_VACIA); }
+
+"grammar" { return new Symbol(sym.GRAMATICA); }
+"terminal" { return new Symbol(sym.TERMINAL); }
+"nonterminal" { return new Symbol(sym.NO_TERMINAL); }
+"axiom" { return new Symbol(sym.AXIOMA); }
+"productions" { return new Symbol(sym.PRODUCCION); }
+
+[a-zA-Z]([0-9]|[a-zA-Z])* { return new Symbol(sym.TEXTO, new String(yytext())); }
+
+[ \t\r\n\f] { /* ignora delimitadores */ }
+. { System.err.println("Caracter Ilegal: "+yytext()); }

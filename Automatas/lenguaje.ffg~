@@ -1,7 +1,5 @@
 adasdasf 1231 regexp akska
 
-regexp e2 { 'hola' }
-
 automaton Prueba{
 	states q0,q1,q2;
 	states q0;
@@ -15,4 +13,4 @@ automaton Prueba{
 	}
 }
 
-regexp e1 { (a*)b }
+regex
