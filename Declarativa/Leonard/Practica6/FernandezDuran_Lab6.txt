@@ -1,0 +1,52 @@
+
+Ejercicio 22.-
+
+a) Realizar una traza y generar el árbol correspondiente al objetivo “?- p(X).'’
+
+[trace]  ?- p(X).
+   Call: (6) p(_G3633) ? creep
+   Call: (7) q ? creep
+   Call: (8) a ? creep
+   Exit: (8) a ? creep
+   Call: (8) b ? creep
+   Call: (9) fail ? creep
+   Fail: (9) fail ? creep
+   Fail: (8) b ? creep
+   Fail: (7) q ? creep
+   Redo: (6) p(_G3633) ? creep
+   Call: (7) s(_G3633) ? creep
+   Exit: (7) s(dos) ? creep
+   Call: (7) t ? creep
+   Exit: (7) t ? creep
+   Exit: (6) p(dos) ? creep
+X = dos.
+
+
+b) Eliminar el corte del programa y repetir la experiencia. ¿Qué ramas fueron podadas?
+
+[trace]  ?- p(X).
+   Call: (6) p(_G3633) ? creep
+   Call: (7) q ? creep
+   Call: (8) a ? creep
+   Exit: (8) a ? creep
+   Call: (8) b ? creep
+   Call: (9) fail ? creep
+   Fail: (9) fail ? creep
+   Fail: (8) b ? creep
+   Redo: (7) q ? creep
+   Call: (8) c ? creep
+   Exit: (8) c ? creep
+   Call: (8) d ? creep
+   Exit: (8) d ? creep
+   Exit: (7) q ? creep
+   Call: (7) r(_G3633) ? creep
+   Exit: (7) r(uno) ? creep
+   Exit: (6) p(uno) ? creep
+X = uno .
+
+Se podó la rama en la que se exploraba q :- c,d. la cual era verdadera, y por tanto, encontraba respuesta en
+p(X) :- q,r(X).
+
+c) ¿ El corte introducido en el programa es rojo o verde ?
+
+Es un corte rojo ya que el significado del programa se ve alterado por la presencia o no de dicho corte.

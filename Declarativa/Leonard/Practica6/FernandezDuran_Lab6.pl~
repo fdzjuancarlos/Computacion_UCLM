@@ -1,0 +1,69 @@
+%Ejercicio 22
+
+p(X) :- q,r(X). t.
+p(X) :- s(X),t. a.
+q :- a,b. b :- fail.
+q :- c,d. c.
+r(uno). d.
+s(dos).
+
+%Ejercicio 23
+
+add(X, L, L):- member(X,L), !.
+add(X, L, [X|L]).
+
+add2(X, L, L):- member(X,L).
+add2(X, L, [X|L]).
+
+%Ejercicio 24
+
+diferente_a(X,Y) :- X=Y, !, fail; true.
+diferente_b(X,Y):- not(X=Y).
+
+%Ejercicio 25
+
+
+%cubo:- write('El siguiente numero '), read(X), integer(X), !, cubo1(X,Y), nl, write('El cubo de '), write(X), write(' es '),
+%write(Y), nl, cubo.
+%cubo.
+
+%cubo1(X, Y) :- Y is X*X*X.
+
+%cubo_2:- repeat, write('El siguiente numero '), read(X), (cubo1(X,Y), nl, write('El cubo de '), write(X), write(' es '),
+%write(Y), nl), false.
+
+cubo :- write('Siguiente numero '), read(X), integer(X), cubo(X), !.
+cubo(X) :- write('El cubo de '),  write(X), write(' es '), Y is X^3, write(Y), nl, cubo.
+ 
+cubo_2 :- repeat, write('Siguiente numero '), read(X), cubo2(X), stop(X), !.
+cubo2(X) :- number(X), write('El cubo de '), write(X), write(' es '), Y is X^3, write(Y), nl.
+cubo2(_) :- true.
+ 
+stop(X) :- X\='stop', fail; X='stop', !.
+
+%Ejercicio 26
+
+cont(Fichero, Carac, Palab, Lineas) :- 
+    open(Fichero, read, _, [alias(in)]), 
+    contador(in, 0, 0, 0, Carac, Palab, Lineas, 0),
+    write('Numero de Caracteres - '), write(Carac),
+    write('\nNumero de Palabras - '), write(Palab),
+    write('\nNumero de Lineas - '), write(Lineas).
+ 
+contador(in, C1, P1, L1, EC, EP, EL, InWord) :- 
+    get0(in, X), not(X = -1), !, 
+    contador2(in, C1, P1, L1, EC, EP, EL, X, InWord).
+     
+contador(in, C1, P1, L1, C1, EP, EL, InWord) :- 
+    InWord = 0 -> (EL is L1, EP is P1); 
+    (EL is L1+1, EP is P1+1).
+ 
+contador2(in, C, P, L, EC, EP, EL, X, InWord) :- 
+    C1 is C+1, (X = 10 -> L1 is L+1; L1 is L), 
+    separador(DP), 
+    (InWord = 0 -> (not(member(X, DP)) -> contador(in, C1, P, L1, EC, EP, EL, 1); 
+    contador(in, C1, P, L1, EC, EP, EL, 0)); 
+    (member(X, DP) -> (P1 is P+1, contador(in, C1, P1, L1, EC, EP, EL, 0)); 
+    contador(in, C1, P, L1, EC, EP, EL, 1))).
+ 
+separador([10, 32, 40, 41, 44, 46, 59, 191, 63]). % ['\n', ' ', '(', ')', ',', '.', ';', '¿', '?']
