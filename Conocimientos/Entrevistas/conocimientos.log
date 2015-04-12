@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  8 APR 2015 17:23
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  8 APR 2015 17:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -297,6 +297,11 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [2
 
 ] [3]
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 76--78
 
  []
@@ -313,13 +318,13 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 157.
-
+ [5]
 Overfull \hbox (10.87605pt too wide) in paragraph at lines 162--163
 []\OT1/cmr/m/n/10 ASCII (Ame-ri-can Stan-dard Co-de for In-for-ma-tion In-ter-c
 han-ge): C^^Sodi-go est^^Sandar
  []
 
-[5]
+
 Underfull \hbox (badness 10000) in paragraph at lines 166--168
 
  []
@@ -354,7 +359,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 260--262
 
  []
 
-[8]
+
+Underfull \vbox (badness 1577) has occurred while \output is active []
+
+ [8]
 Underfull \hbox (badness 10000) in paragraph at lines 273--275
 
  []
@@ -374,10 +382,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 319--321
 
  []
 
-
-Underfull \vbox (badness 1577) has occurred while \output is active []
-
- [10]
+[10]
 Underfull \hbox (badness 10000) in paragraph at lines 346--348
 
  []
@@ -458,7 +463,7 @@ ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy10.pfb>
-Output written on conocimientos.pdf (15 pages, 123543 bytes).
+Output written on conocimientos.pdf (15 pages, 123473 bytes).
 PDF statistics:
  81 PDF objects out of 1000 (max. 8388607)
  56 compressed objects within 1 object stream

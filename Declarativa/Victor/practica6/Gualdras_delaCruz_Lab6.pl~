@@ -14,5 +14,7 @@ cubo.
 
 cubo1(X, Y) :- Y is X*X*X.
 
-cubo_2:- repeat, write('El siguiente numero '), read(X), (not(integer(X)), !)); (cubo1(X,Y), nl, write('El cubo de '), write(X), write(' es '), write(Y), nl), false.
-cubo_2.
+cubo_2:- not(integer(X)).
+cubo_2:- repeat, write('El siguiente numero '), read(X), (cubo1(X,Y), nl, write('El cubo de '), write(X), write(' es '), write(Y), nl), false.
+
+
