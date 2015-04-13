@@ -6,6 +6,7 @@
 \usepackage{llncsdoc}
 \usepackage[latin1]{inputenc}
 \usepackage{graphicx}
+\usepackage{appendix}
 %
 \begin{document}
 \thispagestyle{empty}
@@ -45,18 +46,29 @@ Juan Carlos Fernández Durán\\[2cm]
 \newpage
 %
 
-\section{Resumen}
+\title{Sistema Experto de recomendación de lenguaje de programación}
+\author{Juan Carlos Fernández Durán \and Victor Gualdrás de la Cruz}
+\institute{Universidad Castilla la Mancha,
+Escuela Superior de Informática\\ Ciudad Real, España}
+\maketitle
+\begin{abstract}
 
 En este documento se expone el objetivo que pretende cumplir el sistema de recomendación de lenguajes de programación. Se analizará la necesidad de un sistema como este, lo que quiere abarcar y las utilidades que tendrá. Posteriormente se presentarán los expertos de los que se recabará el conocimiento necesario para el sistema, mostrando sus habilidades y conocimientos más específicos, y lo que aportará cada uno al proyecto. Se mostrarán también los potenciales usuarios que tendrá el SE.
 A continuación se mostrará en que situación se encuentra este tipo de sistemas, analizando si existen otros sistemas similares, o que información de provecho existe que se pueda obtener. También se mostrarán algunos conceptos que serán usados a lo largo de este documento referentes tanto al campo de aplicación como a los Sistemas Expertos en general. 
 Para justificar y comprobar que el sistema es viable y merece la pena su desarrollo se realizara el test de Slagle.
+\end{abstract}
 
-\section{Abstract}
-
+\renewcommand*\abstractname{Abstract}
+\begin{abstract}
 In this document is exposed the goal that aims to accomplish the programming language recommender system. It would be analized the requirement of a system like that, what it wants to cover and the utilitis it will have. After this, the experts whose knowledge we will take of will be presented. The skills and knowledge of this experts will be shown, and it will show which give each other to the proyect. Also the potencial users will be presented. 
 
 After that, it will be shown in which situation it's found this kind of systems, analizyng if there are another similars works, o what helpful information we can take. Next some related concepts are going to be explained, refered to the application field and so to the field of Expert System.
 To warrant and check the viability and whether it is worth to go away with the proyect the Slagle Test is going to be done.
+
+\end{abstract}
+
+\newpage
+
 
 \section{Introducción}
 
@@ -501,6 +513,722 @@ X=\frac{69.94 * 100}{76,21}=91.38%
 
 Así pues, este sistema de recomendación de lenguajes de programación tiene una fiabilidad del \textbf{91.38}, el cual es muy alto, asegurando en gran medida la viabilidad del proyecto.
 
+
+\section{Adquisición del conocimiento}
+
+La adquisición del conocimiento es la extracción o recogida del conocimiento de la fuente experta para obtener el conocimiento heurístico y la experiencia en la resolución de problemas de un determinado dominio por parte del ingeniero, con el fin de que sea usado por un programa. Requiere de una larga e intensa interacción.
+En este caso las fuentes de las que se extraerá dicho conocimiento serán las fuentes citadas en las referencias y los expertos nombrados antes.
+
+\subsection{El Proceso de las Entrevistas}
+
+En el caso de este proyecto se ha decidido optar por un método manual, como son las entrevistas, como método principal de extracción del conocimiento a los expertos, si bien, se ha recurrido también a libros, documentos y fuentes Web como complemento a estas entrevistas. El proceso de las entrevistas es un proceso bastante complicado, especialmente por las diferencias que puedan existir con el experto que pueden ser de muchos tipos: El tiempo que el experto esta disponible, inexistencia de un experto adecuado, el ingeniero del conocimiento puede no tener las bases necesarias sobre el tema para poder comunicarse adecuadamente con este, el experto puede ser reticente a contar secretos o experiencias que le sean exclusivas etc.
+
+
+
+\subsection{Entrevistas y sus resultados}
+
+En este caso, se han utilizado tanto entrevistas no estructuradas como estructuradas. A pesar de que existen varios expertos se ha delimitado el contenido y finalidad del proyecto de tal forma que cada experto aporte su conocimiento sobre su campo específico sin entrar en conflicto o inconsistencias con lo que aporta otro experto. Por esta razón no se ha considerado necesario realizar técnicas de entrevistas múltiples. Las entrevistas han sido determinantes en el proceso de extracción del conocimiento. Sin estas entrevistas no se hubiese podido llevar a cabo gran parte del trabajo ya que existen pocos recursos sobre este tema, y mucho menos opiniones y experiencias de personas con experiencia en esta materia. Este es un campo que necesita en gran medida del factor de la experiencia, ya que teóricamente no se es capaz de analizar y valorar gran parte de las variables que presentan y que diferencia a los distintos lenguajes o tecnologías para la programación.
+Las entrevistas se han realizado de la siguiente manera:
+
+\begin{itemize}
+\item Primera reunión con el experto en la que se ha explicado en que iba a consistir del sistema y lo que se iba a necesitar de él, y se han establecido los principales puntos que se deberían tratar. Además se ha corroborado con el experto su experiencia y conocimiento en el tema. Esta primera entrevista correspondería al grupo de entrevistas no estructuradas.
+
+\item Se le han proporcionado al experto una serie de preguntas que iban a ser la espina dorsal de la entrevista para que pudiese preparárselas.
+
+\item Se ha procedido a una entrevista estructurada con unas preguntas bien definidas que permitían extraer lo necesario para el proyecto.
+
+\item Finalmente se ha contrastado lo comentado por los expertos con otras fuentes de conocimiento, especialmente con datos estadísticos aportados por organizaciones e instituciones de gran prestigio y confianza en el campo del sistema.
+
+Respecto a las variantes de entrevistas utilizadas, decir que han sido mayoritariamente orientadas a una discusión focalizada. Se planteaban datos objetivos tales como "¿Cuál es el lenguaje de programación mas demandado actualmente por las empresas?" y mostrando y estudiando algunas estadísticas. También se ha usado el método de la reclasificación o descomposición de metas, se le han puesto casos generales de como lograr un objetivo, y el experto ha planteado distintas posibilidades, por ejemplo partiendo desde varias tecnologías o especialidades distintas llegar a ser un buen profesional en una determinada área. 
+
+\end{itemize}
+
+%\subsubsection{Anexo Entrevistas}
+
+%En este anexo se recogen y documentan las distintas entrevistas realizadas a de los expertos.
+%\\
+
+
+
+\subsection{El proceso de conceptualización}
+
+Antes de pasar a la etapa de representación del conocimiento es necesario una etapa intermedia denominada conceptualización, que consiste en hacer explícitos los conceptos claves y las relaciones relevantes entre estos. En esta etapa se establecen que conocimientos maneja el experto, cómo los utiliza, dónde los emplea y cuándo los usa, permitiendo de esta manera obtener una descripción detallada del problema mediante modelos conceptuales. Estos modelos conceptuales son una especificación de lo que debe hacer el sistema pero no especifican el cómo.
+
+\subsection{Conceptualización y sus resultados}
+
+Durante este proceso se determinan tres tipos de conocimientos, los Estratégicos
+que especifican qué hacer, dónde y porqué hacerlo, es decir estos conocimientos fijan
+la secuencia de pasos que el SE deberá seguir para ejecutar su tarea, los conocimientos Tácticos
+de Acción u Operativos, que especifican cómo y cuándo el SE puede añadir a sus conocimientos
+genéricos información actual acerca del caso y los conocimientos Fácticos o Declarativos, que especifican
+lo que es, o se cree que es verdad acerca del mundo en general y acerca del caso particular
+para el cual se está ejecutando la tarea. Finalmente también se presentan Metaconocimientos,
+estos registran la forma en que el experto usa los conocimientos para tomar una decisión, pueden
+existir metaconocimientos en cualquier nivel, es decir estos pueden ser metaconocimientos del tipo
+estratégicos, tácticos y fácticos.
+
+\subsubsection{Conocimientos Factuales}
+Especifican lo que es, o se cree que es, verdad acerca del mundo en general y del caso particular para el cual se está ejecutando la tarea.
+
+Primero de todo se ha procedido a la elaboración de un glosario, en el que se recogen los conceptos mas importantes del campo que nos ocupa que es el de la informática.\\
+
+
+
+\textbf{A}
+
+Administrador de base de datos: Persona encargada de velar por la integridad de los datos y sus asociaciones, así como de autorizar las modificaciones que se desee hacer.
+
+Administrador de archivos (File Manager o Manejador de Archivos): Aplicación utilizada para facilitar distintas tareas con archivos como la copia, eliminación, movimiento entre otras. Algunos administradores de archivos permiten la asociación de las extensiones de los archivos con las aplicaciones preparados para trabajar con los mismos, permitiendo abrir,  , reproducir, modificar, etc. cada archivo con la aplicación asociada.
+
+Algoritmo: Procedimiento lógico-matemático, aplicado para resolver un problema.
+
+Análisis de sistemas: Estudio de una tarea o función para comprenderla y encontrar mejores maneras de realizarla.
+
+Ancho de banda: Medida de la cantidad de información que puede pasar por una vía, expresada en bits/segundo (o algún múltiplo).
+
+Aplicación: Programa diseñado para una determinada función
+
+Apple®: Primera compañía fabricante de computadoras personales y creadora de la computadora Macintosh, cuyo sistema operativo incorporó la GUI de mayor éxito hasta la aparición de Microsoft Windows®.
+
+Archivo: Conjunto de datos relacionados.
+
+
+ASCII (American Standard Code for Information Interchange): Código estándar estadounidense para el intercambio de información. Código de siete bits adoptado como un estándar mundial para facilitar el intercambio de datos entre distintos sistemas y máquinas en ambientes conectados en red.
+
+Assembler: Ver Lenguaje ensamblador.
+
+Automatización: Realización de una combinación específica de acciones por una máquina, sin la ayuda de personas.
+\\
+
+\textbf{B}
+
+Backup: Copias de archivos, equipos de reemplazo o procedimientos alternativos disponibles para ser usados en caso de emergencias producidas por fallas totales o parciales de un sistema computacional.
+
+Banco de datos: Colección de archivos de datos, de tipo histórico, utilizados para consultas específicas de algún tema en particular.
+
+Base de datos relacional: Colección de datos organizada y relacionada, para evitar duplicaciones y permitir la obtención de datos combinados, satisfaciendo la necesidad de usuarios con diferentes necesidades de información.
+
+BIOS (Basic Input/Output System): Sistema de entrada/salida básico. Código contenido por una computadora que proporciona un nexo entre el hardware y el sistema operativo. Generalmente contenido en un chip insertado en el motherboard. (o placa madre)
+
+Bit (BInary digiT): Digito binarioi. Unitad básica de información utilizada en un sistema de numeración binario. Un bit sólo puede ser cero o uno.
+\\
+
+\textbf{C}
+
+C: Lenguaje de programación usado principalmente para la programación de sistemas o sofisticadas aplicaciones.
+
+C++: Lenguaje de programación orientado a objetos, basado en el lenguaje C.
+
+Cache: Ver Memoria cache.
+
+Circuito integrado: Circuito electrónico miniaturizado, capaz de realizar todas las funciones de uno convencional. Puede contener numerosos transistores, diodos, condensadores y resistencias que se fabrican y colocan en un simple chip.
+
+Cliente: Programa que demanda servicios de otra computadora llamada servidor, y se hace cargo de la interacción necesaria con el usuario.
+
+Código fuente: Programa escrito en un lenguaje de programación de alto nivel por un progamador. Es solo un archivo de texto simple que contiene la secuencia de operaciones que la computadora deberá ejecutar, en una forma simple de entender por una persona que sepa programar en dicho lenguaje.
+
+Código objeto: Programa expresado en lenguaje de máquina (ceros y unos), de manera que pueda ser ejecutado por una computadora.
+
+Compatibilidad: Habilidad de usar sistemas y dispositivos de una computadora en otra, sin requerir cambios.
+
+Compilador: Programa que traduce instrucciones escritas en un lenguaje de programación de alto nivel a un lenguaje de máquina.
+
+Compilar: Generar un programa en lenguaje de máquina a partir de un lenguaje de programación de alto nivel.
+
+Computadora: Una computadora  es un sistema digital con tecnología microelectrónica capaz de procesar datos a partir de un grupo de instrucciones denominado programa. La estructura básica de una computadora incluye microprocesador (CPU), memoria y dispositivos de entrada/salida (E/S), junto a los buses que permiten la comunicación entre ellos.
+
+Consola: Interfaz de comandos de un sistema operativo que permite el envío de ordenes a la computadora a través del teclado.
+
+Correo electrónico: Servicio de intercambio de mensajes entre usuarios, que puede incluir texto y elementos multimedia.
+\\
+
+\textbf{D}
+
+Dato: Representación de un hecho o idea que puede ser manipulado y al cual se le puede asignar un significado.
+
+Debugging: Ver Depuración.
+
+Default: Ajustes por defecto. Lo que pasará si no se modifica nada.
+
+Depuración: Detección, localización y eliminación de errores en un programa. También llamado debugging.
+
+Diagrama de flujo: Representación gráfica de los tipos y secuencia de operaciones de un programa o proceso.
+
+Dirección IP: Número que identifica cada una de las computadoras que se encuentran conectadas a Internet.  Es única a nivel mundial. En su versión IPv4 (la más común todavía), la forman 4 conjuntos de números binarios, o su representación decimal (ej. 212.15.82.22)
+
+Dominio: El nombre de dominio es un identificador único a través de la cual las computadoras se vinculan a Internet (por ej. para identificar sitios web y direcciones de correo electrónico). El sistema es jerárquico permitiendo la definición de subdominios de un dominio existente. A veces coloquialmente ( y de modo incorrecto) se utiliza para referirse a las "direcciones Web")
+DNS (Domain Name System): Sistema que almacena y asocia diferentes tipos de información con nombres de dominio. Su función más importante es traducir el nombre de dominio a una dirección IP.
+\\
+
+\textbf{E}
+
+Emulación: Proceso mediante el cual una computadora se hace funcionar como si fuera otra, para aceptar el mismo tipo de datos, ejecutar los mismos programas y obtener iguales resultados.
+
+Extensiones de archivos: Es una cadena de caracteres anexada al nombre de un archivo, usualmente antecedida por un punto. Su función principal, es diferenciar el formato del archivo, de modo que el sistema operativo disponga el procedimiento correspondiente para ejecutarlo o interpretarlo.
+\\
+
+\textbf{F}
+
+FAQ (Frecuently Asked Questions): Documentos informativos que recogen las respuestas a las preguntas formuladas más frecuentemente por los usuarios de un servicios determinado.
+
+FORTRAN (FORmula TRANslator): El primer lenguaje de programación de alto nivel, diseñado para realizar cálculos matemáticos.
+
+Firmware: Secuencia de comandos básicos, embebidos dentro del hardware. Generalmente estos comandos están en las memorias ROM.
+
+Formato de archivo: Estructura de un archivo que define la forma en que se guarda y representa la información que contiene en la pantalla o en la impresora. El formato puede ser muy simple y común, como el de los archivos guardados como texto ASCII puro, o puede ser muy complejo e incluir varios tipos de instrucciones y códigos de control utilizados por programas, impresoras y otros dispositivos o el modo de compresión de los datos, como algunos formatos gráficos. En MS-DOS la extensión del nombre del archivo suele indicar el formato del archivo. Entre los ejemplos se cuentan el formato RTF (Rich Text Format), DCA (Document Content Architecture), PICT, DIF (Data Interchange Format), DXF, TIFF (Tag Image File Format) y EPSF (Encapsulated PostScript Format).
+
+
+Freeware: Programa de uso sin costo siempre que se respeten las condiciones del propietario del mismo. No debe confundirse con Free Software.
+
+Free Software: ver Software Libre.
+
+FTP (File Transfer Protocol): Protocolo de transferencia de archivos de una computadora a otra a través de una red (usado en Internet).
+\\
+
+\textbf{G}
+
+Gigabyte (GB): 1.024 Megabytes, o aproximadamente mil millones de bytes (1.024 x 1.024 x 1.024 bytes).
+
+GNU: Proyecto iniciado en 1984 por Richard Stallman que en la actualidad brinda la posibilidad de resolver, casi, la totalidad de los problemas de tratamiento informático con software libre. Esto incluye desde juegos hasta el núcleo del sistema operativo. El núcleo más conocido del proyecto GNU es Linux. Las siglas GNU significan GNU's Not Unix (GNU No es Unix).
+
+GUI (Graphical User Interface): Interfaz Gráfica de Usuario. Diseño amigable para la parte de un programa que interactúa con el usuario, basado en el uso de íconos y ventanas para representar sus distintas funciones. Generalmente asociada con el uso del dispositivo apuntador (ratón).
+\\
+
+\textbf{H}
+
+Hardware: Los componentes físicos de la computadora, así como sus periféricos.
+
+Hipertexto:  Sistema de organitzación y consulta de la información de manera no secuencial. La información se relaciona mediante  enlaces que permiten vincular entre sí  documentos o partes de documentos a través de "saltos". 
+
+Hipervínculo: Conexión en distintos puntos de una página de Internet, que lleva a otro punto determinado del mismo sitio o de otro dentro de la red.
+
+HTML (HiperText Markup Language): Lenguaje de composición de páginas de hipertexto para la WWW.
+
+HTTP (HiperText Transfer Protocol). Protocolo de transferencia de hipertexto. Es el protocolo que permite navegar por la WWW.
+\\
+
+
+\textbf{I}
+
+Ícono: Símbolo que representa un programa, archivo o aplicación y que sirve para ejecutar al mismo.
+
+Información: Es el resultado del procesamiento de datos. Todo aquello que permite adquirir cualquier tipo de conocimientos.
+
+Informática: Es la ciencia del tratamiento automático de la información mediante una computadora. La informática es un amplio campo que incluye los fundamentos teóricos, el diseño, la programación y el uso de las computadoras (ordenadores).
+
+Instrucción: Conjunto de caracteres que especifica una operación a realizarse y el valor o ubicación de uno o más operandos requeridos.
+
+Inteligencia artificial: Programas diseñados para que su funcionamiento imite los procesos humanos de toma de decisiones y para que aprenda de los eventos pasados.
+
+Interfaz: Conexión entre dos componentes de hardware, entre dos aplicaciones o entre un usuario y una aplicación. También llamada por el término en inglés interfase.
+
+Internet: Red mundial de computadoras conectadas a través del protocolo TCP/IP.. Es la más grande e importante red de redes interconectadas a través de routers. .
+
+Intranet:  Denominación utilizada para referirse a la red interna de una empresa o institución.
+\\
+
+\textbf{K}
+
+Kilobyte (KB): Medida de información. Contiene 1.024 bytes.
+\\
+
+\textbf{L}
+
+LAN (Local Area Network): Red de área local. Es la forma en la cual se interconectan computadoras ubicadas en un mismo lugar a través de un cable de red.
+
+Lenguaje de programación: Conjunto de sentencias utilizadas para escribir secuencias de instrucciones para ser ejecutadas en una computadora.
+
+Lenguaje de programación de alto nivel: Lenguaje de programación cercano a la notación utilizada en problemas o procedimientos. Por ejemplo FORTRAN, BASIC, C, PASCAL o Logo.
+
+Lenguaje de programación de bajo nivel: Lenguaje de programación orientado a la máquina. Como los lenguajes de máquina y ensambladores.
+
+Lenguaje ensamblador: Lenguaje de programación simbólico de bajo nivel. Tiene una correspondencia uno a uno en las instrucciones y formato de datos con el lenguaje de máquina. Entre más cercano es el lenguaje de programación al lenguaje de máquina, más rápidas resultan las aplicaciones, pero los programas resultan más difíciles de entender para un programador
+
+Linux: Núcleo o kernel de sistema operativo compatible con UNIX®, que se puede utilizar en casi cualquier plataforma de computadora sin pagar costo de licencia y con libre acceso y modificación de su código fuente. Muchas veces se utiliza "erróneamente" el término para nombrar a todo el sistema operativo.
+
+Lisp: Lenguaje de programación funcional. Su nombre deriva del término "procesamiento de listas" en inglés ("List Processing"). Fue un lenguaje originalmente utilizado en inteligencia artificial.
+
+Login: Acción de conectarse a un sistema ingresando un nombre de usuario y una contraseña.
+
+Logo: Lenguaje de programación creado por Wally Feurzeig y Seymour Papert. Basado en el lenguaje Lisp, fue concebido como un lenguaje apropiado para el aprendizaje y por eso está traducido a muchos idiomas. Muy usado cuando se empezaron a introducir computadoras en los centros educativos. Su característica más conocida es el uso de los llamados gráficos de tortuga, un sistema gráfico muy intuitivo encaminado a la exploración de la geometría.
+\\
+
+\textbf{M}
+
+
+Macro: Instrucción de un programa fuente que realiza un conjunto de operaciones en otro programa que lo contiene.
+
+Megabyte (MB): Medida de información equivalente a 1.024 kilobytes.
+
+Memoria: Almacenamiento primario de una computadora, como la RAM o la ROM.
+
+Memoria auxiliar o secundaria: Memoria que suplementa la memoria principal o primaria, generalmente utilizando parte del disco duro.
+
+Memoria caché: Un área de memoria de alta velocidad en el procesador donde se almacenará la información de uso más frecuente. Es una porción relativamente pequeña de memoria, muy rápida y reservada para el almacenamiento temporal de datos o instrucciones que el procesador va a utilizar próximamente.
+
+Memoria principal: Lugar en el cual se almacenan datos e instrucciones en una computadora antes y durante su ejecución.
+
+Memoria virtual: Una técnica de administración de memoria que permite utilizar un espacio del disco duro como si se tratase de memoria RAM. Esta técnica proporciona a las aplicaciones la posibilidad de utilizar más memoria de la que el sistema dispone.
+
+Menú: Lista de opciones mostrada sobre una pantalla de las cuales el usuario puede seleccionar.
+
+
+Multimedia: Forma de presentar información a través de una computadora, usando texto, gráficos, sonido o video.
+
+Multiprocesamiento: Técnica para ejecutar dos o más secuencias de instrucciones simultáneamente en una misma computadora. Se necesita mas de un procesador (máquinas grandes) o microprocesadores especiales.
+
+Multitarea: Ejecución simultánea, en una computadora, de más de un programa. Las tareas se alternan en la ejecución a tanta velocidad que el usuario no llega a percibir su interrupción.
+\\
+
+\textbf{N}
+
+Net: Apócope de Internet.
+
+Nodo: Computadora o cualquier otro dispositivo conectado a una red.
+\\
+
+\textbf{O}
+
+OCR (Optical Character Recognition): Reconocimiento óptico de caracteres. Técnica de registro y lectura de caracteres u otros símbolos en un archivo de imagen de mapa de bits.
+
+Offline: Equipos o dispositivos que no están en comunicación directa o apagados.
+
+Online: Equipos o dispositivos que están en comunicación directa o encendidos.
+
+Ordenador : Término usado en España y en algunos países de latinoamérica para referirse a una computadora.
+\\
+
+\textbf{P}
+
+Palabra reservada: Palabra que no puede usarse para propósitos distintos de los establecidos por el programa en uso.
+
+PASCAL: Lenguaje de programación especialmente apto para construir programas estructurados. Diseñado por Niklaus Wirth en el instituto ETH Zürich (Suiza) alrededor de 1968, la primera implementación estuvo disponible en 1970.
+
+Password: Contraseña utilizada para ingresar en una red o en un sistema de manera segura.Conjunto de caracteres alfanúmericos requeridos pra accedr a una determinada  red, sistema, aplicación o recurso.
+
+Placa madre (o Motherboard): Placa de circuito impreso donde se instalan el procesador, la ROM, la RAM, los buses y otros elementos de una computadora.
+
+Plugin (o plug-in): Es un programa que interactúa con otro programa para aportarle una función o utilidad específica, generalmente muy específica. Este programa adicional es ejecutado por la aplicación principal. Los plugins típicos tienen la función de reproducir determinados formatos de gráficos, reproducir datos multimedia, codificar/decodificar emails, filtrar imágenes de programas gráficos, etc.
+
+Procesador de textos: Programa que permite la manipulación de textos con formato y que permite generar archivos que conserven el estilo realizado.
+
+Procesamiento de datos: Secuencia sistemática de operaciones realizadas sobre datos para obtener un resultado deseado.
+
+Procesamiento en tiempo real: Técnica de procesamiento en que la actualización de los datos afectados por un evento se realiza a medida que sucede el evento causante.
+
+Proceso: Manipular datos o realizar otras operaciones de acuerdo a un programa.
+
+Programación: Se llama programación a la creación de un programa informático, un conjunto concreto de instrucciones que una computadora u otro dispositivo informático puede ejecutar. El programa se escribe en un determinado lenguaje de programación,  (con dificultad se puede se puede escribir directamente en lenguaje de máquina). Un programa puede estar dividido en diversas partes, que pueden estar escritas en lenguajes distintos.
+
+Programa: Secuencia de instrucciones que dirige a la computadora a realizar operaciones específicas para obtener un resultado deseado.
+
+Programa de control: Programa del sistema operativo que lee instrucciones de control.
+
+Programa fuente: Ver código fuente.
+
+Programa intérprete: Programa de computadora que procesa instrucciones de lenguajes de programación de alto nivel instrucción por instrucción, determinando las operaciones requeridas y haciendo que la computadora las realice.
+
+Programa objeto: Ver código objeto.
+
+Programador: Persona que define la solución a un problema y escribe las instrucciones requeridas por una computadora para llevar a cabo esa solución. Un programador que también realiza análisis de sistemas y diseño, suele llamarse Analista/Programador.
+
+Protocolo: Definición del sistema de comunicación de una computadora. Acuerdo entre diferentes sistemas para trabajar conjuntamente bajo un estándar común. Conjunto de normas que permiten estandarizar un procedimiento repetitivo.
+\\
+
+\textbf{R}
+
+RAM (Random-Access Memory): Memoria primaria de una computadora. En las PCs es accesible por el procesador a través del puente norte del chipset.
+
+Recuperación: Habilidad para reiniciar el proceso, ante una falla del equipo, sin pérdida de datos o resultados.
+
+Red: Interconexión de una o más computadoras a través de hardware y software.
+
+Robot: Máquina programable que puede realizar varias tareas físicas bajo el control de un programa.
+
+Router: Dispositivo que se encarga de gestionar y organizar el tránsito de datos entre diferentes redes.
+\\
+
+\textbf{S}
+
+Salida: Output. Resultado del procesamiento.
+
+Servidor: Computadora o programa que proporciona recursos y servicios a las computadoras conectadas a una red y al mismo tiempo gestiona el uso de esa red..
+
+Simulación: Representación del funcionamiento de un sistema por otro. Por ejemplo, la representación de un sistema físico por un modelo matemático.
+
+Sistema: Conjunto de elementos interrelacionados que trabajan juntos para obtener un resultado deseado.
+
+Sistema de Archivo: Un sistema de archivos consta de tipos de datos abstractos, que son necesarios para el almacenamiento, organización jerárquica, manipulación, navegación, acceso y consulta de datos. La mayoría de los sistemas operativos poseen su propio sistema de archivos. Los sistemas de archivos son representados ya sea textual o gráficamente utilizando gestores de archivos o shells. En modo gráfico a menudo son utilizadas las metáforas de carpetas (directorios) conteniendo documentos, archivos y otras carpetas. Un sistema de archivos es parte integral de un sistema operativo moderno. Los sistemas de archivos más comunes utilizan dispositivos de almacenamiento de datos que permiten el acceso a los datos como una cadena de bloques de un mismo tamaño, a veces llamados sectores, usualmente de 512 bytes de longitud. El software del sistema de archivos es responsable de la organización de estos sectores en archivos y directorios y mantiene un registro de qué sectores pertenecen a qué archivos y cuáles no han sido utilizados. En la realidad, un sistema de archivos no requiere necesariamente de un dispositivo de almacenamiento de datos, sino que puede ser utilizado también para acceder a datos generados dinámicamente, como los recibidos a través de una conexión de red
+
+Sistema de manejo de base de datos: Software que maneja la organización, localización, catalogación, almacenamiento, recuperación y mantención de datos en una base de datos.
+
+Sistema numérico binario: Sistema de numeración de base 2, es decir, que sólo usa dos dígitos. Por lo general los dígitos utilizados son 0 y 1.
+
+Sistema numérico hexadecimal: Sistema numérico de base 16, generalmente usando los dígitos: 0, 1, 2, 3 , 4, 5, 6, 7, 8, 9, A, B, C, D, E, F.
+
+Sistema operativo: Programa de control que dirige el hardware de una computadora. Por lo general es, en realidad, una colección de programas que interactúan juntos.
+
+Software: Programas escritos en un lenguaje que la computadora entiende y puede ejecutar para realizar una tarea.
+
+Software de aplicación: Programas que realizan las tareas específicas de procesamiento de datos.
+
+
+Software libre: Es el que respeta la libertad del usuario, ateniendose a las 4 libertades que plantea la Free Software Fundation: De usarlo para el fin que se quiera; De realizar copias; De modificarlo para ajustarlo a nuestro gusto; De distribuir las mejoras. Adicionalmente se suele decir que la única restricción es que cada uno que reciba ese software, debe heredar esas libertades.
+\\
+
+\textbf{T}
+
+TCP/IP: Conjunto de protocolos que rigen la transmisión de información en Internet.
+
+Terminal: Dispositivo en un sistema o red de comunicación en el cual los datos pueden ingresarse o salir, pero no procesarse.
+
+Terminal inteligente: Es una terminal con capacidad de procesamiento en sí misma.
+
+Testing: La prueba de un programa o un sistema para asegurar que funciona adecuadamente.
+
+Transmisión asincrónica: Método de transferencia de datos en el cual las unidades emisoras y receptoras no tienen igual velocidad.
+
+Transmisión digital: Transferencia eléctrica de datos por señales discretas.
+
+Transmisión sincrónica: Método de transferencia eléctrica en el cual las velocidades de entrada y salida son iguales.
+\\
+
+\textbf{U}
+
+Unidad central de procesamiento (CPU): La Unidad Central de Proceso (UCP) o CPU (siglas de Central Processing Unit) es la unidad donde se ejecutan las instrucciones de los programas y se controla el funcionamiento de los distintos componentes de la computadora. Suele estar integrada en un chip denominado microprocesador.
+\\
+
+
+\textbf{V}
+
+Ventana: Parte de la pantalla usada independientemente del resto.
+
+Virtual: Se dice de la representación en una computadora de algo que no tiene existencia materila o no está presente en ese lugar.
+
+Virus informático:  Programa con finalidades destructivas o de interferencia del funcionamiento correcto de los sistemas informáticos.
+Volúmen: Entidad física utilizada para almacenar datos e instrucciones. Puede ser cinta o un disco magnético.
+\\
+
+\textbf{W}
+
+WAN (Wide Area Network): Conexión entre varias redes de área local, físicamente distantes.  El ejemplo más conocido es Internet.
+
+WLAN (Wireless Local Area Network): Red de área local inalámbrica.
+
+Wiki: Forma de sitio web en donde se acepta que usuarios creen, editen, borren o modifiquen el contenido de una página web, de una forma interactiva, fácil y rápida. Estas facilidades hacen de una wiki una herramienta efectiva para  el  trabajo colaborativo.  Una wiki permite crear y mejorar las páginas de forma instantánea por medio de una interfaz muy simple , dando una gran libertad al usuario
+
+World Wide Web (www). Sistema de organización de la información de Internet a través de enlaces hipertexto. En sentido estricto es el conjunto de servidores que emplean el protocolo HTTP.
+\\
+
+
+
+%Falta la/s ontologia/s
+
+\subsubsection{Conocimientos Estratégicos}
+Especifican qué hacer, dónde y por qué hacerlo, es decir, fijan la secuencia de pasos que el SE deberá seguir para ejecutar su tarea.
+
+%organigrama y cosas parecida
+
+\subsubsection{Conocimientos Tácticos}
+
+De acción u operativos, especifican cómo y cuándo el SE puede añadir a sus conocimientos genéricos información actual acerca del caso
+
+%Sobre todo reglas
+
+\section{Implementación}
+
+Tras haber llevado a cabo todo el proceso de conceptualización toca el de implementación. Primero se mostrará un primer boceto de como se ha planteado el sistema de manera genérica haciendo uso de una herramienta de maquetado, y posteriormente se analizara la tecnología utilizada para el desarrollo de la propia interfaz y finalmente la interfaz propiamente dicha.
+
+\subsection{Interfaz Gráfica de Usuario}
+
+La interfaz de usuario es una parte muy importante de cualquier programa informático. Es la parte que el usuario aprecia de manera directa, y muchas veces sirve para juzgar cualquier sistema antes de verlo en funcionamiento. Algunos datos interesantes son ?La interfaz constituye entre el 47\% y el 60\% de las líneas de código? (McIntyre) o ?Actualmente más del 70\% del esfuerzo de desarrollo de las aplicaciones interactivas está dedicado a la interfaz? (Gartner Group).
+Es imprescindible que esta interfaz sea intuitiva y fácil de entender para el usuario. Además es un proceso que debe realizarse junto con este, mostrando primero bocetos y prototipos y permitiéndole (en la medida de lo posible) hacer cambios o sugerir mejoras.\\
+
+Nuestro sistema experto trata de recomendar un lenguaje a partir de una determinada situación, esta situación será la de el usuario en cuestión, una de las pocas formas que podemos recoger dicha información es mediante preguntas y respuestas, preguntaremos al usuario unas determinadas cuestiones de relevancia para la decisión para la recomendación del lenguaje, una vez tengamos la suficiente información, recomendaremos el lenguaje adecuado junto con una descripción del mismo. A continuación, presentamos en Mockup un primer prototipado de la interfaz:
+
+\includegraphics[width=14cm]{interfazSBC}
+
+Tanto la aplicación de escritorio como en la aplicación móvil, el usuario irá respondiendo una serie de cuestiones pulsando los botones con unas respuestas predeterminadas, de esta forma el sistema experto conocerá la situación del usuario con el que podrá recomendar el lenguaje que más se ajusta a sus necesidades.
+
+
+\subsection{Herramienta de Diseño de Interfaz seleccionada}
+
+Se hará uso de herramientas de prototipado o maquetación, en este caso se ha usado Balsamic Mockups. La ventaja que ofrece esta herramienta es permitir un prototipado muy rápido similar al que se haría dibujando sobre un papel directamente a lápiz, solo que con elementos de arrastrar y soltar, en cortos periodos de tiempo se puede hacer prototipos de la interfaz de forma eficaz y rápida.
+
+Esto es muy importante, ya que si en algún momento, detectamos que algo podría fallar en nuestra interfaz, o incluso, a veces, en la funcionalidad de nuestra propia aplicación, los errores se detectarán en una fase muy temprana del proyecto, y corregir dichos costes es mucho más barato y rápido que una vez la aplicación se ha desarrollado por ejemplo.
+
+Balsamic Mockups además es una aplicación ligera, es decir, se puede trabajar directamente en la propia web, sin necesidad de descargar ninguna aplicación de escritorio, por lo tanto es aún más rápido y cómodo para el propio usuario.
+
+\subsection{Diseño de la Interfaz Gráfica de Usuario del Sistema Experto}
+
+Como al principio no se sabía la plataforma para la que se iba a desarrollar se hicieron dos versiones, una para móvil y otra de aplicación de escritorio.
+
+
+
+\appendix
+\section{Entrevista David Villa Alises}
+
+\begin{tabular}{|l|l|}
+\hline 
+\textbf{Documento de adquisición del conocimiento} & Número:  \\ \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Fecha:}9/04/2015} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Hora:}18:00} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Lugar:}ESI Ciudad Real} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Asistentes: }Juan Carlos Fernández Durán - David Villa Alises} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Fuentes de Conocimiento:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Soporte:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Conocimiento anterior a la entrevista:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Objetivos: }Entrevistar al experto} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Modo:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Planteamiento de la sesión:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Resultados de la sesión:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Plan de análisis:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Resultados de análisis:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Tiempo de análisis: }45 minutos} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Recursos empleados:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Otros datos complementarios:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Comentarios:}} \\ 
+\hline 
+\end{tabular} 
+
+\textit{¿Como docente con gran experiencia y experto en lenguajes imperativos, que lenguaje recomendaría a alguien que quiere empezar con la programación como hobbie?}
+
+Sin conocimientos técnicos relevantes recomendaría Scratch o AppInventor, sin embargo, para una persona con  conocimientos técnicos o matemáticos recomendaría  Ruby o Python ya que los lenguajes interpretados son menos ?encorsetados? y permite escribir código más libremente ya que no está fuertemente tipado.
+
+Es imporante la interactividad, poder interaccionar con el programa desde una Shell, como Python y Ruby,  se podría decir que tu programa funciona como espera que funcione. \\
+
+\textit{¿Y para dedicarse al ámbito profesional?}
+
+Ruby o Python son los adecuados para empezar, su librería estándar se parece mucho a la librería estándar de C o C++, por lo tanto, más tarde al dar el salto a C o C++ es más fácil, además existe mucha documentación de librería estándar C++, tan solo viendo la signatura puedes usarla, todo es bastante parecido y es altamente recomendable.
+
+%Introducción a la programación Int. a Python y 2º cuatrimestre en C
+
+%// Introducción a la Programación con Python / C ? Complejidad Algorítmica
+
+Un ingeniero informático también debe conocer C, puedes hacer un compilador para cualquier cosa, lenguaje simple, compilador simple, toda persona que se quiera considerar un buen profesional debería conocer C, pasar de Python a C es bastante fácil.\\
+
+\textit{¿Cuál cree que es el lenguaje con la curva de aprendizaje mas suave?}
+
+Recomendaría los Koans de Ruby y Python para aprender rápido, estos lenguajes te ocultan muchos detalles al comienzo, por lo tanto es más fácil empezar.\\
+
+\textit{Y de los más usados o con mayor aplicación, ¿Cuál tiene la curva de aprendizaje mas pronunciada?}
+
+Python es muy versátil aunque te puedes encontrar de todo pero ya es forzar, por ejemplo el uso de PHP para  aplicaciones de escritorio.
+
+Python tiene una muy buena relación aceptable que cubra todo el espectro, LUA o  Boo son interesantes también, aunque sean más enfocados a lenguaje de sistemas o de servidor\\
+
+\textit{¿En el caso de niños mas pequeños, que vayan al colegio o estén en enseñanza secundaria, que lenguaje cree que deberían aprender?}
+
+Scratch o AppInventor es más amigable por el tema de arrastrar y soltar y elegir de un menu
+
+Otra opción interesante son los lenguajes gráficos no tienen la suficiente expresividad aún, tienen mucho camino por recorrer pero sin duda es una opción que cobrará una mayor importancia en el futuro y a tener en cuenta.\\
+
+
+\textit{Para un profesional que solo conoce un lenguaje imperativo funcional como C o Pascal, ¿qué lenguaje recomendaría para introducirlo a la programación orientada a objetos?}
+
+Aquel que soporte ambos paradigmas, aunque POO se puede simular en C o Pascal, no es elegante, también depende de la gente purista, por ejemplo Java lo consideran basado en objetos, cualquier lenguaje interpretado es más simple para hacer experimentos.\\
+
+\textit{Bien, ahora le vamos a realizar una serie de cuestiones para que nos identifique el lenguaje que usted considera mas apropiados para las siguientes aplicaciones:}
+
+
+
+\textit{-Programación web.}
+
+Para el lado del cliente, sin duda, JavaScript.
+
+Por el lado del servidor, siempre está cambiando la tecnología, por lo tanto es difícil recomendar uno, últimamente están cobrando importancia los servidores tipo node con JavaScript, sin embargo me parece algo forzado para servidor ya que es interpretado, por lo tanto no es ligero y en el servidor debes poder manejar cualquier cosa.
+
+El lenguaje Go también esta cobrando más importancia, desarrollado por los creadores de C. Actualmente recomendaría Ruby on Rails, pero se debe tener cuidado ya que las tecnologías aquí cambian muy rápidamente.\\
+
+\textit{-Videojuegos.}
+
+C++ debido a la eficiencia, sobre todo para el Motor de Juego, gráficos etc, sin embargo, otras cosas más externas, como IA, recomendaría otros lenguajes como Python o LUA.\\
+
+\textit{-Aplicaciones móviles.}
+
+Más que recomendar lenguajes, solo existen 2 lenguajes que son los impuestos por la propia plataforma, siendo iOS y Android, serían los lenguajes Objective-C y Java.\\
+
+\textit{-Aplicaciones multiplataforma.}
+
+Si deseas multiplataforma, recomendaría Java
+
+.NET no tiene tanta presencia en el mercado pero se recomienda también, su bytecode está mejor pensado, pero .NET debido a la restricciones de la plataforma no está siendo todo lo potente que podría llegar a ser.\\
+
+\textit{-Ámbito Científico / Matemático}
+
+Python le está comiendo el terreno a MatLab ya que es un lenguaje que permite hacer lo mismo y además es un lenguaje de propósito general.\\
+
+
+\textit{Vayamos ahora con la parte de sistemas distribuidos o empotrados. Un caso más específico de sistema empotrado podría ser uno que requiriese de tiempo real ¿Cuál sería la recomendación en este caso?}
+
+Lenguaje C es sin duda la opción a elegir, podría ser interesante también Go pero este lenguaje aún le queda camino por recorrer.
+
+\section{Entrevista Pascual Julián Iranzo}
+
+\begin{tabular}{|l|l|}
+\hline 
+\textbf{Documento de adquisición del conocimiento} & Número:  \\ \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Fecha:}26/03/2015} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Hora:}12:00} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Lugar:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Asistentes: }Victor Gualdrás - Pascual Julián} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Fuentes de Conocimiento:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Soporte:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Conocimiento anterior a la entrevista:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Objetivos: }Entrevistar al experto} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Modo:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Planteamiento de la sesión:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Resultados de la sesión:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Plan de análisis:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Resultados de análisis:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Tiempo de análisis: }} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Recursos empleados:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Otros datos complementarios:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Comentarios:}} \\ 
+\hline 
+\end{tabular} 
+
+
+\textit{¿En qué casos cree que sería mas recomendable usar un lenguaje de programación lógico frente a uno imperativo, y uno funcional frente a uno también imperativo?}
+
+
+Los lenguajes de programación declarativa (ya sean lógicos o funcionales) son más adecuados en la solución de todos los problemas que requieran manipulación simbólica o algún tipo de inferencia lógica.\\
+
+\textit{¿Qué lenguaje recomendaría a alguien que no tiene conocimientos de programación?}
+
+Le recomendaría un lenguaje de programación lógico como Prolog (que no es fuertemente tipado) o un lenguaje funcional como Haskell (que implementa un sistema de tipos muy rico, pero es simple de aprender y usar) para que experimentará la emoción de programar y resolver problemas (incluso complejos) sin las complicaciones sintácticas de los lenguajes imperativos y orientados a objetos.
+
+Naturalmente, aunque estoy proponiendo el uso de un lenguaje declarativo como primer lenguaje de programación, eso no exime del aprendizaje de un lenguaje convencional en una segunda etapa de su formación.\\ 
+
+\textit{¿Y a alguien que sabe programar pero únicamente conoce el paradigma imperativo?}
+
+Un ingeniero informático que únicamente conozca lenguajes convencionales (ya sean de corte imperativo u orientados a objetos) creo que puede tener una desventaja competitiva de cara al futuro que nos viene. Cada vez más, con la llegada de las máquinas multi-core, la computación concurrente y paralela va a ser un tema primordial y los modelos de cómputo de los lenguajes declarativos se adaptan bien a la computación paralela (cosa que no ocurre con los lenguajes convencionales). Muestra del interés que despiertan los lenguajes declarativos y, en especial, los lenguajes funcionales, es que Java 8 incorpora nuevas clases que permiten un estilo de programación funcional en Java. También hay un auge de los lenguajes híbridos tipo Scala. Por otra parte, no olvidemos que, aunque de dominio específico, SQL es un lenguaje declarativo.
+
+Por todo ello, yo recomendaría el estudio de un lenguaje de corte lógico y otro de corte funcional. Los estándares en estos campos son, respectivamente, Prolog y Haskell.\\
+
+\textit{Le vamos a mostrar una serie de aplicaciones que pueden hacer uso de los lenguajes declarativos. Elija en cada caso un lenguaje para cada uno.}
+
+\textit{-IA de videojuegos}
+
+La llamada lógica de videojuegos es, en el momento actual, muy rudimentaria y puede ser ventajosamente implementada mediante simples instrucciones procedimentales (if-then-else). No tengo noticias de lenguajes declarativos empleados con estos fines.\\
+
+
+\textit{-Procesadores de lenguaje natural}
+
+Prolog se ha empleado exhaustivamente para el procesamiento del lenguaje natural. De hecho Prolog tiene su origen en este campo.\\
+
+
+\textit{-Bases de datos}
+
+El lenguaje de dominio específico SQL para bases de datos relacionales y Datalog en el ámbito de las bases de datos deductivas.\\
+
+
+\textit{-Sistemas Expertos}
+Prolog o Lisp, que son lenguajes de propósito general, o lenguajes basados en reglas, especialmente adaptados para el desarrollo de sistemas expertos, como Clips (un lenguaje híbrido que combina los paradigmas lógico, procedural y orientado a objetos).
+
+\section{Entrevista Ismael Caballero}
+
+\begin{tabular}{|l|l|}
+\hline 
+\textbf{Documento de adquisición del conocimiento} & Número:  \\ \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Fecha:}25/03/2015} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Hora:}16:00} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Lugar:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Asistentes: }Juan Carlos -Victor  - Pascual Julián} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Fuentes de Conocimiento:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Soporte:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Conocimiento anterior a la entrevista:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Objetivos: }Entrevistar al experto} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Modo:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Planteamiento de la sesión:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Resultados de la sesión:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Plan de análisis:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Resultados de análisis:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Tiempo de análisis: }} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Recursos empleados:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Otros datos complementarios:}} \\ 
+\hline 
+\multicolumn{2}{|l|}{\textbf{Comentarios:}} \\ 
+\hline 
+\end{tabular}
+
+\textit{¿Cual es su experiencia en el mundo laboral?}
+2 años trabajando en el departamento de I+D en Indra - Software Labs, evaluando la calidad de los productos software, tratando con los lenguajes Java y COBOL\\
+
+\textit{¿Cual es su experiencia en la docencia de la UCLM?}
+Primer curso de programación en C desde los 16 años, cursos en Pascal, en Java, en Visual Basic .NET\\
+
+\textit{¿Cual es el lenguaje que actualmente tiene más demanda por las
+empresas?}
+En España, Java principalmente, JavaScript en programación web FrontEnd y C\#\\
+
+\textit{¿Cual es el lenguaje que considera mejor pagado actualmente?}
+PL-SQL debido al grado de especialización alto\\
+
+\textit{¿Cual considera que es el lenguaje con salida más inmediata tras 
+terminar los estudios?}
+Es más adecuado conocer los framework específicos, como Struts 2, Spring, para grandes proyectos, los lenguajes acaban siendo circunstanciales.\\
+
+\textit{¿Consideraría algún lenguaje mejor para hacer trabajo como
+freelance?}
+Especializarte en un lenguaje como por ejemplo .NET y dedicarte a ello, pero ya debes meterte a un nivel de profundidad.\\
+
+\textit{¿Existe actualmente algún lenguaje de alguna tecnología específica
+que considera interesante para orientar tu carrera laboral?}
+Tal y como avanzan las cosas, hay 2 alternativas, un trabajo de desarrollo en un lenguaje de propósito general tipo Java o tipo C\# o aprender un lenguaje de programación que encaje bien con el BigData.\\
+
+
+
 \newpage
 \begin{thebibliography}{1}
   \bibitem {kish}
@@ -526,6 +1254,7 @@ https://www.odesk.com/blog/2014/03/web-development-101-top-web-development-langu
 
 
 \end{document}
+
 
 % \\   Forzar algo más de espacio entre párrafos
 
