@@ -24,7 +24,7 @@
 \contentsline {subsection}{\numberline {4.2}Entrevistas y sus resultados}{15}
 \contentsline {subsection}{\numberline {4.3}El proceso de conceptualizaci\'on}{16}
 \contentsline {subsection}{\numberline {4.4}Conceptualizaci\'on y sus resultados}{16}
-\contentsline {subsubsection}{Conocimientos Factuales}{17}
+\contentsline {subsubsection}{Conocimientos Factuales}{16}
 \contentsline {subsubsection}{Conocimientos Estrat\'egicos}{26}
 \contentsline {subsubsection}{Conocimientos T\'acticos}{26}
 \contentsline {section}{\numberline {5}Implementaci\'on}{26}

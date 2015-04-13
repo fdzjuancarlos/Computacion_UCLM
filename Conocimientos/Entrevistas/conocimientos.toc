@@ -10,14 +10,3 @@
 \contentsline {subsubsection}{Conocimientos T\'acticos}{15}
 \contentsline {section}{\numberline {2}Implementaci\'on}{15}
 \contentsline {subsection}{\numberline {2.1}Interfaz Gr\'afica de Usuario}{15}
-\contentsline {section}{\numberline {3}Adquisici\'on del conocimiento}{15}
-\contentsline {subsection}{\numberline {3.1}El Proceso de las Entrevistas}{15}
-\contentsline {subsection}{\numberline {3.2}Entrevistas y sus resultados}{16}
-\contentsline {subsubsection}{Anexo Entrevistas}{17}
-\contentsline {subsection}{\numberline {3.3}El proceso de conceptualizaci\'on}{17}
-\contentsline {subsection}{\numberline {3.4}Conceptualizaci\'on y sus resultados}{17}
-\contentsline {subsubsection}{Conocimientos Factuales}{18}
-\contentsline {subsubsection}{Conocimientos Estrat\'egicos}{27}
-\contentsline {subsubsection}{Conocimientos T\'acticos}{27}
-\contentsline {section}{\numberline {4}Implementaci\'on}{27}
-\contentsline {subsection}{\numberline {4.1}Interfaz Gr\'afica de Usuario}{27}

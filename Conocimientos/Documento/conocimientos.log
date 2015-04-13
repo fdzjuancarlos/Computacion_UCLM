@@ -1,18 +1,17 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2014.5.25)  13 APR 2015 19:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.2.23)  13 APR 2015 21:39
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **conocimientos.tex
 (./conocimientos.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9h> and hyphenation patterns for 78 languages loaded.
 (./llncs.cls
 Document Class: llncs 2013/09/27 v2.18 
  LaTeX document class for Lecture Notes in Computer Science
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -27,8 +26,8 @@ File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \c@tracingmulticols=\count87
 \mult@box=\box26
 \multicol@leftmargin=\dimen103
@@ -45,7 +44,6 @@ Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
 \multicolbaselineskip=\skip44
 \partial@page=\box27
 \last@line=\box28
-\maxbalancingoverflow=\dimen108
 \mult@rightbox=\box29
 \mult@grightbox=\box30
 \mult@gfirstbox=\box31
@@ -69,16 +67,16 @@ Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
 \@tempa=\box49
 \c@columnbadness=\count93
 \c@finalcolumnbadness=\count94
-\last@try=\dimen109
-\multicolovershoot=\dimen110
-\multicolundershoot=\dimen111
+\last@try=\dimen108
+\multicolovershoot=\dimen109
+\multicolundershoot=\dimen110
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
-\mc@col@check@num=\count95
-)
-(./aliascnt.sty
+\multicol@sort@counter=\count95
+) (./aliascnt.sty
 Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
- (./remreset.sty))
+
+(./remreset.sty))
 \c@chapter=\count96
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -91,22 +89,22 @@ LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 369.
 LaTeX Font Info:    Redeclaring math symbol \Phi on input line 370.
 LaTeX Font Info:    Redeclaring math symbol \Psi on input line 371.
 LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
-\tocchpnum=\dimen112
-\tocsecnum=\dimen113
-\tocsectotal=\dimen114
-\tocsubsecnum=\dimen115
-\tocsubsectotal=\dimen116
-\tocsubsubsecnum=\dimen117
-\tocsubsubsectotal=\dimen118
-\tocparanum=\dimen119
-\tocparatotal=\dimen120
-\tocsubparanum=\dimen121
+\tocchpnum=\dimen111
+\tocsecnum=\dimen112
+\tocsectotal=\dimen113
+\tocsubsecnum=\dimen114
+\tocsubsectotal=\dimen115
+\tocsubsubsecnum=\dimen116
+\tocsubsubsectotal=\dimen117
+\tocparanum=\dimen118
+\tocparatotal=\dimen119
+\tocsubparanum=\dimen120
 \@tempcntc=\count97
-\fnindent=\dimen122
+\fnindent=\dimen121
 \c@@inst=\count98
 \c@@auth=\count99
 \c@auco=\count100
-\instindent=\dimen123
+\instindent=\dimen122
 \authrun=\box52
 \authorrunning=\toks14
 \tocauthor=\toks15
@@ -128,72 +126,71 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@question=\count113
 \c@solution=\count114
 \c@remark=\count115
-\headlineindent=\dimen124
-)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2014/03/24 3.9k The Babel package
+\headlineindent=\dimen123
+) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/12/03 3.9h The Babel package
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/babel-spanish/spanish.ldf
-Language: spanish.ldf 2014/04/24 v5.0n Spanish support from the babel system
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2014/01/29 v5.0m Spanish support from the babel system
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2014/03/24 3.9k Babel common definitions
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/12/03 3.9h Babel common definitions
 \babel@savecnt=\count116
-\U@D=\dimen125
+\U@D=\dimen124
 )
+\es@datefmt=\count117
 \es@quottoks=\toks18
-\es@quotdepth=\count117
-Package babel Info: Making " an active character on input line 516.
-Package babel Info: Making . an active character on input line 617.
-Package babel Info: Making < an active character on input line 662.
-Package babel Info: Making > an active character on input line 662.
-))
-(./llncsdoc.sty)
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2014/04/30 v1.2b Input encoding file
+\es@quotdepth=\count118
+Package babel Info: Making " an active character on input line 496.
+Package babel Info: Making . an active character on input line 599.
+Package babel Info: Making < an active character on input line 644.
+Package babel Info: Making > an active character on input line 644.
+)) (./llncsdoc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks19
 \inpenc@posthook=\toks20
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/latin1.def
-File: latin1.def 2014/04/30 v1.2b Input encoding file
+(/usr/share/texlive/texmf-dist/tex/latex/base/latin1.def
+File: latin1.def 2008/03/30 v1.1d Input encoding file
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks21
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count118
+\Gread@gobject=\count119
 ))
-\Gin@req@height=\dimen126
-\Gin@req@width=\dimen127
+\Gin@req@height=\dimen125
+\Gin@req@width=\dimen126
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/appendix/appendix.sty
+(/usr/share/texlive/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count119
-\c@@ppsavesec=\count120
-\c@@ppsaveapp=\count121
+\c@@pps=\count120
+\c@@ppsavesec=\count121
+\c@@ppsaveapp=\count122
 )
 (./conocimientos.aux
 LaTeX Info: Redefining \. on input line 6.
@@ -237,28 +234,28 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+ (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
-\scratchdimen=\dimen128
+\scratchcounter=\count123
+\scratchdimen=\dimen127
 \scratchbox=\box54
-\nofMPsegments=\count123
-\nofMParguments=\count124
+\nofMPsegments=\count124
+\nofMParguments=\count125
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count125
-\MPscratchDim=\dimen129
-\MPnumerator=\count126
-\makeMPintoPDFobject=\count127
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen128
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
 \everyMPtoPDFconversion=\toks23
-) (/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
 Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
 Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
@@ -267,22 +264,22 @@ Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
 Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
 Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
@@ -294,7 +291,7 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 452.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
@@ -310,8 +307,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <17.28> on input line 17.
 [1
 
-{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./conocimientos.toc
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./conocimientos.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -322,7 +318,8 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 \tf@toc=\write3
 \openout3 = `conocimientos.toc'.
 
- [2
+
+[2
 
 ] [3]
 Underfull \hbox (badness 10000) in paragraph at lines 83--90
@@ -371,164 +368,164 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[10] [11] [12] [13] [14] [15] <esquema.jpg, id=62, 1101.11375pt x 484.81125pt>
-File: esquema.jpg Graphic file (type jpg)
-
-<use esquema.jpg>
-Package pdftex.def Info: esquema.jpg used on input line 572.
-(pdftex.def)             Requested size: 398.33858pt x 175.38263pt.
-
-Overfull \hbox (66.21504pt too wide) in paragraph at lines 572--573
-[][] 
- []
-
-[16 <./esquema.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 578--579
+[10] [11] [12] [13] [14] [15]
+Underfull \hbox (badness 10000) in paragraph at lines 576--577
 
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 596.
+[16]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 594.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 596.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 594.
 
-Overfull \hbox (10.87605pt too wide) in paragraph at lines 601--602
+Overfull \hbox (10.87605pt too wide) in paragraph at lines 599--600
 []\OT1/cmr/m/n/10 ASCII (Ame-ri-can Stan-dard Co-de for In-for-ma-tion In-ter-c
 han-ge): C^^Sodi-go est^^Sandar
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 605--607
+Underfull \hbox (badness 10000) in paragraph at lines 603--605
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 616--618
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 618--620
+Underfull \hbox (badness 10000) in paragraph at lines 645--647
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 647--649
+Underfull \hbox (badness 10000) in paragraph at lines 662--665
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 664--667
+Underfull \hbox (badness 10000) in paragraph at lines 670--672
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 672--674
+Underfull \hbox (badness 10000) in paragraph at lines 688--690
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 690--692
+Underfull \hbox (badness 10000) in paragraph at lines 697--699
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 699--701
+Underfull \hbox (badness 10000) in paragraph at lines 710--712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 712--714
+Underfull \hbox (badness 10000) in paragraph at lines 730--732
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 735--737
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 732--734
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 737--739
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 758--760
+Underfull \hbox (badness 10000) in paragraph at lines 756--758
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 785--787
+Underfull \hbox (badness 10000) in paragraph at lines 783--785
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 792--794
+Underfull \hbox (badness 10000) in paragraph at lines 790--792
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 803--805
+Underfull \hbox (badness 10000) in paragraph at lines 801--803
 
  []
 
-[22] [23]
-Overfull \hbox (5.57152pt too wide) in paragraph at lines 840--842
+[22]
+Overfull \hbox (5.57152pt too wide) in paragraph at lines 838--840
 []\OT1/cmr/m/n/10 Protocolo: De-fi-ni-ci^^Son del sis-te-ma de co-mu-ni-ca-ci^^
 Son de una compu-tado-ra. Acuer-
  []
 
 
-Overfull \hbox (4.43263pt too wide) in paragraph at lines 840--842
+Overfull \hbox (4.43263pt too wide) in paragraph at lines 838--840
 \OT1/cmr/m/n/10 do en-tre di-fe-ren-tes sis-te-mas pa-ra tra-ba-jar con-jun-ta-
 men-te ba-jo un est^^Sandar com^^Sun.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--842
+Underfull \hbox (badness 10000) in paragraph at lines 838--840
+
+ []
+
+[23]
+Underfull \hbox (badness 10000) in paragraph at lines 851--853
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 853--855
+Underfull \hbox (badness 10000) in paragraph at lines 879--881
 
  []
 
 [24]
-Underfull \hbox (badness 10000) in paragraph at lines 881--883
+Underfull \hbox (badness 10000) in paragraph at lines 896--898
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 898--900
+Underfull \hbox (badness 10000) in paragraph at lines 901--903
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 903--905
+Underfull \hbox (badness 10000) in paragraph at lines 911--914
 
  []
 
 [25]
-Underfull \hbox (badness 10000) in paragraph at lines 913--916
+Underfull \hbox (badness 10000) in paragraph at lines 923--925
 
  []
 
+<esquema.jpg, id=94, 1101.11375pt x 484.81125pt>
+File: esquema.jpg Graphic file (type jpg)
+ <use esquema.jpg>
+Package pdftex.def Info: esquema.jpg used on input line 933.
+(pdftex.def)             Requested size: 398.33858pt x 175.38263pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 925--927
+Overfull \hbox (66.21504pt too wide) in paragraph at lines 933--934
+[][] 
+ []
+
+[26 <./esquema.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 965--966
 
  []
 
-[26]
-Underfull \hbox (badness 10000) in paragraph at lines 964--965
-
- []
-
-<interfazSBC.png, id=98, 774.64406pt x 341.02406pt>
-File: interfazSBC.png Graphic file (type png)
- <use interfazSBC.png>
-Package pdftex.def Info: interfazSBC.png used on input line 968.
+<interfazSBC.PNG, id=99, 774.64406pt x 341.02406pt>
+File: interfazSBC.PNG Graphic file (type png)
+ <use interfazSBC.PNG>
+Package pdftex.def Info: interfazSBC.PNG used on input line 969.
 (pdftex.def)             Requested size: 398.33858pt x 175.36136pt.
 
-Overfull \hbox (66.21504pt too wide) in paragraph at lines 968--969
+Overfull \hbox (66.21504pt too wide) in paragraph at lines 969--970
 [][] 
  []
 
@@ -536,58 +533,58 @@ Overfull \hbox (66.21504pt too wide) in paragraph at lines 968--969
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27]
-[28 <./interfazSBC.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1022--1023
+[28 <./interfazSBC.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 1023--1024
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1032--1033
+Underfull \hbox (badness 10000) in paragraph at lines 1033--1034
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1036--1037
+Underfull \hbox (badness 10000) in paragraph at lines 1037--1038
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1042--1043
+Underfull \hbox (badness 10000) in paragraph at lines 1043--1044
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1048--1049
+Underfull \hbox (badness 10000) in paragraph at lines 1049--1050
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1053--1054
+Underfull \hbox (badness 10000) in paragraph at lines 1054--1055
 
  []
 
 [29]
-Underfull \hbox (badness 10000) in paragraph at lines 1065--1066
+Underfull \hbox (badness 10000) in paragraph at lines 1066--1067
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1069--1070
+Underfull \hbox (badness 10000) in paragraph at lines 1070--1071
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1073--1074
+Underfull \hbox (badness 10000) in paragraph at lines 1074--1075
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1079--1080
+Underfull \hbox (badness 10000) in paragraph at lines 1080--1081
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
+Underfull \hbox (badness 10000) in paragraph at lines 1084--1085
 
  []
 
@@ -595,32 +592,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 1083--1084
 Underfull \vbox (badness 2556) has occurred while \output is active []
 
  [30]
-Underfull \hbox (badness 10000) in paragraph at lines 1136--1137
+Underfull \hbox (badness 10000) in paragraph at lines 1137--1138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1142--1143
+Underfull \hbox (badness 10000) in paragraph at lines 1143--1144
 
  []
 
 [31]
-Underfull \hbox (badness 10000) in paragraph at lines 1148--1149
+Underfull \hbox (badness 10000) in paragraph at lines 1149--1150
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1154--1155
+Underfull \hbox (badness 10000) in paragraph at lines 1155--1156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1159--1160
+Underfull \hbox (badness 10000) in paragraph at lines 1160--1161
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1164--1165
+Underfull \hbox (badness 10000) in paragraph at lines 1165--1166
 
  []
 
@@ -628,48 +625,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 1164--1165
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [32]
-Underfull \hbox (badness 10000) in paragraph at lines 1212--1214
+Underfull \hbox (badness 10000) in paragraph at lines 1213--1215
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1215--1217
+Underfull \hbox (badness 10000) in paragraph at lines 1216--1218
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1219--1221
+Underfull \hbox (badness 10000) in paragraph at lines 1220--1222
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1222--1224
+Underfull \hbox (badness 10000) in paragraph at lines 1223--1225
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1226--1228
+Underfull \hbox (badness 10000) in paragraph at lines 1227--1229
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1230--1232
+Underfull \hbox (badness 10000) in paragraph at lines 1231--1233
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1234--1236
+Underfull \hbox (badness 10000) in paragraph at lines 1235--1237
 
  []
 
 [33] [34]
-Underfull \hbox (badness 2698) in paragraph at lines 1245--1249
+Underfull \hbox (badness 2698) in paragraph at lines 1246--1250
 []\OT1/cmr/m/n/9 Vladyslav Kruglyk and Mi-chael Lvov. Kher-son Sta-te Uni-ver-s
 ity. Ukrai-ne.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1254--1256
+Underfull \hbox (badness 10000) in paragraph at lines 1255--1257
 []\OT1/cmr/m/n/9 Yoshitaka Shiot-su. (2014). https://www.odesk.com/blog/2014/03
 /web-
  []
@@ -683,29 +680,29 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2909 strings out of 493117
- 39561 string characters out of 6135433
- 150286 words of memory out of 5000000
- 6335 multiletter control sequences out of 15000+600000
- 10684 words of font info for 37 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 38i,15n,30p,1317b,384s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></
-usr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
-sr/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
-r/local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-local/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
-cal/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/loca
-l/texlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on conocimientos.pdf (35 pages, 319591 bytes).
+ 2823 strings out of 493304
+ 37898 string characters out of 6139871
+ 148795 words of memory out of 5000000
+ 6239 multiletter control sequences out of 15000+600000
+ 11033 words of font info for 38 fonts, out of 8000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 38i,15n,26p,1317b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
+Output written on conocimientos.pdf (35 pages, 327968 bytes).
 PDF statistics:
- 169 PDF objects out of 1000 (max. 8388607)
- 115 compressed objects within 2 object streams
+ 173 PDF objects out of 1000 (max. 8388607)
+ 118 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
