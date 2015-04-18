@@ -1,0 +1,5 @@
+%Ejercicio 27
+
+A(X):- write(A), write(X).
+ficha(T(H)):- write(T), ficha(H).
+ficha(H):- write(H).

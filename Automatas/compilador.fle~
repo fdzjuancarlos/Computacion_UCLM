@@ -36,7 +36,7 @@ Expr = ( {Alphabet} | \| | \( | \) | \{ | \} | \[ | \] | \< | \> | \* | \+ | \? 
 %%
 
 
-("regexp" {WhiteSpaces} {Alphabet} \{)+ { 
+("regexp" {WhiteSpaces} {Alphabet} {WhiteSpaces} \{)+ { 
 System.out.println("Dentro de expresion");
 yybegin(expresion);
 }
