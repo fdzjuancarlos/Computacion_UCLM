@@ -1,0 +1,5 @@
+-Leer de alguna manera las premisas y el objetivo (eg. fichero) y añadirlo a la base de hechos y reglas
+
+-Transformar todo a lo que entiende prolog, es decir cambiar (->) y cosas asi por (,) y (;). Esto no es imprescindible.
+
+-Hacer el resolutor en si.
