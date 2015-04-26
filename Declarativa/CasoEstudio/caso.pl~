@@ -22,7 +22,6 @@ resolutor(X, L):- clausula(Y), (resolutor(X,Y,L); resolutor(Y,X,L)).
 resulutor(X, L):- recorrer(X, L, L).
 
 resolutor(X, not(X), _):- write(encontrado).
-resolutor(not(X), X, _):- write(encontrado).
 
 resolutor(not(X), (X;Y), L):- (clausula(Y); esta(Y, L)), !, fail; resolutor(Y, [L|Y]).
 resolutor(not(X), (Y;X), L):- (clausula(Y); esta(Y, L)), !, fail; resolutor(Y, [L|Y]).
@@ -39,41 +38,31 @@ resolutor((Y;X), (Z;not(X)), L):- repeticion(Y, Z, C), (clausula(C); esta(C, L))
 
 
 
-resolutor((not(X);Y), (X;Z), L):- 
-resolutor((not(X);Y), (Z;X), L):- 
-
-resolutor(Y;(not(X)), (X;Z), L):- 
-resolutor(Y;(not(X)), (Z;X), L):- 
+resolutor((Y;X;Z), not(X), L):- (clausula(Y); esta(Y, L)), !, fail; resolutor(Y, [L|Y]).
+resolutor((Y;not(X);Z), X, L):- (clausula(Y); esta(Y, L)), !, fail; resolutor(Y, [L|Y]).
 
 
-resolutor((X;Y;Z), not(X), L):- 
-resolutor((Y;X;Z), not(X), L):-
-resolutor((Y;Z;X), not(X), L):-
+resolutor((Y;X;Z), (not(X); M), L):- repeticion((Y;Z), M, C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
+resolutor((Y;X;Z), (M; not(X)), L):- repeticion((Y;Z), M, C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
+
+resolutor((Y;not(X);Z), (X; M), L):- repeticion((Y;Z), M, C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
+resolutor((Y;not(X);Z), (M; X), L):- repeticion((Y;Z), M, C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
 
 
-resolutor((X;Y;Z), (not(X), M), L):- 
-resolutor((Y;X;Z), (not(X), M), L):-
-resolutor((Y;Z;X), (not(X), M), L):-
+resolutor((Y;X;Z), (not(X); M; N), L):- repeticion((Y;Z), (M;N), C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
 
-resolutor((X;Y;Z), (M, not(X)), L):- 
-resolutor((Y;X;Z), (M, not(X)), L):-
-resolutor((Y;Z;X), (M, not(X)), L):-
+resolutor((X;Y;Z), (M; not(X); N), L):- repeticion((Y;Z), (M;N), C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
+resolutor((Y;X;Z), (M; not(X); N), L):- repeticion((Y;Z), (M;N), C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
+resolutor((Y;Z;X), (M; not(X); N), L):- repeticion((Y;Z), (M;N), C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
 
+resolutor((Y;X;Z), (M; N; not(X)), L):- repeticion((Y;Z), (M;N), C), (clausula(C); esta(C, L)), !, fail; resolutor(C, [L|C]).
 
-resolutor((X;Y;Z), (not(X), M), L):- 
-resolutor((Y;X;Z), (not(X), M), L):-
-resolutor((Y;Z;X), (not(X), M), L):-
-
-resolutor((X;Y;Z), (M, not(X)), L):- 
-resolutor((Y;X;Z), (M, not(X)), L):-
-resolutor((Y;Z;X), (M, not(X)), L):-
 
 
 recorrer(_, [], _):- false.
 recorrer(X, [Y|R], L):- resolutor(X,Y,L); resolutor(Y,X,L); recorrer(X,R,L).
 
 repeticion(X,X,X).
-repeticion(X,Y,(X;Y)).
 
 repeticion((X;Y), X, Y). 
 repeticion((Y;X), X, Y).
@@ -82,24 +71,8 @@ repeticion((X;Y), (X;Z), S):- ((repeticion(Y,Z,S1); repeticion(Z,Y,S1)), S=(X;S1
 repeticion((X;Y), (Z;X), S):- ((repeticion(Y,Z,S1); repeticion(Z,Y,S1)), S=(X;S1)) ; S=(X;Y;Z).
 repeticion((Y;X), (Z;X), S):- ((repeticion(Y,Z,S1); repeticion(Z,Y,S1)), S=(X;S1)) ; S=(X;Y;Z).
 
+repeticion(X,Y,(X;Y)).
+
 esta(_, []):- false.
 esta(X, [X|_]):-!.
 esta(X, [_|R]):- esta(X,R).
-
-%repeticion((Y;X), (X;Z)):-
-
-
-%resolutor((X;Y), (not(X);Y)):- clausula(Y), !, fail; (assertz(clausula(Y)), resolutor(Y)).
-%resolutor((X;Y), (Y;not(X))):- clausula(Y), !, fail; (assertz(clausula(Y)), resolutor(Y)).
-
-%resolutor(not(X), (X;Y)):- clausula(Y), !, fail; (assertz(clausula(Y)), resolutor(Y)).
-%resolutor(not(Y), (X;Y)):- clausula(X), !, fail; (assertz(clausula(X)), resolutor(X)).
-
-%resolutor((not(X);Y), X):- clausula(Y), !, fail; (assertz(clausula(Y)), resolutor(Y)).
-%resolutor((X;not(Y)), Y):- clausula(X), !, fail; (assertz(clausula(X)), resolutor(X)).
-
-%resolutor((not(X);Y), (X;Y)):- clausula(Y), !, fail; (assertz(clausula(Y)), resolutor(Y)).
-%resolutor((X;not(Y)), (X;Y)):- clausula(X), !, fail; (assertz(clausula(X)), resolutor(X)).
-
-%resolutor((not(X);Y), (X;Z)):- clausula(Y), !, fail; (assertz(clausula(Y;Z)), resolutor(Y;Z)).
-%resolutor((X;not(Y)), (Z;Y)):- clausula(X), !, fail; (assertz(clausula(X;Z)), resolutor(X;Z)).
