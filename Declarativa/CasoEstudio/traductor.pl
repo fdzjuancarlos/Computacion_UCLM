@@ -48,7 +48,7 @@ f2c(X, Clausula):- term_to_atom(X,Clausula).
 %clausula(p; q).
 %clausula(not(p); q).
 %clausula(p; not(q)).
-clausula(not(p); not(q)).
+%clausula(not(p); not(q)).
 
 resolutor:- clausula(X), resolutor(X), !.
 resolutor(X):- clausula(Y), resolutor(X,Y).
