@@ -73,10 +73,11 @@ Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \mult@nat@firstbox=\box50
 \colbreak@box=\box51
 \multicol@sort@counter=\count95
-) (./aliascnt.sty
-Package: aliascnt 2009/09/08 v1.3 Alias counter (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/aliascnt.sty
+Package: aliascnt 2009/09/08 v1.3 Alias counters (HO)
 
-(./remreset.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/carlisle/remreset.sty))
 \c@chapter=\count96
 LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 362.
 LaTeX Font Info:    Redeclaring math symbol \Delta on input line 363.
@@ -127,7 +128,8 @@ LaTeX Font Info:    Redeclaring math symbol \Omega on input line 372.
 \c@solution=\count114
 \c@remark=\count115
 \headlineindent=\dimen123
-) (/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+)
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2013/12/03 3.9h The Babel package
 
 (/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
@@ -195,28 +197,6 @@ Package: appendix 2009/09/02 v1.2b extra appendix facilities
 (./conocimientos.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
-
-LaTeX Warning: Label `my-label' multiply defined.
-
 )
 \openout1 = `conocimientos.aux'.
 
@@ -234,7 +214,8 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
 LaTeX Font Info:    ... okay on input line 11.
 LaTeX Info: Redefining \. on input line 11.
 LaTeX Info: Redefining \% on input line 11.
- (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count123
 \scratchdimen=\dimen127
@@ -295,437 +276,128 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Overfull \hbox (15.0pt too wide) in paragraph at lines 13--15
-[][]
- []
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 36.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 36.
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <24.88> on input line 17.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <20.74> on input line 17.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 17.
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./conocimientos.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 2.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 2.
-)
-\tf@toc=\write3
-\openout3 = `conocimientos.toc'.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 62--69
 
+ []
 
-[2
-
-] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 83--90
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 112--115
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 91--95
-
- []
-
-[4] [5]
-Underfull \hbox (badness 10000) in paragraph at lines 185--189
-
- []
-
-[6]
-Underfull \hbox (badness 10000) in paragraph at lines 205--211
+Underfull \hbox (badness 10000) in paragraph at lines 116--119
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 212--224
+Underfull \hbox (badness 10000) in paragraph at lines 120--124
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 225--232
+Underfull \hbox (badness 10000) in paragraph at lines 126--130
+
+ []
+
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 190--191
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 234--241
-
- []
-
-[7] [8]
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 299.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 299.
- [9]
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-[10] [11] [12] [13] [14] [15]
-Underfull \hbox (badness 10000) in paragraph at lines 576--577
-
- []
-
-[16]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 594.
-
- (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 594.
-
-Overfull \hbox (10.87605pt too wide) in paragraph at lines 599--600
-[]\OT1/cmr/m/n/10 ASCII (Ame-ri-can Stan-dard Co-de for In-for-ma-tion In-ter-c
-han-ge): C^^Sodi-go est^^Sandar
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 603--605
+Underfull \hbox (badness 10000) in paragraph at lines 194--196
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 616--618
-
- []
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 645--647
+Underfull \hbox (badness 10000) in paragraph at lines 199--201
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 662--665
-
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 670--672
+Underfull \hbox (badness 10000) in paragraph at lines 208--210
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 688--690
-
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 697--699
+Underfull \hbox (badness 10000) in paragraph at lines 214--216
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 710--712
+Underfull \hbox (badness 10000) in paragraph at lines 219--221
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 730--732
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 735--737
-
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 756--758
-
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 783--785
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 790--792
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 801--803
-
- []
-
-[22]
-Overfull \hbox (5.57152pt too wide) in paragraph at lines 838--840
-[]\OT1/cmr/m/n/10 Protocolo: De-fi-ni-ci^^Son del sis-te-ma de co-mu-ni-ca-ci^^
-Son de una compu-tado-ra. Acuer-
- []
-
-
-Overfull \hbox (4.43263pt too wide) in paragraph at lines 838--840
-\OT1/cmr/m/n/10 do en-tre di-fe-ren-tes sis-te-mas pa-ra tra-ba-jar con-jun-ta-
-men-te ba-jo un est^^Sandar com^^Sun.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 838--840
-
- []
-
-[23]
-Underfull \hbox (badness 10000) in paragraph at lines 851--853
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 879--881
-
- []
-
-[24]
-Underfull \hbox (badness 10000) in paragraph at lines 896--898
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 901--903
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 911--914
-
- []
-
-[25]
-Underfull \hbox (badness 10000) in paragraph at lines 923--925
-
- []
-
-<lenguajes.jpg, id=94, 550.055pt x 305.14pt>
+<lenguajes.jpg, id=20, 550.055pt x 305.14pt> [5]
 File: lenguajes.jpg Graphic file (type jpg)
  <use lenguajes.jpg>
-Package pdftex.def Info: lenguajes.jpg used on input line 930.
+Package pdftex.def Info: lenguajes.jpg used on input line 224.
 (pdftex.def)             Requested size: 284.52756pt x 157.84492pt.
 
-<educativo.png, id=95, 414.54875pt x 233.87375pt>
+<educativo.png, id=24, 414.54875pt x 233.87375pt>
 File: educativo.png Graphic file (type png)
  <use educativo.png>
-Package pdftex.def Info: educativo.png used on input line 934.
-(pdftex.def)             Requested size: 227.62204pt x 128.41325pt.
+Package pdftex.def Info: educativo.png used on input line 226.
+(pdftex.def)             Requested size: 284.52756pt x 160.52371pt.
 
-<comercial.png, id=97, 412.54124pt x 257.96375pt>
-File: comercial.png Graphic file (type png)
- <use comercial.png>
-Package pdftex.def Info: comercial.png used on input line 938.
-(pdftex.def)             Requested size: 227.62204pt x 142.33315pt.
+<esquema.jpg, id=26, 1101.11375pt x 484.81125pt>
+File: esquema.jpg Graphic file (type jpg)
+ <use esquema.jpg>
+Package pdftex.def Info: esquema.jpg used on input line 233.
+(pdftex.def)             Requested size: 398.33858pt x 175.38263pt.
+
+Overfull \hbox (66.21504pt too wide) in paragraph at lines 233--234
+[][] 
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [26 <./lenguajes.jpg> <./educativo.png>]
-<esquema.jpg, id=102, 1101.11375pt x 484.81125pt>
-File: esquema.jpg Graphic file (type jpg)
- <use esquema.jpg>
-Package pdftex.def Info: esquema.jpg used on input line 945.
-(pdftex.def)             Requested size: 398.33858pt x 175.38263pt.
-
-Overfull \hbox (66.21504pt too wide) in paragraph at lines 945--946
-[][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 952--955
-
- []
-
-[27 <./comercial.png> <./esquema.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 1011--1012
-
- []
-
-[28] <interfazSBC.PNG, id=111, 774.64406pt x 341.02406pt>
-File: interfazSBC.PNG Graphic file (type png)
-
-<use interfazSBC.PNG>
-Package pdftex.def Info: interfazSBC.PNG used on input line 1015.
-(pdftex.def)             Requested size: 398.33858pt x 175.36136pt.
-
-Overfull \hbox (66.21504pt too wide) in paragraph at lines 1015--1016
-[][] 
- []
-
-[29 <./interfazSBC.PNG>] [30]
-Underfull \hbox (badness 2698) in paragraph at lines 1035--1039
+ [6 <./lenguajes.jpg> <./educativo.png>] [7 <./esquema.jpg>] [8]
+Underfull \hbox (badness 2698) in paragraph at lines 299--303
 []\OT1/cmr/m/n/9 Vladyslav Kruglyk and Mi-chael Lvov. Kher-son Sta-te Uni-ver-s
 ity. Ukrai-ne.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1044--1046
+Underfull \hbox (badness 10000) in paragraph at lines 308--310
 []\OT1/cmr/m/n/9 Yoshitaka Shiot-su. (2014). https://www.odesk.com/blog/2014/03
 /web-
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 1099--1100
-
- []
-
-[31]
-Underfull \hbox (badness 10000) in paragraph at lines 1109--1110
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1113--1114
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1119--1120
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1125--1126
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1130--1131
-
- []
-
-[32]
-Underfull \hbox (badness 10000) in paragraph at lines 1142--1143
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1146--1147
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1150--1151
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1156--1157
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1160--1161
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [33]
-Underfull \hbox (badness 10000) in paragraph at lines 1213--1214
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1219--1220
-
- []
-
-[34]
-Underfull \hbox (badness 10000) in paragraph at lines 1225--1226
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1231--1232
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1236--1237
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1241--1242
-
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [35]
-Underfull \hbox (badness 10000) in paragraph at lines 1289--1291
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1292--1294
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1296--1298
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1299--1301
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1303--1305
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1307--1309
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 1311--1313
-
- []
-
-[36] [37] (./conocimientos.aux
+[9] (./conocimientos.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
-)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+) ) 
 Here is how much of TeX's memory you used:
- 2838 strings out of 493304
- 38150 string characters out of 6139871
- 148795 words of memory out of 5000000
- 6251 multiletter control sequences out of 15000+600000
- 11033 words of font info for 38 fonts, out of 8000000 for 9000
+ 2757 strings out of 493304
+ 37239 string characters out of 6139871
+ 112748 words of memory out of 5000000
+ 6189 multiletter control sequences out of 15000+600000
+ 6460 words of font info for 23 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 38i,15n,26p,1317b,292s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb>
-Output written on conocimientos.pdf (37 pages, 363762 bytes).
+ 38i,7n,26p,583b,222s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texl
+ive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmti7.pfb>
+Output written on conocimientos.pdf (9 pages, 171195 bytes).
 PDF statistics:
- 187 PDF objects out of 1000 (max. 8388607)
- 125 compressed objects within 2 object streams
+ 67 PDF objects out of 1000 (max. 8388607)
+ 44 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 26 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -923,12 +923,24 @@ Wiki: Forma de sitio web en donde se acepta que usuarios creen, editen, borren o
 World Wide Web (www). Sistema de organización de la información de Internet a través de enlaces hipertexto. En sentido estricto es el conjunto de servidores que emplean el protocolo HTTP.
 \\
 
+Aquí se muestran también algunas ontologías sobre los lenguajes de programación que se usarán.
 
+Estos son los lenguajes que vamos a tratar a lo largo del proyecto:
 
-%Falta la/s ontologia/s
+\includegraphics[width=10cm]{lenguajes}
+
+Aquí mostramos los lenguajes que son los indicados cuando queremos aprender, o para el ámbito educativo de niños o personas muy mayores sin conocimientos:
+
+\includegraphics[width=8cm]{educativo}
+
+Por otra parte, estos son aquellos que tienen una orientación mas comercial, para aquellos que quieran hacer de la programación su oficio, o al menos un negocio relativamente rentable.
+
+\includegraphics[width=8cm]{comercial}
+
 
 \subsubsection{Conocimientos Estratégicos}
 Especifican qué hacer, dónde y por qué hacerlo, es decir, fijan la secuencia de pasos que el SE deberá seguir para ejecutar su tarea.
+A continuación se especifican una serie de pseudoreglas que definen como funciona el sistema.
 
 \includegraphics[width=14cm]{esquema}
 
@@ -937,7 +949,41 @@ Especifican qué hacer, dónde y por qué hacerlo, es decir, fijan la secuencia de 
 
 \subsubsection{Conocimientos Tácticos}
 
-De acción u operativos, especifican cómo y cuándo el SE puede añadir a sus conocimientos genéricos información actual acerca del caso
+De acción u operativos, especifican cómo y cuándo el SE puede añadir a sus conocimientos genéricos información actual acerca del caso.
+En este caso, se van a usar pseudoreglas, que representan en un lenguaje mas natural como funcionará nuestro sistema internamente. Consisten en una serie de condiciones que si se cumplen disparan una acción, que puede ser poner un elemento a verdadero que en un futuro será la condición de otra pseudoregla, o bien nos sugiere el lenguaje de programación que ha concluido debemos usar/aprender.
+\\
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R1}} \\ 
+\hline 
+Si & tiene experiencia \\ 
+\hline 
+Entonces & Exp \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R2}} \\ 
+\hline 
+Si & no tiene experiencia \\ 
+\hline 
+Entonces & Aprender \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R2}} \\ 
+\hline 
+Si & Aprender \\ 
+\hline 
+Y & curva de aprendizaje muy fácil \\ 
+\hline 
+Entonces & AppInventor \\ 
+\hline 
+\end{tabular} 
 
 %Sobre todo reglas
 
@@ -972,6 +1018,36 @@ Tanto la aplicación de escritorio como en la aplicación móvil, el usuario irá re
 
 
 
+\section{Conclusiones y trabajo futuro}
+
+Como conclusiones, destacar que se ha conseguido llevar a cabo el proyecto previsto, proporcionando una herramienta que de manera sencilla aconseja o recomienda a un público muy variado el lenguaje de programación que mejor se adapte a sus necesidades. 
+De la evaluación del estado del arte se ha podido comprobar que no existe ningún trabajo similar (al menos serio). Casi toda la información relacionada con este tipo de sistemas que una persona sin un alto grado de experticidad puede tener a su disposición esta recogida en blogs y es mayoritariamente de opiniones de usuarios amateurs. Por el contrario este proyecto cuenta con la participación de grandes expertos y con las fuentes mas fiables de las que se ha podido disponer.
+
+Por supuesto al ser un mercado tan cambiante el mercado tecnológico con el que tan ligados están los lenguajes de programación, este sistema necesita de una actualización continua. Además estas actualizaciones se podrían automatizar extrayendo de alguna fuente de información fiable que lenguajes se usan mas y para que, aunque este seria un cambio completo de orientación del proyecto.
+
+
+\newpage
+\begin{thebibliography}{1}
+  \bibitem {kish}
+Kish Waukee College.
+Expert System for Choosing a Programming Language
+  \bibitem {vladys}
+Vladyslav Kruglyk
+ and Michael Lvov.
+Kherson State University. Ukraine. 
+http://ceur-ws.org/Vol-848/ICTERI-2012-CEUR-WS-paper-37-p-188-198.pdf
+  \bibitem {lisa}
+    Lisa Eadicicco
+    Business Insider. (2014). 
+http://www.businessinsider.com/best-tech-skills-resume-ranked-salary-2014-11
+  \bibitem {yoshi}
+    Yoshitaka Shiotsu. (2014).
+https://www.odesk.com/blog/2014/03/web-development-101-top-web-development-languages-2014/
+  \bibitem {udemy}
+    Kasia Mikoluk. (2013).
+    https://blog.udemy.com/best-programming-language/
+\end{thebibliography}
+%Arch. Rat. Mech. Anal. 78, 315--333 (1982) \end{thebibliography}
 
 \appendix
 \section{Entrevista David Villa Alises}
@@ -1234,31 +1310,6 @@ Especializarte en un lenguaje como por ejemplo .NET y dedicarte a ello, pero ya 
 \textit{¿Existe actualmente algún lenguaje de alguna tecnología específica
 que considera interesante para orientar tu carrera laboral?}
 Tal y como avanzan las cosas, hay 2 alternativas, un trabajo de desarrollo en un lenguaje de propósito general tipo Java o tipo C\# o aprender un lenguaje de programación que encaje bien con el BigData.\\
-
-
-
-\newpage
-\begin{thebibliography}{1}
-  \bibitem {kish}
-Kish Waukee College.
-Expert System for Choosing a Programming Language
-  \bibitem {vladys}
-Vladyslav Kruglyk
- and Michael Lvov.
-Kherson State University. Ukraine. 
-http://ceur-ws.org/Vol-848/ICTERI-2012-CEUR-WS-paper-37-p-188-198.pdf
-  \bibitem {lisa}
-    Lisa Eadicicco
-    Business Insider. (2014). 
-http://www.businessinsider.com/best-tech-skills-resume-ranked-salary-2014-11
-  \bibitem {yoshi}
-    Yoshitaka Shiotsu. (2014).
-https://www.odesk.com/blog/2014/03/web-development-101-top-web-development-languages-2014/
-  \bibitem {udemy}
-    Kasia Mikoluk. (2013).
-    https://blog.udemy.com/best-programming-language/
-\end{thebibliography}
-%Arch. Rat. Mech. Anal. 78, 315--333 (1982) \end{thebibliography}
 
 
 \end{document}

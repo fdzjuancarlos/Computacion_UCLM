@@ -1,0 +1,22 @@
+\select@language {spanish}
+\contentsline {title}{Sistema Experto de recomendaci\'on de lenguaje de programaci\'on}{3}
+\authcount {2}
+\contentsline {author}{Juan Carlos Fern\'andez Dur\'an \and Victor Gualdr\'as de la Cruz}{3}
+\contentsline {section}{\numberline {1}Introducci\'on}{4}
+\contentsline {subsection}{\numberline {1.1}Planteamiento del Problema}{4}
+\contentsline {subsection}{\numberline {1.2}Objetivos y Alcance}{4}
+\contentsline {subsection}{\numberline {1.3}Los Expertos}{4}
+\contentsline {subsection}{\numberline {1.4}Los usuarios finales del sistema}{5}
+\contentsline {section}{\numberline {2}Estado del Arte}{5}
+\contentsline {subsection}{\numberline {2.1}Revisi\'on Bibliogr\'afica}{5}
+\contentsline {section}{\numberline {3}Estudio de viabilidad. Test de Slagle}{6}
+\contentsline {section}{\numberline {4}Adquisici\'on del conocimiento}{6}
+\contentsline {subsection}{\numberline {4.1}El Proceso de las Entrevistas}{6}
+\contentsline {subsection}{\numberline {4.2}Entrevistas y sus resultados}{6}
+\contentsline {subsection}{\numberline {4.3}El proceso de conceptualizaci\'on}{7}
+\contentsline {subsection}{\numberline {4.4}Conceptualizaci\'on y sus resultados}{7}
+\contentsline {subsubsection}{Conocimientos Factuales}{7}
+\contentsline {subsubsection}{Conocimientos Estrat\'egicos}{8}
+\contentsline {subsubsection}{Conocimientos T\'acticos}{8}
+\contentsline {section}{\numberline {5}Implementaci\'on}{8}
+\contentsline {subsection}{\numberline {5.1}Interfaz Gr\'afica de Usuario}{9}
