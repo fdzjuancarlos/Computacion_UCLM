@@ -1,10 +1,15 @@
 Parte resumen de conceptos teoricos y prácticas:
 
-El razonamiento es la habilidad de hacer inferencias, así el razonamiento automático se refiere a la construcción de sistemas informáticos que automatizan este proceso. La construcción de un programa de razonamiento automatizado significa proporcionar una descripción algorítmica a un cálculo formal para que pueda ser implementado en una computadora para demostrar teoremas del cálculo de manera eficiente. 
+La demostración automática de teoremas (de siglas ATP, por el término en inglés: Automated theorem proving) que también puede ser denominada Deducción automatizada, es actualmente el subcampo más desarrollado del razonamiento automático, y se encarga de la demostración de teoremas matemáticos mediante programas de ordenador.
 
+La construcción de un programa de demostración automatizado significa proporcionar una descripción algorítmica a un cálculo formal para que pueda ser implementado en una computadora para demostrar teoremas de manera eficiente. 
+
+La idea de resolución se fundamenta en que si un conjunto de cláusulas es insatisfacible enotnces a partir de él podrá deducirse la cláusula vacía. La estrategia de resolución lineal es una herramienta que nos permite localizar esa cláusula vacía. Su funcionamiento es el siguiente. Comenzando con una cláusula, se resuelve esta contra otra para obtener un resolvente que, a su vez, será resuelto con otra, repitiendo el proceso anterior tantas veces como sea necesario.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Documentación del codigo:
 
-La regla principal del resolutor se llama, valga la redundancia, resolutor. Se invocaría primero resolutor/0 (donde 0 es la aridad) coge la primera claúsula perteneciente al conjunto de claúsulas que haya en la base de hechos, e invoca a resolutor/2 con la claúsula seleccionada. Esta regla va probando cogiendo una claúsula de la base de hechos para comprobar si llega a la claúsula vacía, en caso contrario prueba con las claúsulas laterales, y si tampoco tiene éxito retrocede hasta resolutor/0 y prueba a elegir otra claúsula.
+La regla principal del resolutor se llama, valga la redundancia, resolutor. Se invocaría primero resolutor/0 (donde 0 es la aridad) coge la primera claúsula perteneciente al conjunto de claúsulas que haya en la base de hechos, e invoca a resolutor/2 con la claúsula seleccionada. Esta regla va probando, cogiendo claúsulas de la base de hechos para comprobar si llega a la claúsula vacía, en caso contrario prueba con las claúsulas laterales, y si tampoco tiene éxito retrocede hasta resolutor/0 y prueba a elegir otra claúsula. Cada vez que se aplica el proceso de resolución, se toma la clausula resultante que se denomina resolvente, y se prueba a aplicar de nuevo este proceso, probando primero con las clausulas de la base de hechos o si no consigue nada, probando con las cláusulas añadidas previamente denominadas cláusulas laterales. Este proceso se repite hasta dar con la cláusula vacía.
 
 El funcionamiento interno del resolutor es buscar dentro de dos cláusulas dos proposiciones iguales, una negada y la otra no, para poder aplicar el mecanismo de resolución. Además se asegura de que no se introducen proposiciones iguales (por ejemplo: p^p^q), y que no se introducen claúsulas que ya existan en el conjunto de las claúsulas laterales para no incurrir en bucles.
 
