@@ -953,15 +953,20 @@ De acción u operativos, especifican cómo y cuándo el SE puede añadir a sus conoc
 En este caso, se van a usar pseudoreglas, que representan en un lenguaje mas natural como funcionará nuestro sistema internamente. Consisten en una serie de condiciones que si se cumplen disparan una acción, que puede ser poner un elemento a verdadero que en un futuro será la condición de otra pseudoregla, o bien nos sugiere el lenguaje de programación que ha concluido debemos usar/aprender.
 \\
 
+%primero comprueba si tiene experiencia. Si la tiene vemos cual es fu finalidad
+
 \begin{tabular}{|l|l|}
 \hline 
 \multicolumn{2}{|l|}{\textbf{R1}} \\ 
 \hline 
 Si & tiene experiencia \\ 
 \hline 
-Entonces & Exp \\ 
+Entonces & Finalidad \\ 
 \hline 
 \end{tabular} 
+
+%analiza el no tiene experiencia, hay dos opciones, que quiera aprender a programar en plan los conceptos, o que quiera hacer ya algo serio directamente. 
+%Esto es apreder los fundamentos
 
 \begin{tabular}{|l|l|}
 \hline 
@@ -969,23 +974,332 @@ Entonces & Exp \\
 \hline 
 Si & no tiene experiencia \\ 
 \hline 
-Entonces & Aprender \\ 
+Entonces & NoExp \\ 
 \hline 
 \end{tabular} 
 
 \begin{tabular}{|l|l|}
 \hline 
-\multicolumn{2}{|l|}{\textbf{R2}} \\ 
+\multicolumn{2}{|l|}{\textbf{R3}} \\ 
 \hline 
-Si & Aprender \\ 
+Si & NoExp \\ 
 \hline 
-Y & curva de aprendizaje muy fácil \\ 
+Y & Aprender fundamentos \\ 
 \hline 
-Entonces & AppInventor \\ 
+Entonces & Aprender \\ 
 \hline 
 \end{tabular} 
 
-%Sobre todo reglas
+%Esto es buscar finalidad.
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R4}} \\ 
+\hline 
+Si & NoExp \\ 
+\hline 
+Y & Finalidad concreta \\ 
+\hline 
+Entonces & Finalidad \\ 
+\hline 
+\end{tabular} 
+
+%empieza con todo el tema de aprender bien los fundamentos, que le da la opción entre varias curvas de aprendizaje
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R5}} \\ 
+\hline 
+Si & Aprender \\ 
+\hline 
+Y & curva de aprendizaje muy fácil o lenguaje para niños o ancianos \\ 
+\hline 
+Entonces & $\underline{AppInventor}$ o $\underline{Scratch}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R6}} \\ 
+\hline 
+Si & Aprender \\ 
+\hline 
+Y & curva de aprendizaje fácil \\ 
+\hline 
+Entonces & $\underline{Python}$ o $\underline{Ruby on Rails}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R7}} \\ 
+\hline 
+Si & Aprender \\ 
+\hline 
+Y & curva de aprendizaje normal \\ 
+\hline 
+Entonces & $\underline{Java}$ o $\underline{.Net}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R8}} \\ 
+\hline 
+Si & Aprender \\ 
+\hline 
+Y & curva de aprendizaje difícil \\ 
+\hline 
+Entonces & $\underline{C}$ o $\underline{C++}$\\ 
+\hline 
+\end{tabular} 
+
+%Aqui mira la finalidad, distingue entre hobbie, o si va a ser para aprender algun paradigma (POO, Logica o funcional).
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R9}} \\ 
+\hline 
+Si & Finalidad \\ 
+\hline 
+Y & Finalidad es hobbie o complementaria \\ 
+\hline 
+Entonces & complementaria\\ 
+\hline 
+\end{tabular} 
+
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R10}} \\ 
+\hline 
+Si & Complementaria \\ 
+\hline 
+Y & Aprender paradigma \\ 
+\hline 
+Entonces & AprenderParadigma \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R11}} \\ 
+\hline 
+Si & AprenderParadigma \\ 
+\hline 
+Y & Programación orientada a objetos \\ 
+\hline 
+Entonces & $\underline{Java}$ \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R12}} \\ 
+\hline 
+Si & AprenderParadigma \\ 
+\hline 
+Y & Programación lógica \\ 
+\hline 
+Entonces & $\underline{Prolog}$ \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R13}} \\ 
+\hline 
+Si & AprenderParadigma \\ 
+\hline 
+Y & Programación funcional \\ 
+\hline 
+Entonces & $\underline{Haskell}$ \\ 
+\hline 
+\end{tabular} 
+
+%Aqui mira si es para alguna aplicación. Este es en el que seria bueno un desplegable por todas las opciones
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R14}} \\ 
+\hline 
+Si & Complementaria \\ 
+\hline 
+Y & Aplicación específica \\ 
+\hline 
+Entonces & Aplicación \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R15}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Programación web \\ 
+\hline 
+Entonces & Pweb \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R16}} \\ 
+\hline 
+Si & Pweb \\ 
+\hline 
+Y & Parte cliente \\ 
+\hline 
+Entonces & $\underline{JavaScript}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R17}} \\ 
+\hline 
+Si & Pweb \\ 
+\hline 
+Y & Parte servidor \\ 
+\hline 
+Entonces & $\underline{JavaScript}$ o $\underline{Go}$ o $\underline{Ruby on Rails}$ \\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R18}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Videojuegos \\ 
+\hline 
+Entonces & $\underline{C++}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R19}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Aplicaciones móviles \\ 
+\hline 
+Entonces & $\underline{Android -> Java}$ $\underline{iOs -> ObjetiveC}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R19}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Multiplataforma \\ 
+\hline 
+Entonces & $\underline{Java}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R20}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Ámbito científico \\ 
+\hline 
+Entonces & $\underline{Matlab}$ $\underline{Python}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R21}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Sistemas Expertos \\ 
+\hline 
+Entonces & $\underline{Lisp}$ $\underline{Prolog}$\\ 
+\hline 
+\end{tabular}
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R22}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Sistemas distribuidos \\ 
+\hline 
+Entonces & $\underline{C}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R23}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Procesadores de lenguaje natural \\ 
+\hline 
+Entonces & $\underline{Prolog}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R24}} \\ 
+\hline 
+Si & Aplicación \\ 
+\hline 
+Y & Bases de Datos \\ 
+\hline 
+Entonces & $\underline{SQL}$\\ 
+\hline 
+\end{tabular} 
+
+%Este deberia aparecer cuando mira la finalidad, pero ya me daba pereza cambiar todos los numeros otra vez.
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R25}} \\ 
+\hline 
+Si & Finalidad \\ 
+\hline 
+Y & Finalidad es económica \\ 
+\hline 
+Entonces & Económica\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R26}} \\ 
+\hline 
+Si & Económica \\ 
+\hline 
+Y & Lenguaje mejor pagado \\ 
+\hline 
+Entonces & $\underline{PL-SQL}$\\ 
+\hline 
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline 
+\multicolumn{2}{|l|}{\textbf{R27}} \\ 
+\hline 
+Si & Económica \\ 
+\hline 
+Y & Lenguaje con mayor demanda \\ 
+\hline 
+Entonces & $\underline{Java}$ o $\underline{C#}$ o $\underline{.NET}$ + $\underline{Framework específico}$\\ 
+\hline 
+\end{tabular} 
 
 \section{Implementación}
 
