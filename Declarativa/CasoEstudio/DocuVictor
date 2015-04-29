@@ -1,0 +1,23 @@
+Parte resumen de conceptos teoricos y prácticas:
+
+El razonamiento es la habilidad de hacer inferencias, así el razonamiento automático se refiere a la construcción de sistemas informáticos que automatizan este proceso. La construcción de un programa de razonamiento automatizado significa proporcionar una descripción algorítmica a un cálculo formal para que pueda ser implementado en una computadora para demostrar teoremas del cálculo de manera eficiente. 
+
+Documentación del codigo:
+
+La regla principal del resolutor se llama, valga la redundancia, resolutor. Se invocaría primero resolutor/0 (donde 0 es la aridad) coge la primera claúsula perteneciente al conjunto de claúsulas que haya en la base de hechos, e invoca a resolutor/2 con la claúsula seleccionada. Esta regla va probando cogiendo una claúsula de la base de hechos para comprobar si llega a la claúsula vacía, en caso contrario prueba con las claúsulas laterales, y si tampoco tiene éxito retrocede hasta resolutor/0 y prueba a elegir otra claúsula.
+
+El funcionamiento interno del resolutor es buscar dentro de dos cláusulas dos proposiciones iguales, una negada y la otra no, para poder aplicar el mecanismo de resolución. Además se asegura de que no se introducen proposiciones iguales (por ejemplo: p^p^q), y que no se introducen claúsulas que ya existan en el conjunto de las claúsulas laterales para no incurrir en bucles.
+
+A continuación se muestra una breve API de las funciones que se encuentran en el modulo Resolutor:
+
+-resolutor/0: Selecciona una claúsula de las centrales e invoca Resolutor/2.
+
+-resolutor/2: Toma una claúsula perteneciente al conjunto de claúsulas laterales e invoca resolutor/3 con la claúsula central y lateral seleccionadas y la lista de claúsulas laterales.
+
+-resolutor/3: Aplica el mecanismo de resolución lineal mediante las claúsulas seleccionadas por Resolutor/2.
+
+-recorrer/3: Esta regla recorre la lista de claúsulas laterales para intentar buscar una con la que llegar a la claúsula vacía.
+
+-repeticion/3: Se asegura de que no se introducen claúsulas con proposiciones repetidas.
+
+-esta/2: Comprueba si ya existe una claúsula determinada en el conjunto de laterales para no incurrir en bucles.
