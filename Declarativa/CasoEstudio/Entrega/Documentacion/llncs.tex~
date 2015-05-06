@@ -1,0 +1,159 @@
+% This is LLNCS.DOC the documentation file of
+% the LaTeX2e class from Springer-Verlag
+% for Lecture Notes in Computer Science, version 2.4
+\documentclass{llncs}
+\usepackage{llncsdoc}
+\usepackage[latin1]{inputenc}
+%
+\begin{document}
+\markboth{\LaTeXe{} Class for Lecture Notes in Computer
+Science}{\LaTeXe{} Class for Lecture Notes in Computer Science}
+\thispagestyle{empty}
+\begin{flushleft}
+\LARGE\bfseries Instructions for Authors\\
+Coding with \LaTeX\\[2cm]
+\end{flushleft}
+\rule{\textwidth}{1pt}
+\vspace{2pt}
+\begin{flushright}
+\Huge
+\begin{tabular}{@{}l}
+\LaTeXe{} Class\\
+for Lecture Notes\\
+in Computer Science\\[6pt]
+{\Large Version 2.4}
+\end{tabular}
+\end{flushright}
+\rule{\textwidth}{1pt}
+\vfill
+%\begin{flushleft}
+%\large\itshape
+%\begin{tabular}{@{}l}
+%{\Large\upshape\bfseries Springer}\\[8pt]
+%Berlin\enspace Heidelberg\enspace New\kern0.1em York\\[5pt]
+%Barcelona\enspace Budapest\enspace Hong\kern0.2em Kong\\[5pt]
+%London\enspace Milan\enspace Paris\enspace\\[5pt]
+%Santa\kern0.2em Clara\enspace Singapore\enspace Tokyo
+%\end{tabular}
+%\end{flushleft}
+\newpage
+%
+\section*{For further information please contact us:}
+%
+\begin{flushleft}
+\begin{tabular}{l@{\quad}l@{\hspace{3mm}}l@{\qquad}l}
+$\bullet$&\multicolumn{3}{@{}l}{\bfseries LNCS Editorial Office}\\[1mm]
+&\multicolumn{3}{@{}l}{Springer-Verlag}\\
+&\multicolumn{3}{@{}l}{Computer Science Editorial}\\
+&\multicolumn{3}{@{}l}{Tiergartenstraße 17}\\
+&\multicolumn{3}{@{}l}{69121 Heidelberg}\\
+&\multicolumn{3}{@{}l}{Germany}\\[0.5mm]
+ & Tel:       & +49-6221-487-8706\\
+ & Fax:       & +49-6221-487-8588\\
+ & e-mail:    & \tt lncs@springer.com    & for editorial questions\\
+ &            & \tt texhelp@springer.de & for \TeX{} problems\\[2mm]
+\noalign{\rule{\textwidth}{1pt}}
+\noalign{\vskip2mm}
+%
+%{\tt svserv@vax.ntp.springer.de}\hfil first try the \verb|help|
+%command.
+%
+$\bullet$&\multicolumn{3}{@{}l}{\bfseries We are also reachable through the world wide web:}\\[1mm]
+         &\multicolumn{2}{@{}l}{\texttt{http://www.springer.com}}&Springer Global Website\\
+         &\multicolumn{2}{@{}l}{\texttt{http://www.springer.com/lncs}}&LNCS home page\\
+         &\multicolumn{2}{@{}l}{\texttt{http://www.springerlink.com}}&data repository\\
+         &\multicolumn{2}{@{}l}{\texttt{ftp://ftp.springer.de}}&FTP server
+\end{tabular}
+\end{flushleft}
+
+
+%
+\newpage
+\tableofcontents
+\newpage
+%
+\section{Introducción}
+
+En esta sección realizaremos una introducción acerca del Sistema Experto de recomendación de lengauje de 
+Programación en el que quedará definido nuestro problema, definiendo a su vez el alcance que abarcará nuestro
+sistema experto y de cuáles son los objetivos que satisfará el mismo. Presentaremos los expertos de los cuales
+se obtendrá el conocimiento experto y a qué tipo de usuario estará dirigido nuestro Sistema Experto
+
+
+\subsection{Planteamiento del Problema}
+
+El mundo de la informática es demasiado grande y muchas veces la tecnología y tendencias actuales suelen variar
+con rapidez, esto puede ser desconcertante para las personas que dedicamos nuestra vida diaria a este campo, 
+entre ellos, los informáticos.
+ Muchas veces, nos vemos en la situación de querer abordar un nuevo problema, queremos especializarnos en
+ un campo específco, pero no conocemos las herramientas apropiadas para ello, en nuestro caso, los lenguajes de
+ programación, los cuales se caracterizan porque no existe uno que predomine sobre todos, ya que cada uno
+ se adapta mejor a unos problemas que otros abordan peor.\\
+
+Sin embargo, en la vida real, tampoco hay 1 lenguaje específico para cada tipo de problema, si es cierto que,
+existen unos determinados lenguajes de programación más importantes que otros a la hora de abordad una
+temática concreta, por ejemplo, la programación en dispositivos móviles, la programación de sistemas empotrados,
+ la programación de un sistema experto o incluso un lenguaje que sea más didactico para aprender a programar.\\
+
+ En base a unas características recomendaremos el lenguaje de programación que más adecuado al usuario según
+ sus necesidades o preocupaciones. En este sistema experto nos centraremos en las necesidades más comunes,
+ como por ejemplo, necesidades empresariales que van fuertemente ligadas a una tecnología, como los
+ dispositivos Smartphone, de entre los que se pueden diferenciar principalmente los sistemas Android y los
+ sistemas iOS. También estudiaremos los lenguajes recomendados para aplicaciones convencionales de escritorio por ejemplo
+ de gestión, programación de microcontroladores, campo de los videojuegos o desarrollo de páginas web entre
+ otros.
+
+
+\subsection{Objetivos y Alcance}
+
+El objetivo de nuestro sistema experto es proporcionar al usuario un lenguaje de programación que se adapte
+a sus problemas y necesidades, pudiendo estas diferir de varias formas, los campos de aplicación para nuestro
+sistema experto serán:
+
+\begin{itemize}
+  \item Aplicaciones de sobremesa
+  \item Aplicaciones multiplataforma
+  \item Páginas Web
+  \item Aprendizaje
+  \item Sistemas Expertos
+  \item Videojuegos
+  \item Aplicaciones para móviles
+  \item Microcontroladores
+  \item Conocer un determinado paradigma (POO por ejemplo)
+\end{itemize}
+
+\subsection{Los Expertos}
+
+El conocimiento será adquirido principalmente de 3 expertos, siendo todos profesores con actividades docentes
+en la Escuela Superior de Informática de la UCLM
+
+\begin{itemize}
+  \item \textbf{Pascual Julián Iranzo}: Doctorado en Ciencias de la Computación, con actividad docente en
+    Lógica y Programación declarativa durante 18 años, experto en Sistemas Inteligentes proporcionará el
+    conocimiento necesario acerca de la rama de la Programación Declarativa, sus ventajas frente a la
+    Programación Imperativa así como de Sistemas Inteligentes.
+  \item \textbf{David Villa Alises}: Doctorado en Ingenería Informática, miembro del grupo de investigación
+    \textbf{Arco} con actividad docente en Redes de Computadores y Sistemas Distribuidos.
+  \item \textbf{Ismael Caballero Muñoz-Reja}:HTTP Error 404. The requested resource is not found.
+\end{itemize}
+
+\subsection{Los usuarios finales del sistema}
+
+\end{document}
+
+% \\   Forzar algo más de espacio entre párrafos
+
+%  \textbf{Texto en negrita}
+
+%  \begin{itemize}
+%    \item Tu lista
+%    \item de objetos
+%  \end{itemize} Además se puede anidar con otro begin itemize para sublistas de objetos
+
+% \newpage  Forzar nueva página
+
+% Las imágenes aún no las entiendo porque es complicado, lo suyo es echarle un google
+
+% Cualquier otra cosa que se necesite echandole 1 google en inglés siempre hay alguien que lo resuelve,
+% está muy bien documentado, yo ya te digo que no he necesitado aprender LaTeX como tal si no que me he
+% puesto sobre la marcha buscando lo que necesitaba y aquí estoy
