@@ -1,0 +1,234 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or epsÂ§ with pdflatex; use eps in DVI mode
+				
+\usepackage{pdfpages}
+\usepackage{eurosym}
+
+
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage[latin1]{inputenc}
+\usepackage{framed}
+
+
+\title{Ingenieria del Software II}
+%\date{}							% Activate to display a given date or no date
+
+\begin{document}
+
+
+%\addto\captionsspanish{%
+  %\renewcommand\contentsname{}}
+%\begin{flushleft}
+%\large\itshape
+%\begin{tabular}{@{}l}
+%{\Large\upshape\bfseries Springer}\\[8pt]
+%Berlin\enspace Heidelberg\enspace New\kern0.1em York\\[5pt]
+%Barcelona\enspace Budapest\enspace Hong\kern0.2em Kong\\[5pt]
+%London\enspace Milan\enspace Paris\enspace\\[5pt]
+%Santa\kern0.2em Clara\enspace Singapore\enspace Tokyo
+%\end{tabular}
+%\end{flushleft}
+
+
+\title{Trabajo Teórico: Redes Neuronales}
+\author{Juan Carlos Fernández Durán, Juan Manuel Fernández García-Minguillán y
+ \newline Victor Gualdrás de la Cruz.}
+
+
+\maketitle
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+
+\section{Introducción}
+
+Se puede decir que ya a comienzos de la segunda guerra mundial empezaban a aparecer la construcción de máquinas inteligentes como rudimentarios ordenadores analógicos que se encargaban de tareas como la navegación, acuñando Norbert Wiener tras la misma el término cibernética como el estudio unificado del control y de la comunicación en los animales y máquinas, pero años más tardes fue relegado a un segundo puesto junto con las redes neuronales por el extraordinario desarrollo de otro campo, la IA, cuyo término acuño John McCarthy, que trata de algoritmos que hacen pensar a los ordenadores. Pero dado que con el paso de los años se construían ordenadores más potentes pero la inteligencia de la IA apenas crecía, las Redes Neuronales volvieron a estar en primer plano.
+
+
+Tras este pequeña introducción histórica incidiremos más en los conceptos teóricos asociados, en este caso en el verdadero corazon de un computador, el microprocesador.
+
+El microprocesador no es mas que un complejisimo circuito electronico que puede actualmente integrar varios millones de componentes electronicos en un espacio alrededor de un centímetro cuadrado. Aunque dichos microprocesadores permitian realizar un numero bastante alto de operaciones para ciertas tareas necesitaban un tiempo de calculo aterrador para la arquitectura de Von Neuman, un ejemplo de ello es el reconocimiento de objetos en un sistema visual, es decir, aunque un computador permite operar con datos precisos organizados de manera secuencial los problemas del mundo real tratan con datos imprecisos y simultáneos.
+
+Pero como algo tan elemental para el ser humano como reconocer los objetos que ve, puede llegar a ser un problema tan complicado para un ordenador, la respuesta es el cerebro, el cerebro no sigue una arquitectura de Von Neuman, ni siquiera es un sistema con multiples procesadores, sino un conjunto de millones de procesadores elementales o neuronas interconectadas, que aunque sean sencillas, lentas y poco fiables operan normalmente en paralelo unos cien mil millones de neuronas.
+
+Esto junto a que las neuronas no tienen que ser programadas, sino que aprenden gracias a las señales que reciben del entorno, pero no hay nada mejor que una pequeña tabla para ilustrar las diferencias existentes entre el cerebro y los microprocesadores.
+
+\begin{tabular}{|l|l|l|}
+\hline 
+  &  Cerebro & Computador \\ 
+\hline 
+  Velocidad de Proceso & 10-2 seg (100 Hz) & 3*10-10 seg (3 GHz) \\  %Corregir esto
+\hline 
+Estilo de Procesamiento & Paralelo & Secuencial \\ 
+\hline 
+Número de Procesadores & entre 10ss11 y 10ss14 & Pocos \\  %Corregir
+\hline 
+Conexiones & 10 000 por procesador & pocas \\  %Corregir
+\hline 
+Almacenamiento del conocimiento & Distribuido & Direcciones Fijas \\  
+\hline 
+Tolerancia a Fallos & Amplia & Nula \\  
+\hline 
+Tipo de control del proceso & Auto-organizado & Centralizado \\  
+\hline 
+\end{tabular} 
+
+\section{Introducción Biológica}
+
+Para explicarlo mejor expondremos algunos conceptos básicos de las redes neuronales. Desde el punto de vista funcional, las neuronas constituyen procesadores de información sencillos, que como todo sistema de este tipo poseen un canal de entrada de información, las dendritas; un órgano de cómputo, el soma, y un canal de salida, el axón, que aunque sea una visión muy simplificada de su funcionamiento, nos sirve para explicar el mismo. Como dato curioso se calcula que una neurona del cortex cerebral recibe información, por término medio, de unas 10 000 neuronas (convergencia), y envía impulsos a varios cientos de ellas (divergencia).
+
+La unión entre 2 neuronas se denomina sinapsis, dicho proceso no necesita normalmente el contacto físico entre neuronas, sino que estas permanecen separadas por un pequeño vacío de unas 0.2 micras. En relación a la sinapsis, se habla de neuronas presinapticas ( las que envian las señales ) y postsinápticas ( las que reciben las mismas ). La sinapsis es siempre direccional, la información fluye en un unico sentido.
+
+Dicha comunicación es generalmente de tipo químico en la que si el potencial de la neurona (no se explicará en detalle lo que conforma el potencial de la neuronas dado que es un campo denso y no se ve lo suficientemente importante como para ser introducido en este documento) supera el umbral de disparo, se genera un pulso. Hay que destacar que los pulsos generados son digitales, es decir, existe o no existe el pulso, además que todos poseen la misma magnitud. Aparte de esto una estimulación más intensa disminuye el intervalo existente entre los pulsos, aunque no puede crecer de manera indefinida, sino que existe una frecuencia máxima a partir del cual ya no se puede aumentar más.
+
+\subsubsection{Aprendizaje}
+
+Durante el desarrollo de un ser vivo el cerebro se modela, de forma que existen muchas cualidades del individuo que no son innatas, sino que se van adquiriendo, ya sea por el establecimiento de nuevas conexiones, roptura de otras, el modelado de las intensidades sinapticas o incluso mediante la muerte neuronal. Este tipo de acciones, en especial la modificación de las intensidades sinápticas, son las que utilizarán los sistemas neuronales artificiales para llevar a cabo el aprendizaje.
+
+\subsection{Estructura de un sistema neuronal artificial}
+
+Según el punto de vista del grupo PDP (Parallel Distributed Procesing Research Group), un sistema neuronal está compuesto por los siguientes elementos:
+
+\begin{itemize}
+\item Un conjunto de procesadores elementales o neuronas artificiales
+\item Un patrón de conectividad o arquitectura
+\item Una dinámica de activaciones
+\item Una regla o dinámica de aprendizaje
+\item Un entorno donde opera
+\end{itemize}
+
+Por lo tanto veremos dos tipos de modelos, el modelo genérico de neurona artificial y el modelo estándar de neurona artificial.
+
+\subsubsection{Modelo genérico de neurona artificial}
+
+Un procesador elemental o neurona es un dispositivo simple de cálculo que a partir de un vector de entrada procedente del exterior o de otras neuronas, proporciona una única respuesta o salida. Los elementos que lo forman son:
+
+\begin{itemize}
+\item Conjunto de entradas
+\item Pesos sinápticos de la neurona, que representa la intensidad de interacción entre cada neurona presináptica y la neurona postsináptica.
+\item Regla de propagación, que proporciona el valor del potencial postsináptico de la neurona en función de sus pesos y entradas.
+\item Función de activación, que proporciona el estado de activación actual de la neurona en función de su estado anterior y de su potencial postsináptico actual.
+\item Función de salida, que proporciona la salida actual de la neurona en función de su estado de activación.
+\end{itemize}
+
+\subsubsection{Modelo estándar de neurona artificial}
+
+Una neurona estandar consiste en:
+
+\begin{itemize}
+\item Un conjunto de entradas y de pesos sinápticos
+\item Una regla de propagación
+\item Una función de activación, que representa simultaneamente la salida de la neurona y su estado de activación
+\end{itemize}
+
+\section{Tipos de Redes Neuronales}
+
+Las redes neuronales se clasifican comúnmente en términos de sus  correspondientes algoritmos o métodos de entrenamiento: redes de pesos fijos, redes no supervisadas, y redes de entrenamiento supervisado. Para las redes de pesos fijos no existe ningún tipo de entrenamiento.
+
+\subsection{Supervisadas}
+
+Los tipos de redes neuronales supervisadas son las más comunes. Se componen de de varios patrones de entrenamiento de entrada y salida. La principal característica de este tipo de algoritmos es que existe un ?maestro? que va observando la salida y corrigiendo esta cuando se considera necesario.
+
+El funcionamiento básico de este tipo de redes es el siguiente:
+-Se muestran los patrones a la red y la salida que se espera ante esa determinada entrada.
+-A continuación se usa una fórmula matemática que minimiza el error en el ajuste de los pesos.
+
+Algunos modelos de redes no supervisadas son:
+
+\textbf{Perceptron}: Es uno de los ejemplos más simples de red neuronal. Consiste en un conjunto de neuronas que no están unidas entre sí. Cada neurona recibe todas las entradas, y cada una de estas neuronas producen una salida propia. 
+El proceso que sigue es simple, primero se le proporcionan una serie de entradas y se permite al perceptron que calcule la salida de estas, a continuación, se muestra la salida que debería haber proporcionado, es decir, la correcta. De esta manera el perceptron calcula el error y ajusta sus pesos de manera proporcional a este error.
+
+\textbf{Perceptron multicapa}: Es una versión mejorada del Perceptron simple. Pretende suplir las limitaciones del Perceptron simple o unicapa. Este modelo consiste en una serie de perceptrones unicapa que se van conectando entre sí. Es decir, la salida de la capa anterior es la entrada de la posterior.
+El gran problema de este modelo es su entrenamiento, ya que es difícil corregir el error en las distintas capas o saber en qué capa se producen estos para equilibrar los pesos. Para solucionar este defecto se desarrollo el algoritmo de BackPropagation, que pretende propagar los errores producidos en la última capa hacia atrás.
+
+Otros ejemplos de redes neuronales supervisadas son: Time Delay, Probabilistic y Generalized Regresion.
+
+\subsection{Auto-Organizadas}
+
+A diferencia de las redes supervisadas, las no supervisadas o autoorganizadas no requieren de un maestro, es decir, su entrenamiento consiste únicamente en patrones de entrada. En este tipo de redes, estas aprenden a base de las experiencias de los patrones de entrenamiento anteriores. Buscan características comunes o que se repitan, correlaciones, o categorías en las que agrupar los datos de entrada.
+La salida puede representar tanto el grado de similitud entre la entrada actual y las entradas pasadas o bien puede categorizar a través de clustering la entrada.
+
+Algunas de estas redes mapean las características mediante una disposición geométrica, de manera que se obtiene un mapa topográfico de las características de las entradas, para que si se obtienen entradas similares, se afecte a neuronas de salida próximas entre sí.
+
+Los modelos de redes neuronales no supervisadas más importantes son los siguientes:
+
+\textbf{Regla de aprendizaje de Hebb}: Este tipo de aprendizaje se basa en el postulado formulado por Donald O. Hebb en 1949: ?Cuando un axón de una celda A está suficientemente cerca como para conseguir excitar a una celda B y repetida o persistemente toma parte en su activación, algún proceso de crecimiento o cambio metabólico tiene lugares en una o ambas celdas, de tal forma que la eficiencia de A,cuando la celda a activar es B, aumenta?. 
+
+Una celda es un conjunto de neuronas fuertemente conexionadas, y la eficiencia es la intensidad de la conexión o el peso.
+Básicamente esta regla busca reforzar el peso que conecta dos nodos que se excitan el uno al otro. 
+
+\textbf{Regla de aprendizaje competitivo}: En el aprendizaje competitivo, si un patrón nuevo pertenece a una clase reconocida previamente, entonces la inclusión de este nuevo patrón a esta clase matizará la representación de la misma. Si el nuevo patrón no pertenece a ninguna de las clases reconocidas anteriormente,entonces la estructura y los pesos de la red neuronal serán ajustados para reconocer a la nueva clase.
+
+
+\section{Implementación}
+
+En lugar de implementar desde 0 nuestro propia red neuronal, puede representar una mejor alternativa utilizar un framework ya desarrollado para trabajar con redes neuronales de manera que nosotros solo tengamos que preocuparnos de desarrollar la misma.
+
+Una posible alternativa es incorporar FANN ( Fast Artificial Neural Network ) la cual lleva 10 años en constante desarrollo, proporciona una librería para trabajar con redes neuronales cuya principal ventaja es su eficiencia ya que está escrita en C y C++, con licencia LGPL
+
+Si uno utiliza Java para el proyecto, puede incorporar Neuroph para modelar la red neuronal, bajo la licencia de Apache 2.0 de código abierto es otra buena alternativa a tener en cuenta.
+
+\section{Aplicaciones}
+
+Una de las principales ventajas de las redes neuronales es su grado de adaptabilidad, gracias a los procesos de aprendizaje, es posible que la propia red neuronal se ajuste para la aplicación determinada.
+
+Las redes neuronales son utilizadas frecuentemente en el campo del aprendizaje de patrones, también puede ser un buen sustituto de máquinas de estado y listas de reglas.
+
+A continuación se explorarán distintas aplicaciones sobre la que una red neuronal es de especial utilidad a la hora de abordar dicho problema.\\
+
+\textbf{Reconocimiento Facial}
+
+En el campo de la investigación, las Redes Neuronales tienen una importante presencia a la hora de resolver la problemática del reconocimiento facial.
+
+Esta se da como entrada a la red neuronal de 3 posibles formas, utilización de imagenes bidimensionales a escala de gris, con una verificación por medio de un clasificador (k vecinos cercanos y máquinas de vector soporte), de hecho, se consiguen mejores resultados de esta forma que con una nube de puntos en tres dimensiones, dichos datos se obtienen mediante 2 cámaras, pero puede introducir varias errores a la hora de sincronizar las mismas y por lo tanto una imagen en escala de grises tiene es más fiable.
+
+Otra manera de proporcionar la entrada es mediante datos tridimensionales, aunque las pruebas no son todo lo satisfactorias que deberían.\\
+
+\textbf{Modelos Financieros}
+
+Una aplicación que se ha dado de forma efectiva es la de poder predecir modelos financieros, por ejemplo, en el caso de la Universidad de Valladolid, se desarrolló una red neuronal capaz de predecir si un banco quebraría o no, este modelo acertó sus predicciones en un 96% para los bancos que quebraron en EEUU durante el año 2013.
+
+Esto fue posible gracias a el previo análisis de los indicadores de la década anterior marcada por la crisis, el modelo reveló que los modelos que tenían una alta concentración en préstamos de la construcción, los bancos que tuvieron un crecimiento rápido sin capitalización adecuada son los más propensos a quebrar.
+
+Esto refuerza el concepto de que las redes neuronales son excepcionalmente útiles a la hora de utilizarlas para el reconocimiento de patrones.\\
+
+\textbf{Desarrollo de Videojuegos}
+
+Las redes neuronales son también utilizadas para el desarrollo de componentes, en concreto, la Inteligencia Artificial de un videojuego, esto puede abarcar diferentes aspectos.
+
+Una red neuronal puede modelar toda la inteligencia artificial del protagonista, esto se pudo observar, por ejemplo en un concurso de modelación de inteligencias artificiales para Super Mario de 2012, una de las posibles implementaciones fue modelada mediante redes neuronales.
+
+La búsqueda de caminos es uno de los problemas más comunes de este campo, mediante la evolución de los pesos en las neuronas artificiales de nuestra red neuronal artificial podemos obtener como solución un camino adecuado, a veces, incluso en conjunto con los algoritmos genéticos o mediante algún proceso de machine-learning de la propia red neuronal, son capaces de proporcionar el camino adecuado\\
+
+\textbf{Modelos Meteorológicos}
+
+La predicción meteorológica se presta también al reconocimiento de patrones y se ha desarrollado en este campo  varias redes neuronales para afrontar este problema, teniendo en mente tratar de mejorar el tiempo que lleva a cabo realizar las simulaciones meteorológicas que se llevaban a cabo.\\
+
+\textbf{Modelos de eficiencia energética}
+
+Google con el paso del tiempo ha recopilado un gran número de datos acerca de la energía utilizada en sus Data Center y ha explorado numerosas vías para refrigerarlo como por ejemplo la utilización de agua de mar.
+
+Una de las necesidades era predecir cómo se va a comportar la eficiencia energética y hacer una predicción efectiva de la misma, para ello, modelarlo directamente mediante un algoritmo puede ser un proceso realmente tedioso, pero si aplicamos reconocimiento de patrones, no es tan difícil.
+
+Se diseñó una red neuronal para que tuviera la capacidad de predecir esta eficiencia energética. Con cada registro el algoritmo va adaptando los pesos para que se obtenga la salida deseada, desarrollando un modelo que predecía correctamente la eficiencia energética con una precisión del 99,6%
+
+Este modelo preciso permitió a Google realizar simulaciones para observar cómo se comportaría este sistema energético dada una entrada concreta sin que los servidores peligren en ningún momento obteniendo información valiosa.
+
+\section{Conclusión}
+
+Las redes neuronales pueden ser excepcionalmente útiles, como hemos visto para diversos campos de aplicación. A partir de datos reales somos capaces de construir un modelo mediante una red neuronal que se comporta con una impresionante fidelidad a lo que ocurriría en el entorno físico realmente, esto puede representar importantes ventajas como por ejemplo, realizar diversas pruebas sin que estas influyan en nuestro entorno físico, y así realizar diversas tareas de investigación, como por ejemplo mejorar la eficiencia, u otros propósitos de investigación.
+
+El reconocimiento de patrones es otro de los puntos fuertes, permitiendo averiguar cuales son las principales causas de que un determinado suceso intervenga, ya que por nuestra propia cuenta en un mar de variables puede ser realmente difícil para nosotros averiguarlo.
+
+
+
+\end{document}

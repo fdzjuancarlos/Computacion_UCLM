@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Introducci\'on}{3}
+\contentsline {section}{\numberline {2}Introducci\'on Biol\'ogica}{4}
+\contentsline {subsubsection}{\numberline {2.0.1}Aprendizaje}{4}
+\contentsline {subsection}{\numberline {2.1}Estructura de un sistema neuronal artificial}{4}
+\contentsline {subsubsection}{\numberline {2.1.1}Modelo gen\'erico de neurona artificial}{5}
+\contentsline {subsubsection}{\numberline {2.1.2}Modelo est\'andar de neurona artificial}{5}
+\contentsline {section}{\numberline {3}Tipos de Redes Neuronales}{5}
+\contentsline {subsection}{\numberline {3.1}Supervisadas}{6}
+\contentsline {subsection}{\numberline {3.2}Auto-Organizadas}{6}
+\contentsline {section}{\numberline {4}Implementaci\'on}{7}
+\contentsline {section}{\numberline {5}Aplicaciones}{7}
+\contentsline {section}{\numberline {6}Conclusi\'on}{9}
