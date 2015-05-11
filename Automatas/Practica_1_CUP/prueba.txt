@@ -1,2 +1,24 @@
-3+2;
-4+1;
+grammar gr{
+	terminal piter,sellers;
+nonterminal S,A;
+axiom S;
+productions{
+S := a S;
+S := e A;
+S := e;
+S := a;
+A := a A| $;
+}
+}
+
+automaton prueba{
+states q0,q1,q2;
+alphabet a,b,c;
+initial q0;
+final q2;
+transition{
+q0,a = q1;
+q1,b = q1;
+q1,c = q2;
+}
+}

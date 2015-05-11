@@ -1,32 +1,88 @@
-
 import java_cup.runtime.*;
 import java.io.*;
 
 parser code {:
-	public static void main(String args[]) throws Exception {
-		try{
-		new parser(new Yylex(System.in)).parse();  // Inicializamos el scanner (Yylex) para que 				}							   	   // la entrada sea por teclado   
-		}
-		catch ( Exception e) {
-			System.out.println(" Análisis INCORRECTO !!");
-			System.exit(1);}
-		System.out.println("Análisis Correcto ");
- 	}
+  public static void main(String args[]) throws Exception {
+    try{
+      new parser(new Yylex(System.in)).parse();  // Inicializamos el scanner (Yylex) para que
+    }
+    catch ( Exception e) {
+      System.out.println( e );
+      System.out.println(" Análisis INCORRECTO !!");
+      System.exit(1);
+    }
+    System.out.println("Análisis Correcto ");
+   }
 :}
 
+terminal CORCHETE_ABIERTO, CORCHETE_CERRADO, COMA, PUNTO_Y_COMA, ASIGNADOR, UNION, PALABRA_VACIA, IGUAL;
+terminal GRAMATICA, TERMINAL, NO_TERMINAL, AXIOMA, PRODUCCION;
+terminal AUTOMATA, ESTADOS, ALFABETO, INICIAL, FINAL, TRANSICION;
+terminal TEXTO;
 
-terminal PUNTOYCOMA, MAS, POR, PAREN_I, PAREN_D;
-terminal Integer NUMERO;
 
-non terminal lista, expr_p;
-non terminal Integer expr;
+non terminal lista_simbolos_espacio, lista_simbolos_coma, union_lista_simbolos;
+non terminal regla_produccion, lista_reglas_produccion;
+non terminal regla_transicion, lista_reglas_transicion;
+non terminal term_p, no_term_p, axioma_p, produccion_p;
+non terminal estados_p, alfabeto_p, inicial_p, final_p, transicion_p;
+non terminal term, no_term, axioma, produccion;
+non terminal estados, alfabeto, inicial, final, transicion;
+non terminal gramat;
+non terminal automaton;
 
-precedence left MAS;
-precedence left POR;
+precedence left COMA;
+precedence left UNION;
+precedence left IGUAL;
+precedence left ASIGNADOR;
 
-lista ::= lista expr_p | expr_p;
-expr_p ::= expr PUNTOYCOMA;
-expr      ::= NUMERO
-            | expr MAS expr
-	    | expr POR expr
-	    | PAREN_I expr PAREN_D ;
+gramat ::= GRAMATICA TEXTO CORCHETE_ABIERTO
+   term_p
+   no_term_p
+   axioma_p
+   produccion_p
+   CORCHETE_CERRADO;
+   
+automaton ::= AUTOMATA TEXTO CORCHETE_ABIERTO
+   estados_p
+   alfabeto_p
+   inicial_p
+   final_p
+   transicion_p
+   CORCHETE_CERRADO;
+
+term_p ::= term PUNTO_Y_COMA;
+no_term_p ::= no_term PUNTO_Y_COMA;
+axioma_p ::= axioma PUNTO_Y_COMA;
+produccion_p ::= produccion;
+
+estados_p ::= estados PUNTO_Y_COMA;
+alfabeto_p ::= no_term PUNTO_Y_COMA;
+inicial_p ::= axioma PUNTO_Y_COMA;
+final_p ::= produccion PUNTO_Y_COMA;
+transicion_p ::= transicion;
+
+term ::= TERMINAL lista_simbolos_coma;
+no_term ::= NO_TERMINAL lista_simbolos_coma;
+axioma ::= AXIOMA TEXTO;
+produccion ::= PRODUCCION CORCHETE_ABIERTO lista_reglas_produccion CORCHETE_CERRADO;
+
+estados ::= ESTADOS lista_simbolos_coma;
+alfabeto ::= ALFABETO lista_simbolos_coma;
+inicial ::= INICIAL TEXTO;
+final ::= FINAL TEXTO;
+transicion ::= TRANSICION CORCHETE_ABIERTO lista_reglas_transicion CORCHETE_CERRADO;
+
+regla_produccion::= TEXTO ASIGNADOR union_lista_simbolos PUNTO_Y_COMA;
+lista_reglas_produccion::= lista_reglas_produccion regla_produccion | regla_produccion;
+
+regla_transicion::= TEXTO COMA TEXTO IGUAL TEXTO;
+lista_reglas_transicion::= lista_reglas_transicion regla_transicion | regla_transicion;
+
+lista_simbolos_espacio ::= lista_simbolos_espacio TEXTO | TEXTO;
+lista_simbolos_coma ::= lista_simbolos_coma COMA TEXTO | TEXTO;
+union_lista_simbolos ::= union_lista_simbolos UNION lista_simbolos_espacio |
+                         union_lista_simbolos UNION PALABRA_VACIA |
+                         lista_simbolos_espacio;
+                         
+

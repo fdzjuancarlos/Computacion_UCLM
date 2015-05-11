@@ -128,12 +128,12 @@ input(File):-
          open(File,read,Str),
          %lee Str por lineas y las almacena en la lista L
          read_line(Str,L),
-         %cierra Str
-         close(Str),
          %para cada elemento de L, ejecuta formulatoclausula
          forall(member(E,L),formula2clausula(E)),
          %llama al resolutor
-         resolutor.
+         resolutor,
+         %cierra Str
+         close(Str).
 
 
 

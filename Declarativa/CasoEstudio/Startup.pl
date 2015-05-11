@@ -5,21 +5,6 @@
 %caso de estudio
 
 :- dynamic clausula/1, clausula/2.
-%clausula(X).
-%% clausula(p; q).
-%clausula(not(p); q).
-%clausula(p; not(q)).
-%clausula(not(p); not(q)).
-
-%%
-%%clausula(p;q;r).
-%%clausula(p;not(q)).
-%%clausula(not(r);not(q)).
-%%clausula(not(p);r).
-
-%
-%clausula(not(p)).
-%clausula(p;q).
 
 % Resolutor hace la parte principal de aplicar el mecanismo de resolucion lineal. Usa reglas auxiliares.
 
