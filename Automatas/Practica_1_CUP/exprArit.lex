@@ -46,11 +46,14 @@ import java_cup.runtime.*;
 "]" { return new Symbol(sym.P_CUADRADO_CERRADO); }
 "-" { return new Symbol(sym.GUION); }
 "*" { return new Symbol(sym.CLAUSURA); }
-"+" { retunr new Symbol(sym.CLAUSURA_POSITIVA); }
+"+" { return new Symbol(sym.CLAUSURA_POSITIVA); }
 "?" { return new Symbol(sym.INTERROGACION); }
 
-[a-zA-Z]([0-9]|[a-zA-Z])* { return new Symbol(sym.TEXTO, new String(yytext())); }
-[0-9]|[a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
+[a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
+[a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.IDENTIFICADOR, new String(yytext())); }
+
+[0-9a-zA-Z] { return new Symbol(sym.CARACTER_NUMERO, new String(yytext())); }
+[0-9a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.CARACTERES_NUMEROS, new String(yytext())); }
 
 [ \t\r\n\f] { /* ignora delimitadores */ }
 . { System.err.println("Caracter Ilegal: "+yytext()); }
