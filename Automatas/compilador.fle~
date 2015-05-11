@@ -30,7 +30,8 @@ WhiteSpace = {LineTerminator} | [\t\f]
 WhiteSpaces = {WhiteSpace}*
 
 Str = ('{Alphabet}')+
-Expr = ( {Alphabet} | \| | \( | \) | \{ | \} | \[ | \] | \< | \> | \* | \+ | \? | \^ | \$ | \/ | \. | \" | \~ | \! | {Str})+
+Expr = ( {Alphabet} | \| | \( | \) | \[ | \] | \< | \> | \* | \+ | \? | \^ | \$ | \/ | \. | \" | \~ | \! | {Str})+
+
 
 
 %%
@@ -81,9 +82,10 @@ yybegin(automata);
 <expresion>{
 	({Expr})+
 		{System.out.println("Expresion Regular");}
-	
-	\}+ {
+
+	\} {
 		System.out.println("Fin de expresion regular");
+		yybegin(YYINITIAL);
 	}
 }
 
