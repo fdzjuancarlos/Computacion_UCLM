@@ -148,7 +148,7 @@ union_lista_simbolos ::= union_lista_simbolos UNION lista_simbolos_espacio |
                          union_lista_simbolos UNION PALABRA_VACIA |
                          lista_simbolos_espacio;
 
-texto ::= identificador | CARACTERES_NUMEROS;
+texto ::= identificador | CARACTERES_NUMEROS | CARACTER_NUMERO;
 caracter ::= CARACTER | CARACTER_NUMERO;
 
 reg_expresion ::= reglas_expresiones | PARENTESIS_ABIERTO reg_expresion PARENTESIS_CERRADO | reg_expresion
