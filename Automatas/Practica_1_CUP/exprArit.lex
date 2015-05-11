@@ -50,7 +50,7 @@ import java_cup.runtime.*;
 "?" { return new Symbol(sym.INTERROGACION); }
 
 [a-zA-Z]([0-9]|[a-zA-Z])* { return new Symbol(sym.TEXTO, new String(yytext())); }
-[a-zA-Z]([0-9]|[a-zA-Z]) { return new Symbol(sym.CARACTER, new String(yytext())); }
+[0-9]|[a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
 
 [ \t\r\n\f] { /* ignora delimitadores */ }
 . { System.err.println("Caracter Ilegal: "+yytext()); }
