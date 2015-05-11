@@ -10,6 +10,7 @@ import java_cup.runtime.*;
 %%
 /* ------------------------ Seccion de reglas lexicas ---------------------- */
 
+"/*" (.)* "*/" { }
 
 "{" { return new Symbol(sym.CORCHETE_ABIERTO); }
 "}" { return new Symbol(sym.CORCHETE_CERRADO); }
@@ -35,7 +36,7 @@ import java_cup.runtime.*;
 "final" { return new Symbol(sym.FINAL); }
 "transition" { return new Symbol(sym.TRANSICION); }
 
-"FAtoRe" { return new Symbol(sym.FUN_FA_TO_RE); }
+"FAtoRE" { return new Symbol(sym.FUN_FA_TO_RE); }
 "CFGtoPDA" { return new Symbol(sym.FUN_CFG_TO_PDA); }
 "clean" { return new Symbol(sym.FUN_CLEAN); }
 
@@ -48,6 +49,10 @@ import java_cup.runtime.*;
 "*" { return new Symbol(sym.CLAUSURA); }
 "+" { return new Symbol(sym.CLAUSURA_POSITIVA); }
 "?" { return new Symbol(sym.INTERROGACION); }
+
+"recognize" { return new Symbol(sym.RECONOCER); }
+"REtoFA" { return new Symbol(sym.RETOFA); }
+"FAtoNDFA" { return new Symbol(sym.FATONDFA); }
 
 [a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
 [a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.IDENTIFICADOR, new String(yytext())); }

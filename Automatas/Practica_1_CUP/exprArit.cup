@@ -21,6 +21,7 @@ terminal  ESTADOS, ALFABETO, INICIAL, FINAL, TRANSICION;
 terminal IDENTIFICADOR;
 terminal CARACTER_NUMERO, CARACTERES_NUMEROS, CARACTER;
 terminal LENGUAJE_VACIO;
+terminal RECONOCER, RETOFA, FATONDFA;
 terminal FUN_FA_TO_RE, FUN_CFG_TO_PDA, FUN_CLEAN;
 
 terminal EXPRESION_REGULAR, P_CUADRADO_ABIERTO, P_CUADRADO_CERRADO, GUION, CLAUSURA, CLAUSURA_POSITIVA, INTERROGACION, COMILLA;
@@ -41,6 +42,8 @@ non terminal terminos_base, fun_clean, fun_clean_p, fun_fa_to_re, fun_fa_to_re_p
 
 non terminal reg_expresion, reglas_expresiones, regla_interseccion, regla_clase, regla_clausura,
 regla_clausura_positiva, regla_opcionalidad, regla_expresion;
+non terminal recognize_p, retofa_p, fatondfa_p;
+non terminal recognize, retofa, fatondfa;
 
 non terminal regexp;
 
@@ -65,10 +68,11 @@ precedence left P_CUADRADO_CERRADO;
 precedence right PARENTESIS_ABIERTO;
 precedence left PARENTESIS_CERRADO;
 
-//general ::= reg_expresion; 
+
 general ::= general terminos_base | terminos_base;
 
-terminos_base ::= gramat | automaton | regexp | fun_fa_to_re_p | fun_cfg_to_pda_p | fun_clean_p | reg_expresion; 
+
+terminos_base ::= gramat | automaton | regexp | fun_fa_to_re_p | fun_cfg_to_pda_p | fun_clean_p | reg_expresion | recognize_p | retofa_p |  fatondfa_p; 
 
 identificador ::= IDENTIFICADOR | CARACTER;
 
@@ -88,6 +92,16 @@ automaton ::= AUTOMATA identificador CORCHETE_ABIERTO
    CORCHETE_CERRADO;
    
 regexp ::= EXPRESION_REGULAR identificador CORCHETE_ABIERTO reg_expresion CORCHETE_CERRADO;
+
+recognize_p ::= recognize PUNTO_Y_COMA;
+recognize ::= RECONOCER PARENTESIS_ABIERTO identificador COMA 
+lista_simbolos_espacio PARENTESIS_CERRADO;
+
+retofa_p ::= retofa PUNTO_Y_COMA;
+retofa ::= identificador IGUAL RETOFA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
+
+fatondfa_p ::= fatondfa PUNTO_Y_COMA;
+fatondfa ::= identificador IGUAL FATONDFA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
 
 fun_fa_to_re_p ::= fun_fa_to_re PUNTO_Y_COMA;
 fun_cfg_to_pda_p ::= fun_cfg_to_pda PUNTO_Y_COMA;
@@ -134,7 +148,7 @@ union_lista_simbolos ::= union_lista_simbolos UNION lista_simbolos_espacio |
                          union_lista_simbolos UNION PALABRA_VACIA |
                          lista_simbolos_espacio;
 
-texto ::= identificador | CARACTERES_NUMEROS;
+texto ::= identificador | CARACTERES_NUMEROS | CARACTER_NUMERO;
 caracter ::= CARACTER | CARACTER_NUMERO;
 
 reg_expresion ::= reglas_expresiones | PARENTESIS_ABIERTO reg_expresion PARENTESIS_CERRADO | reg_expresion

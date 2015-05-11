@@ -1,24 +1,46 @@
+
+regexp e1 { (abc)|($|'hola') }
+
+regexp e2 { @* }
+
+regexp e3 { ([A-C]*)(b?) }
+
+regexp e4 { (([3-5])+(def)*)|$ }
+
 grammar gr{
 	terminal piter,sellers;
-nonterminal S,A;
-axiom S;
-productions{
-S := a S;
-S := e A; 
-S := e;
-S := a;
-A := a A| $;
-}
+	nonterminal S,A;
+	axiom S;
+	productions{
+		S := a S;
+		S := e A; 
+		S := e; /*Comentario de prueba*/
+		S := a;
+		A := a A| $;
+	}
 }
 
 automaton prueba{
-states q0,q1,q2;
-alphabet a,b,c;
-initial q0;
-final q2;
-transition{
-q0, = (q1,q5,q3);
-q1,b = q1;
-q1,c = q2;
+	states q0,q1,q2;
+	alphabet a,b,c;
+	initial q0;
+	final q2;
+	transition{
+		q0, = (q1,q5,q3);
+		q1,b = q1;
+		q1,c = q2;
+	}
 }
-}
+
+recognize(identificador, identificador con espacios);
+
+automata = REtoFA(identificador);
+
+otroAutomata = FAtoNDFA(identificador);
+
+expresionRegular = FAtoRE(otroIdentificador); /* Tantos identificadores! */
+
+automataPila = CFGtoPDA(gramaticaLibreContexto);
+
+gramaticaLimpia = clean(gramatica);
+
