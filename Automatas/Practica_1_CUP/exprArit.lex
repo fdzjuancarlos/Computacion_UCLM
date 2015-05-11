@@ -10,6 +10,7 @@ import java_cup.runtime.*;
 %%
 /* ------------------------ Seccion de reglas lexicas ---------------------- */
 
+"/*" (.)* "*/" { }
 
 "{" { return new Symbol(sym.CORCHETE_ABIERTO); }
 "}" { return new Symbol(sym.CORCHETE_CERRADO); }
