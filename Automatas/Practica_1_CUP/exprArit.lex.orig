@@ -35,10 +35,12 @@ import java_cup.runtime.*;
 "final" { return new Symbol(sym.FINAL); }
 "transition" { return new Symbol(sym.TRANSICION); }
 
+<<<<<<< HEAD
 // ("/*" ([a-z]|[A-Z]|[0-9])* "*/" ) {
 //	System.out.print("");
 //}
 
+=======
 "regexp" { return new Symbol(sym.EXPRESION_REGULAR); }
 "'" { return new Symbol(sym.COMILLA); }
 "@" { return new Symbol(sym.LENGUAJE_VACIO); }
@@ -48,6 +50,7 @@ import java_cup.runtime.*;
 "*" { return new Symbol(sym.CLAUSURA); }
 "+" { retunr new Symbol(sym.CLAUSURA_POSITIVA); }
 "?" { return new Symbol(sym.INTERROGACION); }
+>>>>>>> 96b201a1f0e041ada3978dce489cb66a8850926f
 
 [a-zA-Z]([0-9]|[a-zA-Z])* { return new Symbol(sym.TEXTO, new String(yytext())); }
 [a-zA-Z]([0-9]|[a-zA-Z]) { return new Symbol(sym.CARACTER, new String(yytext())); }

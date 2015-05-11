@@ -8,10 +8,10 @@ parser code {:
     }
     catch ( Exception e) {
       System.out.println( e );
-      System.out.println(" Anï¿½lisis INCORRECTO !!");
+      System.out.println(" Análisis INCORRECTO !!");
       System.exit(1);
     }
-    System.out.println("Anï¿½lisis Correcto ");
+    System.out.println("Análisis Correcto ");
    }
 :}
 
@@ -44,6 +44,11 @@ precedence left UNION;
 precedence left IGUAL;
 precedence left ASIGNADOR;
 
+<<<<<<< HEAD
+general ::= automaton general | gramat general | automaton | gramat;
+
+
+=======
 precedence left INTERSECCION;
 precedence left GUION;
 precedence left CLAUSURA;
@@ -51,6 +56,7 @@ precedence left CLAUSURA_CERRADA;
 precedence left INTERROGACION;
 
 general ::= general gramat | general automaton | general regexp | gramat | automaton | regexp; 
+>>>>>>> 96b201a1f0e041ada3978dce489cb66a8850926f
 
 gramat ::= GRAMATICA TEXTO CORCHETE_ABIERTO
    term_p
@@ -67,6 +73,8 @@ automaton ::= AUTOMATA TEXTO CORCHETE_ABIERTO
    transicion_p
    CORCHETE_CERRADO;
    
+
+
 regexp ::= EXPRESION_REGULAR TEXTO CORCHETE_ABIERTO lista_reglas_expresion CORCHETE_CERRADO;
 
 
@@ -96,11 +104,16 @@ transicion ::= TRANSICION CORCHETE_ABIERTO lista_reglas_transicion CORCHETE_CERR
 regla_produccion::= TEXTO ASIGNADOR union_lista_simbolos PUNTO_Y_COMA;
 lista_reglas_produccion::= lista_reglas_produccion regla_produccion | regla_produccion;
 
+<<<<<<< HEAD
 estado_actual_transita ::= TEXTO COMA | TEXTO COMA TEXTO;
 estado_transitado ::= TEXTO | PARENTESIS_ABIERTO lista_simbolos_coma PARENTESIS_CERRADO;
 regla_transicion::= estado_actual_transita IGUAL estado_transitado;
 regla_transicion_p ::= regla_transicion PUNTO_Y_COMA;
 lista_reglas_transicion::= lista_reglas_transicion regla_transicion_p | regla_transicion_p;
+=======
+regla_transicion::= TEXTO COMA TEXTO IGUAL TEXTO;
+lista_reglas_transicion::= lista_reglas_transicion regla_transicion | regla_transicion; 
+>>>>>>> 96b201a1f0e041ada3978dce489cb66a8850926f
 
 lista_simbolos_espacio ::= lista_simbolos_espacio TEXTO | TEXTO;
 lista_simbolos_coma ::= lista_simbolos_coma COMA TEXTO | TEXTO;
