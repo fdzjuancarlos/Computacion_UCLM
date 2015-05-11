@@ -33,8 +33,18 @@ import java_cup.runtime.*;
 "final" { return new Symbol(sym.FINAL); }
 "transition" { return new Symbol(sym.TRANSICION); }
 
+"regexp" { return new Symbol(sym.EXPRESION_REGULAR); }
+"'" { return new Symbol(sym.COMILLA); }
+"@" { return new Symbol(sym.LENGUAJE_VACIO); }
+"[" { return new Symbol(sym.P_CUADRADO_ABIERTO); }
+"]" { return new Symbol(sym.P_CUADRADO_CERRADO); }
+"-" { return new Symbol(sym.GUION); }
+"*" { return new Symbol(sym.CLAUSURA); }
+"+" { retunr new Symbol(sym.CLAUSURA_POSITIVA); }
+"?" { return new Symbol(sym.INTERROGACION); }
 
 [a-zA-Z]([0-9]|[a-zA-Z])* { return new Symbol(sym.TEXTO, new String(yytext())); }
+[a-zA-Z]([0-9]|[a-zA-Z]) { return new Symbol(sym.CARACTER, new String(yytext())); }
 
 [ \t\r\n\f] { /* ignora delimitadores */ }
 . { System.err.println("Caracter Ilegal: "+yytext()); }

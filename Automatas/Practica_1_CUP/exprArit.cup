@@ -19,7 +19,9 @@ terminal CORCHETE_ABIERTO, CORCHETE_CERRADO, COMA, PUNTO_Y_COMA, ASIGNADOR, UNIO
 terminal GRAMATICA, TERMINAL, NO_TERMINAL, AXIOMA, PRODUCCION;
 terminal AUTOMATA, ESTADOS, ALFABETO, INICIAL, FINAL, TRANSICION;
 terminal TEXTO;
+terminal CARACTER;
 
+terminal EXPRESION_REGULAR, P_CUADRADO_ABIERTO, P_CUADRADO_CERRADO, GUION, CLAUSURA, CLAUSURA_POSITIVA, INTERROGACION, INTERSECCION, PARENTESIS_ABIERTO, PARENTESIS_CERRADO;
 
 non terminal lista_simbolos_espacio, lista_simbolos_coma, union_lista_simbolos;
 non terminal regla_produccion, lista_reglas_produccion;
@@ -31,10 +33,22 @@ non terminal estados, alfabeto, inicial, final, transicion;
 non terminal gramat;
 non terminal automaton;
 
+non terminal lista_reglas_expresion, lista_reglas_expresion_intermedio, reglas_expresiones, regla_concatenacion, regla_interseccion, regla_clase, regla_clausura, regla_clausura_positiva, regla_opcionalidad, regla_expresion;
+
+non terminal regexp;
+
 precedence left COMA;
 precedence left UNION;
 precedence left IGUAL;
 precedence left ASIGNADOR;
+
+precedence left INTERSECCION;
+precedence left GUION;
+precedence left CLAUSURA;
+precedence left CLAUSURA_CERRADA;
+precedence left INTERROGACION;
+
+general ::= general gramat | general automaton | general regexp | gramat | automaton | regexp; 
 
 gramat ::= GRAMATICA TEXTO CORCHETE_ABIERTO
    term_p
@@ -50,6 +64,10 @@ automaton ::= AUTOMATA TEXTO CORCHETE_ABIERTO
    final_p
    transicion_p
    CORCHETE_CERRADO;
+
+regexp ::= EXPRESION_REGULAR TEXTO CORCHETE_ABIERTO lista_reglas_expresion CORCHETE_CERRADO;
+
+
 
 term_p ::= term PUNTO_Y_COMA;
 no_term_p ::= no_term PUNTO_Y_COMA;
@@ -77,12 +95,31 @@ regla_produccion::= TEXTO ASIGNADOR union_lista_simbolos PUNTO_Y_COMA;
 lista_reglas_produccion::= lista_reglas_produccion regla_produccion | regla_produccion;
 
 regla_transicion::= TEXTO COMA TEXTO IGUAL TEXTO;
-lista_reglas_transicion::= lista_reglas_transicion regla_transicion | regla_transicion;
+lista_reglas_transicion::= lista_reglas_transicion regla_transicion | regla_transicion; 
 
 lista_simbolos_espacio ::= lista_simbolos_espacio TEXTO | TEXTO;
 lista_simbolos_coma ::= lista_simbolos_coma COMA TEXTO | TEXTO;
 union_lista_simbolos ::= union_lista_simbolos UNION lista_simbolos_espacio |
                          union_lista_simbolos UNION PALABRA_VACIA |
                          lista_simbolos_espacio;
-                         
 
+
+lista_reglas_expresion ::= lista_reglas_expresion_intermedio | PARENTESIS_ABIERTO lista_reglas_expresion PARENTESIS_CERRADO;
+
+lista_reglas_expresion_intermedio ::= lista_reglas_expresion regla_expresion | regla_expresion;
+
+reglas_expresiones ::= regla_concatenacion | regla_expresion | regla_interseccion | regla_clase | regla_clausura | regla_clausura_positiva | regla_opcionalidad; 
+
+regla_concatenacion ::= lista_reglas_expresion lista_reglas_expresion;
+
+regla_interseccion ::= lista_reglas_expresion INTERSECCION lista_reglas_expresion;        
+
+regla_clase ::= P_CUADRADO_ABIERTO CARACTER GUION CARACTER P_CUADRADO_CERRADO;
+
+regla_clausura ::= lista_reglas_expresion CLAUSURA;
+
+regla_clausura_positiva ::= lista_reglas_expresion CLAUSURA_POSITIVA;
+
+regla_opcionalidad ::= lista_reglas_expresion INTERROGACION;
+
+regla_expresion::= CARACTER | COMILLA TEXTO COMILLA;
