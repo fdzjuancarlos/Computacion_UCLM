@@ -49,6 +49,10 @@ import java_cup.runtime.*;
 "+" { return new Symbol(sym.CLAUSURA_POSITIVA); }
 "?" { return new Symbol(sym.INTERROGACION); }
 
+"recognize" { return new Symbol(sym.RECONOCER); }
+"REtoFA" { return new Symbol(sym.RETOFA); }
+"FAtoNDFA" { return new Symbol(sym.FATONDFA); }
+
 [a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
 [a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.IDENTIFICADOR, new String(yytext())); }
 
