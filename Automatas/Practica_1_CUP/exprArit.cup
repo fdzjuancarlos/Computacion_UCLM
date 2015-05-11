@@ -22,6 +22,7 @@ terminal IDENTIFICADOR;
 terminal CARACTER_NUMERO, CARACTERES_NUMEROS, CARACTER;
 terminal LENGUAJE_VACIO;
 terminal RECONOCER, RETOFA, FATONDFA;
+terminal FUN_FA_TO_RE, FUN_CFG_TO_PDA, FUN_CLEAN;
 
 terminal EXPRESION_REGULAR, P_CUADRADO_ABIERTO, P_CUADRADO_CERRADO, GUION, CLAUSURA, CLAUSURA_POSITIVA, INTERROGACION, COMILLA;
 
@@ -37,11 +38,12 @@ non terminal gramat;
 non terminal automaton;
 non terminal general;
 non terminal texto, identificador, caracter;
+non terminal terminos_base, fun_clean, fun_clean_p, fun_fa_to_re, fun_fa_to_re_p, fun_cfg_to_pda, fun_cfg_to_pda_p;
 
 non terminal reg_expresion, reglas_expresiones, regla_interseccion, regla_clase, regla_clausura,
 regla_clausura_positiva, regla_opcionalidad, regla_expresion;
 non terminal recognize_p, retofa_p, fatondfa_p;
-non terminal functions, recognize, retofa, fatondfa;
+non terminal recognize, retofa, fatondfa;
 
 non terminal regexp;
 
@@ -66,9 +68,11 @@ precedence left P_CUADRADO_CERRADO;
 precedence right PARENTESIS_ABIERTO;
 precedence left PARENTESIS_CERRADO;
 
-general ::= general gramat | general automaton | general regexp | gramat | automaton | regexp | reg_expresion | general functions | functions; 
 
-functions ::= recognize_p | retofa_p | fatondfa_p;
+general ::= general terminos_base | terminos_base;
+
+
+terminos_base ::= gramat | automaton | regexp | fun_fa_to_re_p | fun_cfg_to_pda_p | fun_clean_p | reg_expresion | recognize_p | retofa_p |  fatondfa_p; 
 
 identificador ::= IDENTIFICADOR | CARACTER;
 
@@ -99,6 +103,13 @@ retofa ::= identificador IGUAL RETOFA PARENTESIS_ABIERTO identificador PARENTESI
 fatondfa_p ::= fatondfa PUNTO_Y_COMA;
 fatondfa ::= identificador IGUAL FATONDFA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
 
+fun_fa_to_re_p ::= fun_fa_to_re PUNTO_Y_COMA;
+fun_cfg_to_pda_p ::= fun_cfg_to_pda PUNTO_Y_COMA;
+fun_clean_p ::= fun_clean PUNTO_Y_COMA;
+
+fun_fa_to_re ::= identificador IGUAL FUN_FA_TO_RE PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
+fun_cfg_to_pda::= identificador IGUAL FUN_CFG_TO_PDA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
+fun_clean::= identificador IGUAL FUN_CLEAN PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
 
 term_p ::= term PUNTO_Y_COMA;
 no_term_p ::= no_term PUNTO_Y_COMA;

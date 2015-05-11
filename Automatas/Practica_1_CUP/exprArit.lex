@@ -36,9 +36,9 @@ import java_cup.runtime.*;
 "final" { return new Symbol(sym.FINAL); }
 "transition" { return new Symbol(sym.TRANSICION); }
 
-// ("/*" ([a-z]|[A-Z]|[0-9])* "*/" ) {
-//	System.out.print("");
-//}
+"FAtoRE" { return new Symbol(sym.FUN_FA_TO_RE); }
+"CFGtoPDA" { return new Symbol(sym.FUN_CFG_TO_PDA); }
+"clean" { return new Symbol(sym.FUN_CLEAN); }
 
 "regexp" { return new Symbol(sym.EXPRESION_REGULAR); }
 "'" { return new Symbol(sym.COMILLA); }

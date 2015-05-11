@@ -8,20 +8,26 @@ parser code {:
     }
     catch ( Exception e) {
       System.out.println( e );
-      System.out.println(" Análisis INCORRECTO !!");
+      System.out.println(" Analisis INCORRECTO !!");
       System.exit(1);
     }
-    System.out.println("Análisis Correcto ");
+    System.out.println("Analisis Correcto ");
    }
 :}
 
 terminal CORCHETE_ABIERTO, CORCHETE_CERRADO,PARENTESIS_ABIERTO, PARENTESIS_CERRADO, COMA, PUNTO_Y_COMA, ASIGNADOR, UNION, PALABRA_VACIA, IGUAL;
 terminal GRAMATICA, TERMINAL, NO_TERMINAL, AXIOMA, PRODUCCION, AUTOMATA;
 terminal  ESTADOS, ALFABETO, INICIAL, FINAL, TRANSICION;
-terminal TEXTO;
-terminal CARACTER;
+terminal IDENTIFICADOR;
+terminal CARACTER_NUMERO, CARACTERES_NUMEROS, CARACTER;
+terminal LENGUAJE_VACIO;
+<<<<<<< HEAD
+terminal RECONOCER, RETOFA, FATONDFA;
+=======
+terminal FUN_FA_TO_RE, FUN_CFG_TO_PDA, FUN_CLEAN;
+>>>>>>> c9b8f5d56cd54edbd550ab15b099e43a85597ead
 
-terminal EXPRESION_REGULAR, P_CUADRADO_ABIERTO, P_CUADRADO_CERRADO, GUION, CLAUSURA, CLAUSURA_POSITIVA, INTERROGACION, INTERSECCION, PARENTESIS_ABIERTO, PARENTESIS_CERRADO;
+terminal EXPRESION_REGULAR, P_CUADRADO_ABIERTO, P_CUADRADO_CERRADO, GUION, CLAUSURA, CLAUSURA_POSITIVA, INTERROGACION, COMILLA;
 
 non terminal lista_simbolos_espacio, lista_simbolos_coma, union_lista_simbolos;
 non terminal estado_actual_transita, estado_transitado;
@@ -34,8 +40,13 @@ non terminal estados, alfabeto, inicial, final, transicion;
 non terminal gramat;
 non terminal automaton;
 non terminal general;
+non terminal texto, identificador, caracter;
+non terminal terminos_base, fun_clean, fun_clean_p, fun_fa_to_re, fun_fa_to_re_p, fun_cfg_to_pda, fun_cfg_to_pda_p;
 
-non terminal lista_reglas_expresion, lista_reglas_expresion_intermedio, reglas_expresiones, regla_concatenacion, regla_interseccion, regla_clase, regla_clausura, regla_clausura_positiva, regla_opcionalidad, regla_expresion;
+non terminal reg_expresion, reglas_expresiones, regla_interseccion, regla_clase, regla_clausura,
+regla_clausura_positiva, regla_opcionalidad, regla_expresion;
+non terminal recognize_p, retofa_p, fatondfa_p;
+non terminal functions, recognize, retofa, fatondfa;
 
 non terminal regexp;
 
@@ -44,28 +55,43 @@ precedence left UNION;
 precedence left IGUAL;
 precedence left ASIGNADOR;
 
-<<<<<<< HEAD
-general ::= automaton general | gramat general | automaton | gramat;
-
-
-=======
-precedence left INTERSECCION;
+precedence left CARACTER;
+precedence left LENGUAJE_VACIO;
+precedence left PALABRA_VACIA;
+precedence left CARACTER_NUMERO;
+precedence left CARACTERES_NUMEROS;
+precedence left IDENTIFICADOR;
 precedence left GUION;
 precedence left CLAUSURA;
-precedence left CLAUSURA_CERRADA;
+precedence left CLAUSURA_POSITIVA;
 precedence left INTERROGACION;
+precedence left COMILLA;
+precedence right P_CUADRADO_ABIERTO;
+precedence left P_CUADRADO_CERRADO;
+precedence right PARENTESIS_ABIERTO;
+precedence left PARENTESIS_CERRADO;
 
-general ::= general gramat | general automaton | general regexp | gramat | automaton | regexp; 
->>>>>>> 96b201a1f0e041ada3978dce489cb66a8850926f
+<<<<<<< HEAD
+general ::= general gramat | general automaton | general regexp | gramat | automaton | regexp | reg_expresion | general functions | functions; 
 
-gramat ::= GRAMATICA TEXTO CORCHETE_ABIERTO
+functions ::= recognize_p | retofa_p | fatondfa_p;
+=======
+//general ::= reg_expresion; 
+general ::= general terminos_base | terminos_base;
+
+terminos_base ::= gramat | automaton | regexp | fun_fa_to_re_p | fun_cfg_to_pda_p | fun_clean_p | reg_expresion; 
+>>>>>>> c9b8f5d56cd54edbd550ab15b099e43a85597ead
+
+identificador ::= IDENTIFICADOR | CARACTER;
+
+gramat ::= GRAMATICA identificador CORCHETE_ABIERTO
    term_p
    no_term_p
    axioma_p
    produccion_p
    CORCHETE_CERRADO;
    
-automaton ::= AUTOMATA TEXTO CORCHETE_ABIERTO
+automaton ::= AUTOMATA identificador CORCHETE_ABIERTO
    estados_p
    alfabeto_p
    inicial_p
@@ -73,11 +99,28 @@ automaton ::= AUTOMATA TEXTO CORCHETE_ABIERTO
    transicion_p
    CORCHETE_CERRADO;
    
+regexp ::= EXPRESION_REGULAR identificador CORCHETE_ABIERTO reg_expresion CORCHETE_CERRADO;
 
+<<<<<<< HEAD
+recognize_p ::= recognize PUNTO_Y_COMA;
+recognize ::= RECONOCER PARENTESIS_ABIERTO identificador COMA 
+lista_simbolos_espacio PARENTESIS_CERRADO;
 
-regexp ::= EXPRESION_REGULAR TEXTO CORCHETE_ABIERTO lista_reglas_expresion CORCHETE_CERRADO;
+retofa_p ::= retofa PUNTO_Y_COMA;
+retofa ::= identificador IGUAL RETOFA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
 
+fatondfa_p ::= fatondfa PUNTO_Y_COMA;
+fatondfa ::= identificador IGUAL FATONDFA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
 
+=======
+fun_fa_to_re_p ::= fun_fa_to_re PUNTO_Y_COMA;
+fun_cfg_to_pda_p ::= fun_cfg_to_pda PUNTO_Y_COMA;
+fun_clean_p ::= fun_clean PUNTO_Y_COMA;
+
+fun_fa_to_re ::= identificador IGUAL FUN_FA_TO_RE PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
+fun_cfg_to_pda::= identificador IGUAL FUN_CFG_TO_PDA PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
+fun_clean::= identificador IGUAL FUN_CLEAN PARENTESIS_ABIERTO identificador PARENTESIS_CERRADO;
+>>>>>>> c9b8f5d56cd54edbd550ab15b099e43a85597ead
 
 term_p ::= term PUNTO_Y_COMA;
 no_term_p ::= no_term PUNTO_Y_COMA;
@@ -92,52 +135,47 @@ transicion_p ::= transicion;
 
 term ::= TERMINAL lista_simbolos_coma;
 no_term ::= NO_TERMINAL lista_simbolos_coma;
-axioma ::= AXIOMA TEXTO;
+axioma ::= AXIOMA identificador;
 produccion ::= PRODUCCION CORCHETE_ABIERTO lista_reglas_produccion CORCHETE_CERRADO;
 
 estados ::= ESTADOS lista_simbolos_coma;
 alfabeto ::= ALFABETO lista_simbolos_coma;
-inicial ::= INICIAL TEXTO;
+inicial ::= INICIAL identificador;
 final ::= FINAL lista_simbolos_coma;
 transicion ::= TRANSICION CORCHETE_ABIERTO lista_reglas_transicion CORCHETE_CERRADO;
 
-regla_produccion::= TEXTO ASIGNADOR union_lista_simbolos PUNTO_Y_COMA;
+regla_produccion::= identificador ASIGNADOR union_lista_simbolos PUNTO_Y_COMA;
 lista_reglas_produccion::= lista_reglas_produccion regla_produccion | regla_produccion;
 
-<<<<<<< HEAD
-estado_actual_transita ::= TEXTO COMA | TEXTO COMA TEXTO;
-estado_transitado ::= TEXTO | PARENTESIS_ABIERTO lista_simbolos_coma PARENTESIS_CERRADO;
+estado_actual_transita ::= identificador COMA | identificador COMA identificador;
+estado_transitado ::= identificador | PARENTESIS_ABIERTO lista_simbolos_coma PARENTESIS_CERRADO;
 regla_transicion::= estado_actual_transita IGUAL estado_transitado;
 regla_transicion_p ::= regla_transicion PUNTO_Y_COMA;
 lista_reglas_transicion::= lista_reglas_transicion regla_transicion_p | regla_transicion_p;
-=======
-regla_transicion::= TEXTO COMA TEXTO IGUAL TEXTO;
-lista_reglas_transicion::= lista_reglas_transicion regla_transicion | regla_transicion; 
->>>>>>> 96b201a1f0e041ada3978dce489cb66a8850926f
 
-lista_simbolos_espacio ::= lista_simbolos_espacio TEXTO | TEXTO;
-lista_simbolos_coma ::= lista_simbolos_coma COMA TEXTO | TEXTO;
+lista_simbolos_espacio ::= lista_simbolos_espacio identificador | identificador;
+lista_simbolos_coma ::= lista_simbolos_coma COMA identificador | identificador;
 union_lista_simbolos ::= union_lista_simbolos UNION lista_simbolos_espacio |
                          union_lista_simbolos UNION PALABRA_VACIA |
                          lista_simbolos_espacio;
 
+texto ::= identificador | CARACTERES_NUMEROS;
+caracter ::= CARACTER | CARACTER_NUMERO;
 
-lista_reglas_expresion ::= lista_reglas_expresion_intermedio | PARENTESIS_ABIERTO lista_reglas_expresion PARENTESIS_CERRADO;
+reg_expresion ::= reglas_expresiones | PARENTESIS_ABIERTO reg_expresion PARENTESIS_CERRADO | reg_expresion
+reg_expresion;
 
-lista_reglas_expresion_intermedio ::= lista_reglas_expresion regla_expresion | regla_expresion;
+reglas_expresiones ::= regla_clase | regla_expresion | regla_clausura | regla_clausura_positiva | regla_opcionalidad |
+regla_interseccion;
 
-reglas_expresiones ::= regla_concatenacion | regla_expresion | regla_interseccion | regla_clase | regla_clausura | regla_clausura_positiva | regla_opcionalidad; 
+regla_interseccion ::= reg_expresion UNION reg_expresion;        
 
-regla_concatenacion ::= lista_reglas_expresion lista_reglas_expresion;
+regla_clase ::= P_CUADRADO_ABIERTO caracter GUION caracter P_CUADRADO_CERRADO;
 
-regla_interseccion ::= lista_reglas_expresion INTERSECCION lista_reglas_expresion;        
+regla_clausura ::= reg_expresion CLAUSURA;
 
-regla_clase ::= P_CUADRADO_ABIERTO CARACTER GUION CARACTER P_CUADRADO_CERRADO;
+regla_clausura_positiva ::= reg_expresion CLAUSURA_POSITIVA;
 
-regla_clausura ::= lista_reglas_expresion CLAUSURA;
+regla_opcionalidad ::= reg_expresion INTERROGACION;
 
-regla_clausura_positiva ::= lista_reglas_expresion CLAUSURA_POSITIVA;
-
-regla_opcionalidad ::= lista_reglas_expresion INTERROGACION;
-
-regla_expresion::= CARACTER | COMILLA TEXTO COMILLA;
+regla_expresion::= texto | PALABRA_VACIA | LENGUAJE_VACIO | COMILLA texto COMILLA;
