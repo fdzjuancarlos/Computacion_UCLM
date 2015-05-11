@@ -1,0 +1,435 @@
+\documentclass{llncs}
+
+% Packages
+% ---
+
+\usepackage{amsmath} % Advanced math typesetting
+\usepackage[utf8]{inputenc} % Unicode support (Umlauts etc.)
+\usepackage[spanish]{babel} % Change hyphenation rules
+\usepackage[hidelinks]{hyperref} % Add a link to your document
+\usepackage{graphicx} % Add pictures to your document
+%\usepackage{listings} % Source code formatting and highlighting
+\usepackage{dialogue}
+
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{color}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+\usepackage{minted}
+
+\usepackage[export]{adjustbox}
+
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\begin{document}
+
+\title{Construcción de un analizador léxico y sintáctico con JFlex y CUP}
+%
+
+\author{Juan Carlos Fernández Durán\\
+Juan Manuel Fernández García-Minguillán\\
+Victor Gualdrás de la Cruz}
+\institute{Teoría de Autómatas y Computación\\
+Universidad de Castilla-La Mancha}
+
+
+\maketitle              % typeset the title of the contribution
+\newpage
+
+\tableofcontents
+\newpage
+
+\section{Objetivo y alcance}
+
+El objetivo de esta práctica es construir un analizador léxico y sintáctico de un subconjunto del lenguaje usado por la
+herramienta web SELFA. Esta herramienta desarrolla un software web para la definición de expresiones regulares,
+gramáticas, autómatas finitos y autómatas a pila, así como para la realización de diferentes  operaciones sobre estos
+elementos. La herramienta se puede encontrar en http://portal.esi.uclm.es/selfa/indexCompilar.php\\
+
+Usando Jflex y Cup, se propone diseñar un analizador léxico y sintáctico para un subconjunto del lenguaje de esta
+herramienta.\\
+
+El subconjunto del lenguaje que se pretende analizar se compone por:
+
+\begin{itemize}
+  \item
+    Definición de expresiones regulares (Ers)
+  \item
+    Definición de autómatas finitos (Afs)
+  \item
+    Definición de gramáticas
+  \item
+    Definición de dos operaciones para Ers (recognize y RetoFa)
+  \item
+    Definición de dos operaciones para Afs (FatoNDFA y FAtoRe)
+  \item
+    Definición de dos operaciones para gramáticas (CFGtoPDA y clean)
+  \item
+    Posibilidad de tener comentarios en el texto, del tipo /* .... */
+\end{itemize}
+
+\section{Herramientas usadas}
+
+Se ha construido el analizador léxico y sintáctico con la ayuda de:
+
+\begin{description}
+  \item[Flex]
+    Flex es un generador de analizador léxico (también conocido como generador de escáner) para Java y escrito en Java.
+    Un analizador léxico toma como entrada una especificación con un conjunto de expresiones regulares y acciones
+    correspondientes. Genera un programa (un analizador léxico ) que lee la entrada, compara la entrada con las
+    expresiones regulares en el archivo de especificaciones, y ejecuta la acción correspondiente si una expresión
+    regular coincide. JFlex está basado en autómatas finitos deterministas (AFDs). Son rápidos ya que no tinenen una
+    costosa vuelta atrás.\\
+
+  \item[CUP]
+    (Construction of Useful Parsers) o Constructor de Parsers (Analizadores Léxicos) Útiles es un LALR (Look-Ahead LR
+    parser) generador de Parser para java. Fue desarrollado por C. Scott Ananian, Frank Flannery, Dan Wang, Andrew W.
+    Appel y Michael Petter.
+\end{description}
+
+
+\section{Analizador léxico}
+
+El analizador léxico se compone de tres partes. La sección de código de usuario donde se incluye código java que será
+copiado literalmente en el fichero .java, delante de la declaración de la clase. En este caso contiene la importación de la librería java\_cup.runtime.\\
+
+A continuación aparece la sección de opciones y declaraciones para definir características de la clase que se genera,
+que en este caso no son necesarias.\\
+
+Por último la sección más amplia e importante es la de Reglas y Acciones. Aquí se definen las expresiones regulares, y
+las acciones a llevar a cabo cada vez que se reconozca una de estas expresiones.\\
+
+En primer lugar tenemos la definición de los comentarios, que se realiza de la siguiente forma:
+
+\begin{minted}[linenos,mathescape]{java}
+"/*" (.)* "*/" { }
+\end{minted}
+
+Esta expresión viene ha decir que todo lo que sea de la forma, /* a continuación cualquier cosa que quieras meter (esto
+se representa mediante el punto), y por último se produce el cierre mediante */.\\
+
+A continuación aparecen los distintos símbolos y palabras reservadas que se usan en el subconjunto del lenguaje de SELFA y que es necesario reconocer.
+
+\begin{minted}[linenos,mathescape]{java}
+"{" { return new Symbol(sym.CORCHETE_ABIERTO); }
+"}" { return new Symbol(sym.CORCHETE_CERRADO); }
+"(" { return new Symbol(sym.PARENTESIS_ABIERTO); }
+")" { return new Symbol(sym.PARENTESIS_CERRADO); }
+"," { return new Symbol(sym.COMA); }
+";" { return new Symbol(sym.PUNTO_Y_COMA); }
+":=" { return new Symbol(sym.ASIGNADOR); }
+"=" { return new Symbol(sym.IGUAL); }
+"|" { return new Symbol(sym.UNION); }
+"$" { return new Symbol(sym.PALABRA_VACIA); }
+
+"grammar" { return new Symbol(sym.GRAMATICA); }
+"terminal" { return new Symbol(sym.TERMINAL); }
+"nonterminal" { return new Symbol(sym.NO_TERMINAL); }
+"axiom" { return new Symbol(sym.AXIOMA); }
+"productions" { return new Symbol(sym.PRODUCCION); }
+
+"automaton" { return new Symbol(sym.AUTOMATA); }
+"states" { return new Symbol(sym.ESTADOS); }
+"alphabet" { return new Symbol(sym.ALFABETO); }
+"initial" { return new Symbol(sym.INICIAL); }
+"final" { return new Symbol(sym.FINAL); }
+"transition" { return new Symbol(sym.TRANSICION); }
+
+"FAtoRE" { return new Symbol(sym.FUN_FA_TO_RE); }
+"CFGtoPDA" { return new Symbol(sym.FUN_CFG_TO_PDA); }
+"clean" { return new Symbol(sym.FUN_CLEAN); }
+
+"regexp" { return new Symbol(sym.EXPRESION_REGULAR); }
+"'" { return new Symbol(sym.COMILLA); }
+"@" { return new Symbol(sym.LENGUAJE_VACIO); }
+"[" { return new Symbol(sym.P_CUADRADO_ABIERTO); }
+"]" { return new Symbol(sym.P_CUADRADO_CERRADO); }
+"-" { return new Symbol(sym.GUION); }
+"*" { return new Symbol(sym.CLAUSURA); }
+"+" { return new Symbol(sym.CLAUSURA_POSITIVA); }
+"?" { return new Symbol(sym.INTERROGACION); }
+
+"recognize" { return new Symbol(sym.RECONOCER); }
+"REtoFA" { return new Symbol(sym.RETOFA); }
+"FAtoNDFA" { return new Symbol(sym.FATONDFA); }
+
+[a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
+[a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.IDENTIFICADOR, new String(yytext())); }
+
+[0-9a-zA-Z] { return new Symbol(sym.CARACTER_NUMERO, new String(yytext())); }
+[0-9a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.CARACTERES_NUMEROS, new String(yytext())); }
+
+[\t\r\n\f] { /* ignora delimitadores */ }
+. { System.err.println("Caracter Ilegal: "+yytext()); }
+\end{minted}
+
+Lo que aparece entre comillas antes del primer corchete es lo que se pretende reconocer, y luego cuando hace return new
+Symbol(sym.ALGO); lo que está haciendo es pasarle al cups el identificador asociado a ese símbolo.\\
+
+Destacar como casos más especial el último, donde recogemos si se introduce algún carácter que consideremos ilegal como
+los tabuladores o los retornos de carro.\\
+
+\section{Analizador Gramatical}
+
+La función principal de analizador gramatical es a partir de una gramática libre de contexto, obtener el Autómata a Pila
+que reconozca un determinado lenguaje.
+La relación existente entre Cup y Jflex es que cada símbolo terminal de la gramática puede ser definido con una
+expresión regular. Por tanto, en Jflex se definen todos los terminales de la gramática.\\
+
+Al contrario que el analizador léxico, el analizador gramatical implementado en cups se compone de cinco partes, aunque
+algunas al igual que en el caso anterior son opcionales.\\
+
+La primera parte hace referencia a los package e imports del sistema. En el caso de este sistema formarían parte de esta
+primera especifiación:\\
+
+\begin{minted}[linenos,mathescape]{java}
+import java_cup.runtime.*;
+import java.io.*;
+\end{minted}
+
+A continuación viene la sección de los componentes del código de usuario. Esta es una de las partes opcionales que
+pueden aparecer en un fichero Cup. En este caso el código de esta sección sería:
+
+\begin{minted}[linenos,mathescape]{java}
+parser code {:
+  public static void main(String args[]) throws Exception {
+    try{
+      new parser(new Yylex(System.in)).parse();  
+    }
+    catch ( Exception e) {
+      System.out.println( e );
+      System.out.println(" Análisis INCORRECTO !!");
+      System.exit(1);
+    }
+    System.out.println("Análisis Correcto ");
+   }
+:}
+\end{minted}
+
+Este método pasa al analizador lo que lee de la entrada estándar de java y en el caso de que haya un error salta la
+excepción asociada.\\
+
+A continuación nos encontramos con la 3ª sección, que en este caso si es obligatoria, y aquí es donde procedemos a
+declarar la lista de símbolos de la gramática.\\
+
+
+
+\section{Reconocimiento de un Autómata}
+
+Un autómata está compuesto por un conjunto de estados, un alfabeto, un estado inicial, un conjunto de estados finales y sus posibles transiciones.
+
+\begin{minted}[linenos,mathescape]{java}
+automaton ::= AUTOMATA identificador CORCHETE_ABIERTO
+   estados_p
+   alfabeto_p
+   inicial_p
+   final_p
+   transicion_p
+   CORCHETE_CERRADO;
+\end{minted} 
+
+En la producción “automaton” identificamos primero la palabra reservada para el automata mediante un identificador terminal llamada AUTOMATA, en nuestro caso, la palabra reservada será “automaton”
+
+\begin{minted}[linenos,mathescape]{java}
+"automaton" { return new Symbol(sym.AUTOMATA); }
+\end{minted} 
+
+Una vez hemos detectado la palabra reservada, procedemos a leer el identificador del mismo mediante la producción no terminal “identificador” que produce
+
+Un identificador en este caso será un conjunto de caracteres que no pueden empezar por número que identifica con un nombre, en este caso, nuestro autómata.
+
+
+\begin{minted}[linenos,mathescape]{java}
+identificador ::= IDENTIFICADOR | CARACTER;
+\end{minted} 
+
+Contemplamos 2 posibilidades, que el identificador tenga más de una letra o que por el contrario sea un carácter.
+
+\begin{minted}[linenos,mathescape]{java}
+[a-zA-Z]([0-9a-zA-Z])* { return new Symbol(sym.IDENTIFICADOR, new String(yytext())); }
+
+[a-zA-Z] { return new Symbol(sym.CARACTER, new String(yytext())); }
+\end{minted} 
+
+Una vez hemos identificado en nuestro autómata tanto la palabra reservada como el nombre que lo identifica, esperamos la apertura de corchete, en ese momento procedemos a comprobar cada uno de los elementos de los que está compuesto nuestro autómata empezando por el conjunto de estados totales.
+
+\begin{minted}[linenos,mathescape]{java}
+estados_p ::= estados PUNTO_Y_COMA;
+\end{minted} 
+
+Como en todas las producciones, detectamos antes un nivel previo en el que comprobamos la producción básica (en este caso, estados) y que esté terminado por “;”
+
+\begin{minted}[linenos,mathescape]{java}
+estados ::= ESTADOS lista_simbolos_coma;
+\end{minted} 
+
+En nuestro caso básico para estados, el símbolo terminal ESTADOS reconocerá la palabra reservada “states”, una vez reconocido procedemos a identificar todos los nombres, que en este caso estarán separados por coma.
+
+\begin{minted}[linenos,mathescape]{java}
+lista_simbolos_coma ::= lista_simbolos_coma COMA identificador | identificador;
+\end{minted} 
+
+Esta producción recursiva por la izquierda detectará cualquier número de identificadores separados por coma.
+
+“alfabeto\_p”, “alfabeto”, “final\_p” y “final” están definidos de igual forma que lo está “estados\_p” y “estados” respectivamente ya que tienen las mismas necesidades, una palabra reservada precedida de una lista de símbolos separados por coma.
+
+“inicial\_p” y “inicial” tan solo aceptan un solo identificador, de modo que utilizamos “inicial\_p” como es habitual para encapsular “inicial” tras el punto y coma, en inicial esperaremos la palabra reservada “initial” y un identificador.
+
+\begin{minted}[linenos,mathescape]{java}
+inicial ::= INICIAL identificador;
+\end{minted} 
+
+Una vez identificado los estados, el alfabeto, el estado inicial y los finales, nos queda por reconocer la transición, en este caso tenemos varias reglas para reconocer de forma nivelada cada uno de los aspectos que engloban las transiciones
+
+\begin{minted}[linenos,mathescape]{java}
+transicion ::= TRANSICION CORCHETE_ABIERTO lista_reglas_transicion CORCHETE_CERRADO;
+\end{minted} 
+
+Detectamos la palabra reservada “transition” y esperamos una “lista\_reglas\_transicion” encapsuladas por corchetes,
+analicemos ahora la producción “lista\_reglas\_transicion”.
+
+\begin{minted}[linenos,mathescape]{java}
+lista_reglas_transicion::= lista_reglas_transicion regla_transicion_p | regla_transicion_p;
+\end{minted} 
+
+La anterior producción está compuesta por ella misma y sucesivas “regla\_transicion\_p” que son la que definirán cada una de las reglas de transición de nuestro autómata, esta definición recursiva nos permite poder definir cualquier número de reglas de transición
+
+\begin{minted}[linenos,mathescape]{java}
+regla_transicion_p ::= regla_transicion PUNTO_Y_COMA;
+regla_transicion::= estado_actual_transita IGUAL estado_transitado;
+\end{minted} 
+
+Una regla de transición, por ejemplo,  “q0,b = (q1,q2)” está compuesto por un estado, y por un símbolo que puede ser uno
+perteneciente al alfabeto o la palabra vacía, en cuyo caso no se especificará, esto se definirá en la producción
+“estado\_actual\_transita”, luego, a la derecha de la igualdad indicamos el estado o conjunto de estados a los que se
+transitará, que será definido en “estado\_transitado”
+
+\begin{minted}[linenos,mathescape]{java}
+estado_actual_transita ::= identificador COMA | identificador COMA identificador;
+\end{minted} 
+
+En este caso aceptaremos un identificador precedido siempre por coma, y de forma opcional, otro identificador
+
+\begin{minted}[linenos,mathescape]{java}
+estado_transitado ::= identificador | PARENTESIS_ABIERTO lista_simbolos_coma PARENTESIS_CERRADO;
+\end{minted} 
+
+En estado transitado detectaremos o el estado transitado o un conjunto de estados separado por comas encapsulados en paréntesis.
+
+Una vez procesados todos estos símbolos, tendremos nuestro autómata ya definido.
+
+
+
+\section{Reconocimiento la Gramática}
+
+Una gramática se compone por terminales y no terminales, definición de axiomas y una lista de producciones, por lo tanto definimos la estructura
+
+\begin{minted}[linenos,mathescape]{java}
+gramat ::= GRAMATICA identificador CORCHETE_ABIERTO
+   term_p
+   no_term_p
+   axioma_p
+   produccion_p
+   CORCHETE_CERRADO;
+\end{minted} 
+
+
+Como se puede observar, la definición de la gramática es idéntica a la definición del autómata, por lo tanto se procederá a explicar las producciones diferentes
+
+\begin{minted}[linenos,mathescape]{java}
+term ::= TERMINAL lista_simbolos_coma;
+no_term ::= NO_TERMINAL lista_simbolos_coma;
+axioma ::= AXIOMA identificador;
+produccion ::= PRODUCCION CORCHETE_ABIERTO lista_reglas_produccion CORCHETE_CERRADO;
+\end{minted} 
+
+Según las necesidades, se procederá a leer símbolos de igual forma que hicimos en el reconocimiento de nuestro autómata, dependiendo de si esperamos una lista de símbolos separados por coma o tan solo un identificador. Las reglas de producción serán definidos con una estructura parecida a la del conjunto de transiciones de nuestro autómata.
+
+\begin{minted}[linenos,mathescape]{java}
+lista_reglas_produccion::= lista_reglas_produccion regla_produccion | regla_produccion;
+\end{minted} 
+
+
+Mediante “lista\_reglas\_produccion” podremos definir que nuestro conjunto de reglas de produccion acepta cualquier número de estas mediante una definición recursiva por la izquierda
+
+\begin{minted}[linenos,mathescape]{java}
+regla_produccion::= identificador ASIGNADOR union_lista_simbolos PUNTO_Y_COMA;
+\end{minted} 
+
+Las producciones, por ejemplo "\(S := a A| $;)\" están definidas por un identificador, un operador de asignación, un
+conjunto de símbolos definidos por “union\_lista\_simbolos”
+
+\begin{minted}[linenos,mathescape]{java}
+union_lista_simbolos ::= union_lista_simbolos UNION lista_simbolos_espacio |
+                         union_lista_simbolos UNION PALABRA_VACIA |
+                         lista_simbolos_espacio;
+\end{minted} 
+
+Con una definición recursiva por la izquierda, aceptaremos cualquier número de identificadores unidos por unión separados por el símbolo UNION “|” de la misma forma que definimos las gramáticas en CUP
+
+\begin{minted}[linenos,mathescape]{java}
+lista_simbolos_espacio ::= lista_simbolos_espacio identificador | identificador;
+\end{minted} 
+
+La lista de símbolos separados por espacio tan solo será un conjunto de identificadores precedidos, como nuestros identificadores no aceptan el carácter “espacio” como una posibilidad para formar el identificador, sólo podran diferenciarse mediante la separación por espacios.
+
+
+
+\section{Reconocimiento de una Expresión Regular}
+
+Para el reconocimiento de una expresión regular se empezará definiendo los elementos menos específicos.
+
+A continuación se representarán los términos base definidos con el JFlex con mayúsculas, elementos a los que les daremos un significado sintáctico con CUP.
+
+\begin{minted}[linenos,mathescape]{java}
+texto ::= identificador | CARACTERES_NUMEROS | CARACTER_NUMERO;
+caracter ::= CARACTER | CARACTER_NUMERO;
+\end{minted} 
+
+Para poder facilitar el uso del operador de concatenación implícito se ha definido que un texto puede ser tanto un identificador como un conjunto de caracteres y numeros o un caracter o un número, mientras que un caracter puede ser tanto un carácter sin número como uno con número.
+
+\begin{minted}[linenos,mathescape]{java}
+regla_expresion::= texto | PALABRA_VACIA | LENGUAJE_VACIO | COMILLA texto COMILLA;
+\end{minted} 
+
+Se define como el elemento mínimo de una expresión regular a una concatenación de caracteres, definido como “texto”, una palabra vacia, un lenguaje vacio, o como una frase definida entre comillas.
+
+\begin{minted}[linenos,mathescape]{java}
+regla_interseccion ::= reg_expresion UNION reg_expresion;        
+
+regla_clase ::= P_CUADRADO_ABIERTO caracter GUION caracter P_CUADRADO_CERRADO;
+
+regla_clausura ::= reg_expresion CLAUSURA;
+
+regla_clausura_positiva ::= reg_expresion CLAUSURA_POSITIVA;
+
+regla_opcionalidad ::= reg_expresion INTERROGACION;
+\end{minted} 
+
+Se define el resto de operaciones excepto la operación de concatenación, que al ser implícito no es necesario que tenga un símbolo.
+
+\begin{minted}[linenos,mathescape]{java}
+reglas_expresiones ::= regla_clase | regla_expresion | regla_clausura | regla_clausura_positiva | regla_opcionalidad |
+regla_interseccion;
+\end{minted} 
+
+Se agrupan todas con el fin de facilitar el proceso de modelado del analizador.
+
+\begin{minted}[linenos,mathescape]{java}
+reg_expresion ::= reglas_expresiones | PARENTESIS_ABIERTO reg_expresion PARENTESIS_CERRADO | reg_expresion reg_expresion;
+
+Se define una expresión regular como una de las operaciones anteriores, una expresión regular pero entre paréntesis o la concatenación de varias expresiones regulares.
+
+\begin{minted}[linenos,mathescape]{java}
+regexp ::= EXPRESION_REGULAR identificador CORCHETE_ABIERTO reg_expresion CORCHETE_CERRADO;
+\end{minted} 
+
+Y por caso más específico se define la estructura de una expresión regular, tanto con su identificador como la expresión regular asociada.
+
+\end{document}
