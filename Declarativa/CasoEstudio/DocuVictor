@@ -4,7 +4,7 @@ La demostración automática de teoremas (de siglas ATP, por el término en ingl
 
 La construcción de un programa de demostración automatizado significa proporcionar una descripción algorítmica a un cálculo formal para que pueda ser implementado en una computadora para demostrar teoremas de manera eficiente. 
 
-La idea de resolución se fundamenta en que si un conjunto de cláusulas es insatisfacible enotnces a partir de él podrá deducirse la cláusula vacía. La estrategia de resolución lineal es una herramienta que nos permite localizar esa cláusula vacía. Su funcionamiento es el siguiente. Comenzando con una cláusula, se resuelve esta contra otra para obtener un resolvente que, a su vez, será resuelto con otra, repitiendo el proceso anterior tantas veces como sea necesario.
+La idea de resolución se fundamenta en que si un conjunto de cláusulas es insatisfacible entonces a partir de él podrá deducirse la cláusula vacía. La estrategia de resolución lineal es una herramienta que nos permite localizar esa cláusula vacía. Su funcionamiento es el siguiente. Comenzando con una cláusula, se resuelve esta contra otra para obtener un resolvente que, a su vez, será resuelto con otra, repitiendo el proceso anterior tantas veces como sea necesario.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 Documentación del codigo:

@@ -1,0 +1,105 @@
+% This is LLNCS.DOC the documentation file of
+% the LaTeX2e class from Springer-Verlag
+% for Lecture Notes in Computer Science, version 2.4
+\documentclass{llncs}
+\usepackage[spanish]{babel}
+\usepackage{llncsdoc}
+\usepackage[latin1]{inputenc}
+\usepackage{graphicx}
+\usepackage{appendix}
+%
+\begin{document}
+
+
+\addto\captionsspanish{%
+  \renewcommand\contentsname{}}
+%\begin{flushleft}
+%\large\itshape
+%\begin{tabular}{@{}l}
+%{\Large\upshape\bfseries Springer}\\[8pt]
+%Berlin\enspace Heidelberg\enspace New\kern0.1em York\\[5pt]
+%Barcelona\enspace Budapest\enspace Hong\kern0.2em Kong\\[5pt]
+%London\enspace Milan\enspace Paris\enspace\\[5pt]
+%Santa\kern0.2em Clara\enspace Singapore\enspace Tokyo
+%\end{tabular}
+%\end{flushleft}
+
+
+\title{Sistema Demostrador automático de teoremas basado en resolución.}
+\author{Juan Carlos Fernández Durán, Victor Gualdrás de la Cruz y Omar Khanji.\\
+\textbf{Profesor y director del proyecto:} Pascual Julián Iranzo.}
+
+\institute{Universidad Castilla la Mancha,
+Escuela Superior de Informática\\ Ciudad Real, España}
+
+\maketitle
+
+\tableofcontents
+
+\newpage
+
+
+\section{Introducción}
+
+La demostración automática de teoremas (de siglas ATP, por el término en inglés: Automated theorem proving) que también puede ser denominada Deducción automatizada, es actualmente el subcampo más desarrollado del razonamiento automático, y se encarga de la demostración de teoremas matemáticos mediante programas de ordenador.
+
+La construcción de un programa de demostración automatizado significa proporcionar una descripción algorítmica a un cálculo formal para que pueda ser implementado en una computadora para demostrar teoremas de manera eficiente. 
+
+La idea de resolución se fundamenta en que si un conjunto de cláusulas es insatisfacible enotnces a partir de él podrá deducirse la cláusula vacía. La estrategia de resolución lineal es una herramienta que nos permite localizar esa cláusula vacía. Su funcionamiento es el siguiente. Comenzando con una cláusula, se resuelve esta contra otra para obtener un resolvente que, a su vez, será resuelto con otra, repitiendo el proceso anterior tantas veces como sea necesario.
+
+\section{Documentación del código}
+
+A continuación se presentarán los diferentes módulos de los que está compuesto la aplicación
+
+\subsection{Resolutor}
+
+La regla principal del resolutor se llama, valga la redundancia, resolutor. Se invocaría primero resolutor/0 (donde 0 es la aridad) coge la primera claúsula perteneciente al conjunto de claúsulas que haya en la base de hechos, e invoca a resolutor/2 con la claúsula seleccionada. Esta regla va probando, cogiendo claúsulas de la base de hechos para comprobar si llega a la claúsula vacía, en caso contrario prueba con las claúsulas laterales, y si tampoco tiene éxito retrocede hasta resolutor/0 y prueba a elegir otra claúsula. Cada vez que se aplica el proceso de resolución, se toma la clausula resultante que se denomina resolvente, y se prueba a aplicar de nuevo este proceso, probando primero con las clausulas de la base de hechos o si no consigue nada, probando con las cláusulas añadidas previamente denominadas cláusulas laterales. Este proceso se repite hasta dar con la cláusula vacía.
+
+El funcionamiento interno del resolutor es buscar dentro de dos cláusulas dos proposiciones iguales, una negada y la otra no, para poder aplicar el mecanismo de resolución. Además se asegura de que no se introducen proposiciones iguales (por ejemplo: p\^p\^q), y que no se introducen claúsulas que ya existan en el conjunto de las claúsulas laterales para no incurrir en bucles.
+
+A continuación se muestra una breve API de las funciones que se encuentran en el modulo Resolutor:
+
+-resolutor/0: Selecciona una claúsula de las centrales e invoca Resolutor/2.
+
+-resolutor/2: Toma una claúsula perteneciente al conjunto de claúsulas laterales e invoca resolutor/3 con la claúsula central y lateral seleccionadas y la lista de claúsulas laterales.
+
+-resolutor/3: Aplica el mecanismo de resolución lineal mediante las claúsulas seleccionadas por Resolutor/2.
+
+-recorrer/3: Esta regla recorre la lista de claúsulas laterales para intentar buscar una con la que llegar a la claúsula vacía.
+
+-repeticion/3: Se asegura de que no se introducen claúsulas con proposiciones repetidas.
+
+-esta/2: Comprueba si ya existe una claúsula determinada en el conjunto de laterales para no incurrir en bucles.
+
+\subsection{Traductor}
+
+El traductor es el paso intermedio entre las fórmulas de usuario a cláusulas que podrán ser manejadas por el resolutor. Están programadas basadas en una recursión sobre patrones, formula2clausula/1 traduce la fórmula y la inserta en el resolutor como una cláusula que puede aceptar.
+
+Los predicados f2c adicionales transforman de forma recursiva la fórmula hasta que queda totalmente lista. También se define la precedencia de los operadores para que se tengan en cuenta en la transformación.
+
+\subsection{Entrada y Salida}
+
+Para leer el archivo de entrada al ejecutar "input('nombredelarchivo').", el programa abre el fichero en modo lectura, lo almacena en Stream, y va separando por lineas, las cuales va almacenando en la lista L. Al encontrar con que ha leido todo el fichero mediante at\_end\_of\_stream/1, por cada elemento de la lista, es decir, por cada linea, ejecuta formula2clausula/1. A continuación llama al resolutor y por último cierra el Stream.
+
+
+
+
+\end{document}
+
+
+% \\   Forzar algo más de espacio entre párrafos
+
+%  \textbf{Texto en negrita}
+
+%  \begin{itemize}
+%    \item Tu lista
+%    \item de objetos
+%  \end{itemize} Además se puede anidar con otro begin itemize para sublistas de objetos
+
+% \newpage  Forzar nueva página
+
+% Las imágenes aún no las entiendo porque es complicado, lo suyo es echarle un google
+
+% Cualquier otra cosa que se necesite echandole 1 google en inglés siempre hay alguien que lo resuelve,
+% está muy bien documentado, yo ya te digo que no he necesitado aprender LaTeX como tal si no que me he
+% puesto sobre la marcha buscando lo que necesitaba y aquí estoy

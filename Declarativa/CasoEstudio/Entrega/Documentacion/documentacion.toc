@@ -1,0 +1,9 @@
+\select@language {spanish}
+\contentsline {title}{Sistema Demostrador autom\'atico de teoremas basado en resoluci\'on.}{1}
+\authcount {1}
+\contentsline {author}{Juan Carlos Fern\'andez Dur\'an, Victor Gualdr\'as de la Cruz y Omar Khanji.\unskip \ \ignorespaces \textbf {Profesor y director del proyecto:} Pascual Juli\'an Iranzo.}{1}
+\contentsline {section}{\numberline {1}Introducci\'on}{3}
+\contentsline {section}{\numberline {2}Documentaci\'on del c\'odigo}{3}
+\contentsline {subsection}{\numberline {2.1}Resolutor}{3}
+\contentsline {subsection}{\numberline {2.2}Traductor}{4}
+\contentsline {subsection}{\numberline {2.3}Entrada y Salida}{4}
